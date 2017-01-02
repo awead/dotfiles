@@ -1,0 +1,141 @@
+#!/bin/bash
+# ----------------------------------------------
+# Bash Profile
+# ----------------------------------------------
+
+source $HOME/.bash_private
+
+# Git-specific settings
+export GITAWAREPROMPT=~/.bash/git-aware-prompt
+source "${GITAWAREPROMPT}/main.sh"
+export PS1="\u@\h \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+source ~/.bash/git-completion.bash
+
+# Colored listings
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+# Env
+export DUO_PASSCODE=push
+
+# Aliases
+alias ls='ls -Gh'
+alias d2='wine .wine/drive_c/Program\ Files/Diablo\ II/Diablo\ II.exe'
+alias d2nt='wine .wine/drive_c/Program\ Files/D2NT/D2NT\ Manager.exe'
+alias nuke-rockets="git grep -l '=>'| xargs perl -pi -e 's/(?<!:):(\w+)\s?=>\s?/$1: /g'"
+alias firefox="~/Applications/Firefox.app/Contents/MacOS/firefox-bin"
+alias killall-resque="ps -ax | grep resque | awk '{ print $1 }' | xargs kill -s KILL"
+alias killall-spring="ps -ax | grep spring | awk '{ print $1 }' | xargs kill -s KILL"
+alias git-log-pretty='git log --pretty=format:" %cd : %s [%cn]" --date=short'
+alias be-rspec='bundle exec rspec'
+alias be-rake='bundle exec rake'
+alias date-iso-8601='date -u +"%Y-%m-%dT%H:%M:%SZ"'
+
+# Dev shortcuts
+alias fcrepo-start="bundle exec fcrepo_wrapper --config ~/.fcrepo_wrapper > /dev/null 2>&1 &"
+alias solr-sufia-test="bundle exec solr_wrapper --config .internal_test_app/config/solr_wrapper_test.yml > /dev/null 2>&1 &"
+alias solr-sufia-dev="bundle exec solr_wrapper --config .internal_test_app/.solr_wrapper > /dev/null 2>&1 &"
+alias solr-dev="bundle exec solr_wrapper --config .solr_wrapper > /dev/null 2>&1 &"
+alias solr-test="bundle exec solr_wrapper --config config/solr_wrapper_test.yml > /dev/null 2>&1 &"
+alias resque-pool-start="bundle exec resque-pool -E development start"
+
+# Postgres
+export PG_HOME="/usr/local/var/postgres"
+alias pg-start="pg_ctl -D $PG_HOME -l $PG_HOME/server.log start"
+alias pg-stop="pg_ctl -D $PG_HOME stop -s -m fast"
+
+# Chruby settings
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
+# Additional bin directories
+export DROPBOX_BIN="$HOME/Dropbox/bin"
+export LATEX_BIN="/usr/local/texlive/2013/bin/x86_64-darwin"
+export SUBLIME_BIN="~/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+export LO_BIN="$HOME/Applications/LibreOffice.app/Contents/MacOS"
+export FOX_BIN="$HOME/Applications/Firefox.app/Contents/MacOS"
+export DF_BIN="$HOME/.dotfiles/bin"
+
+# Homebrew Settings
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS=--require-sha
+
+# Libraries
+# LDFLAGS:  -L/usr/local/opt/openssl/lib
+# CPPFLAGS: -I/usr/local/opt/openssl/include
+# LDFLAGS:  -L/usr/local/opt/curl/lib
+# CPPFLAGS: -I/usr/local/opt/curl/include
+# PKG_CONFIG_PATH: /usr/local/opt/curl/lib/pkgconfig
+
+# Pathing
+#
+# Look in Homebrew installs first, under /usr/local, then OSX binaries. Lastly, look in the
+# custom-install directories.
+PATH=/usr/local/bin:/usr/local/sbin:/opt/npm/bin:$PATH:$DROPBOX_BIN:$LATEX_BIN:$SUBLIME_BIN:$FOX_BIN:$LO_BIN:$DF_BIN
+export PATH
+
+# Java
+JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME
+
+# Imagemagick
+export MAGICK_TEMPORARY_PATH=/Volumes/Data/tmp
+export MAGICK_TEMPDIR=/Volumes/Data/tmp
+
+
+# Rails version
+# export RAILS_VERSION=4.2.7
+# export RAILS_VERSION=5.0.0.1
+
+# Sufia/Hydra
+LOCAL_IMPORT_DIR=~/Desktop
+export LOCAL_IMPORT_DIR
+#SOLR_DEVELOPMENT_PORT=8983 && export SOLR_DEVELOPMENT_PORT
+#SOLR_TEST_PORT=8985 && export SOLR_TEST_PORT
+FCREPO_DEVELOPMENT_PORT=8986 && export FCREPO_DEVELOPMENT_PORT
+FCREPO_TEST_PORT=8986 && export FCREPO_TEST_PORT
+
+function bgrep {
+  ag "$@" $(bundle show --paths) .
+}
+
+function bfind {
+  find . $(bundle show --paths) -name "*$@*"
+}
+
+function open-st {
+  open -a "Sublime Text" "$@"
+}
+
+function open-md {
+  open -a "Marked" "$@"
+}
+
+function cwd {
+  echo -n `pwd` | pbcopy
+}
+
+function furl {
+  curl --user fedoraAdmin:fedoraAdmin -k "$@"
+}
+
+function fcurl {
+  curl --user fedoraAdmin:fedoraAdmin -k "$@"
+}
+
+function rubocop-changed {
+  git status --porcelain | cut -c4- | grep -v "html.erb$" | grep ".rb" | xargs bundle exec rubocop
+}
+
+function rubocop-fix-changed {
+  git diff --name-only HEAD~1 | grep -v "html.erb$" | grep ".rb" | xargs bundle exec rubocop -a
+}
+
+function rspec-changed {
+  git status | grep "_spec.rb" | awk '{ print $2 }' | xargs bundle exec rspec
+}
+
+function rspec-save-results {
+  cp tmp/rspec_results.html tmp/rspec_results_saved.html 
+}

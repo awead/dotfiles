@@ -1,0 +1,9 @@
+[user]
+	name = Adam Wead
+	email = amsterdamos@gmail.com
+[commit]
+	gpgsign = true
+[credential]
+	helper = osxkeychain
+[core]
+	excludesfile = /Users/awead/.gitignore

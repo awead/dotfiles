@@ -1,0 +1,23 @@
+#!/bin/bash
+
+ACTION=$1
+CONNECTED=`scutil --nc status "LIAS VPN" | grep -c "Connected"`
+
+if [ -z $1 ]; then
+  echo "Usage: lias [start|stop]"
+  exit 1;
+fi
+
+if [ $1 = 'start' ]; then
+  if [ $CONNECTED -ne 0 ]; then
+    echo "Alreday conected"
+    exit 0;
+  fi
+  scutil --nc start "LIAS VPN"
+  exit 0;
+fi
+
+if [ $1 = 'stop' ]; then
+  scutil --nc stop "LIAS VPN"
+  exit 0;  
+fi
