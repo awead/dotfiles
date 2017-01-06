@@ -4,8 +4,8 @@
 # --------------------------------------------------------------------------
 
 # Ruby
-if test ! $(which chruby); then
-  echo "chruby isn't installed"
+if test ! $(which ruby-install); then
+  echo "ruby-install isn't installed"
   exit 1;
 fi
 ruby-install ruby 2.3.1
