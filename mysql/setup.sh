@@ -8,8 +8,9 @@ if test ! $(which mysql); then
   exit 1;
 fi
 
-mysql.server stop
+killall mysqld
 rm -Rf /usr/local/var/mysql
+mkdir /usr/local/var/mysql
 mysqld --initialize-insecure --explicit_defaults_for_timestamp
 mysql.server start
 mysql -u root --skip-password < $HOME/.dotfiles/mysql/init

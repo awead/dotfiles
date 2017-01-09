@@ -4,7 +4,8 @@ ACTION=$1
 CONNECTED=`scutil --nc status "LIAS VPN" | grep -c "Connected"`
 
 if [ -z $1 ]; then
-  echo "Usage: lias [start|stop]"
+  echo "Use one of the following commands for scutil --nc"
+  `scutil --nc help`
   exit 1;
 fi
 
@@ -14,10 +15,6 @@ if [ $1 = 'start' ]; then
     exit 0;
   fi
   scutil --nc start "LIAS VPN"
-  exit 0;
-fi
-
-if [ $1 = 'stop' ]; then
-  scutil --nc stop "LIAS VPN"
-  exit 0;  
+else
+  scutil --nc $1 "LIAS VPN"
 fi
