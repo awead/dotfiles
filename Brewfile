@@ -9,6 +9,7 @@ cask 'java'
 cask 'sublime-text'
 cask 'google-chrome'
 cask 'cord'
+cask 'libreoffice'
 
 brew 'chruby'
 brew 'openssl'
