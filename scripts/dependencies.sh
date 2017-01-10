@@ -36,3 +36,6 @@ freshclam
 
 # Redis
 find /usr/local -name "*redis.plist" -exec cp '{}' $HOME/Library/LaunchAgents \;
+
+# Sublime settings
+cp $HOME/.dotfiles/sublime/Preferences.sublime-settings "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
