@@ -33,3 +33,6 @@ cp /usr/local/etc/clamav/freshclam.conf.sample /usr/local/etc/clamav/freshclam.c
 cp /usr/local/etc/clamav/clamd.conf.sample /usr/local/etc/clamav/clamd.conf
 perl -pi -e 's/^/#/ if /^Example/' /usr/local/etc/clamav/freshclam.conf
 freshclam
+
+# Redis
+find /usr/local -name "*redis.plist" -exec cp '{}' $HOME/Library/LaunchAgents \;

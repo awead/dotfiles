@@ -22,10 +22,17 @@ ln -s $HOME/.dotfiles/home/bundle/config $HOME/.bundle/config
 
 # .ssh
 if [ -z $SAFE ]; then
-  echo "Where's the safe?"
-  exit 1;
+  echo "No safe found. Skipping..."
+else
+  mkdir -p $HOME/.ssh
+  rm -f $HOME/.ssh/config
+  ln -s $HOME/.dotfiles/home/ssh/config $HOME/.ssh/config
+  cp $SAFE/Keys/* $HOME/.ssh
 fi
-mkdir -p $HOME/.ssh
-rm -f $HOME/.ssh/config
-ln -s $HOME/.dotfiles/home/ssh/config $HOME/.ssh/config
-cp $SAFE/Keys/* $HOME/.ssh
+
+# Create project directoris
+mkdir -p $HOME/Projects/Github/aic-collections
+mkdir -p $HOME/Projects/Github/awead
+mkdir -p $HOME/Projects/Github/projecthydra
+mkdir -p $HOME/Projects/Github/projecthydra-labs
+mkdir -p $HOME/Projects/Github/psu-stewardship
