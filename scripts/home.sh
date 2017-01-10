@@ -18,4 +18,4 @@ ln -Fs $HOME/.dotfiles/home/bash $HOME/.bash
 # .bundle
 mkdir -p $HOME/.bundle
 rm -f $HOME/.bundle/config
-ln -Fs $HOME/.dotfiles/home/bundle/config $HOME/.bundle/config
+ln -s $HOME/.dotfiles/home/bundle/config $HOME/.bundle/config

@@ -1,1 +1,2 @@
-/Users/awead/.dotfiles/home/bundle/config
+---
+BUNDLE_GIT__ALLOW_INSECURE: "true"
