@@ -28,6 +28,8 @@ else
   rm -f $HOME/.ssh/config
   ln -s $HOME/.dotfiles/home/ssh/config $HOME/.ssh/config
   cp $SAFE/Keys/* $HOME/.ssh
+  cd $HOME
+  tar -xf $SAFE/gpg.tar
 fi
 
 # Create project directoris
