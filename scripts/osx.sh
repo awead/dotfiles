@@ -71,9 +71,15 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
+#
+# Terminal
+#
+
+cp $HOME/.dotfiles/terminal/*.ttf ~/Library/Fonts
+
 osascript <<EOD
 tell application "Terminal"
-	set themeName to "Silver Aerogel"
+	set themeName to "Custom"
 	do shell script "open '$HOME/.dotfiles/terminal/" & themeName & ".terminal'"
 	(* Wait a little bit to ensure that the custom theme is added. *)
 	delay 1
