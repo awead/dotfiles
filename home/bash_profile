@@ -6,10 +6,10 @@
 source $HOME/.bash_private
 
 # Git-specific settings
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
-source "${GITAWAREPROMPT}/main.sh"
-export PS1="\u@\h \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
-source ~/.bash/git-completion.bash
+# export GITAWAREPROMPT=~/.bash/git-aware-prompt
+# source "${GITAWAREPROMPT}/main.sh"
+# export PS1="\u@\h \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+# source ~/.bash/git-completion.bash
 
 # Colored listings
 export CLICOLOR=1
