@@ -10,6 +10,8 @@ cask 'sublime-text'
 cask 'google-chrome'
 cask 'cord'
 cask 'libreoffice'
+cask 'toggldesktop'
+cask 'github-desktop'
 
 brew 'chruby'
 brew 'openssl'
