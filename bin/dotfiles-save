@@ -1,0 +1,6 @@
+#!/bin/bash
+# --------------------------------------------------------------------------
+# Copies any changes to files to the dotfiles repo
+# --------------------------------------------------------------------------
+
+cp "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings" $HOME/.dotfiles/sublime

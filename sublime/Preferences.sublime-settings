@@ -2,5 +2,7 @@
 	"font_face": "Inconsolata",
 	"font_size": 17,
 	"tab_size": 2,
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+  "spell_check": true,
+  "dictionary": "Packages/Language - English/en_US.dic"
 }
