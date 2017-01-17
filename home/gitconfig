@@ -7,3 +7,5 @@
 	helper = osxkeychain
 [core]
 	excludesfile = /Users/awead/.gitignore
+[alias]
+	quick-stats = ! $HOME/.dotfiles/bin/git-quick-stats
