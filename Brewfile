@@ -1,4 +1,5 @@
 # Brewfile
+# git brew bundle
 
 tap 'caskroom/cask'
 tap 'homebrew/bundle'
@@ -12,6 +13,7 @@ cask 'cord'
 cask 'libreoffice'
 cask 'toggldesktop'
 cask 'github-desktop'
+cask 'p4merge'
 
 brew 'chruby'
 brew 'openssl'

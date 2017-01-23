@@ -1,11 +1,20 @@
 [user]
 	name = Adam Wead
 	email = amsterdamos@gmail.com
+	signingkey = 26B15197
 [commit]
 	gpgsign = true
 [credential]
 	helper = osxkeychain
 [core]
 	excludesfile = /Users/awead/.gitignore
+	editor = vim
 [alias]
 	quick-stats = ! $HOME/.dotfiles/bin/git-quick-stats
+[diff]
+	external = extDiff
+[merge]
+	tool = extMerge
+[mergetool "extMerge"]
+	cmd = extMerge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	trustExitCode = false
