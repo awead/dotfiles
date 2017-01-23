@@ -11,10 +11,13 @@
 	editor = vim
 [alias]
 	quick-stats = ! $HOME/.dotfiles/bin/git-quick-stats
+	d = difftool
 [diff]
-	external = extDiff
+	tool = vimdiff
 [merge]
 	tool = extMerge
 [mergetool "extMerge"]
 	cmd = extMerge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = false
+[difftool]
+	prompt = false

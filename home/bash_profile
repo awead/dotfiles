@@ -5,18 +5,13 @@
 
 source $HOME/.bash_private
 
-# Git-specific settings
-# export GITAWAREPROMPT=~/.bash/git-aware-prompt
-# source "${GITAWAREPROMPT}/main.sh"
-# export PS1="\u@\h \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
-# source ~/.bash/git-completion.bash
-
 # Colored listings
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # Env
 export DUO_PASSCODE=push
+export EDITOR=/usr/local/bin/vim
 
 # Aliases
 alias ls='ls -Gh'
@@ -62,13 +57,6 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS=--require-sha
 
-# Libraries
-# LDFLAGS:  -L/usr/local/opt/openssl/lib
-# CPPFLAGS: -I/usr/local/opt/openssl/include
-# LDFLAGS:  -L/usr/local/opt/curl/lib
-# CPPFLAGS: -I/usr/local/opt/curl/include
-# PKG_CONFIG_PATH: /usr/local/opt/curl/lib/pkgconfig
-
 # Pathing
 #
 # Look in Homebrew installs first, under /usr/local, then OSX binaries. Lastly, look in the
@@ -83,7 +71,6 @@ export JAVA_HOME
 # Imagemagick
 export MAGICK_TEMPORARY_PATH=/Volumes/Data/tmp
 export MAGICK_TEMPDIR=/Volumes/Data/tmp
-
 
 # Rails version
 # export RAILS_VERSION=4.2.7
@@ -138,5 +125,5 @@ function rspec-changed {
 }
 
 function rspec-save-results {
-  cp tmp/rspec_results.html tmp/rspec_results_saved.html 
+  cp tmp/rspec_results.html tmp/rspec_results_saved.html
 }
