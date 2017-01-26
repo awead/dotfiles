@@ -1,6 +1,6 @@
 #!/bin/bash
 # --------------------------------------------------------------------------
-# Setup script for OS X settings, preferences and appications
+# Setup script for OS X settings, preferences and applications
 # --------------------------------------------------------------------------
 
 #
