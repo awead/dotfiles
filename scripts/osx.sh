@@ -88,6 +88,30 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
 #
+# Dock
+#
+
+# Clear it out
+defaults delete com.apple.dock persistent-apps
+defaults delete com.apple.dock persistent-others
+
+# Add my own
+while IFS= read -r line; do
+	defaults write com.apple.dock persistent-apps -array-add "<dict>
+		<key>tile-data</key>
+		<dict>
+			<key>file-data</key>
+			<dict>
+				<key>_CFURLString</key>
+				<string>$line</string>
+				<key>_CFURLStringType</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+	</dict>"
+done < "$HOME/.dotfiles/scripts/conf/dock.conf"
+
+#
 # Terminal
 #
 
