@@ -62,6 +62,10 @@ defaults write com.apple.menuextra.clock DateFormat "EEE H:mm"
 defaults write com.apple.menuextra.clock FlashDateSeparators 0
 defaults write com.apple.menuextra.clock IsAnalog 0
 
+# Disable auto capitalize
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
 #
 # Finder
 #
@@ -86,6 +90,18 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# Finder: show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Show Status bar in Finder
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Show Path bar in Finder
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Don't show files on the Desktop
+defaults write com.apple.finder CreateDesktop false
 
 #
 # Dock
