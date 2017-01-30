@@ -66,6 +66,10 @@ defaults write com.apple.menuextra.clock IsAnalog 0
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
+# Enable accessibility zoom with control key
+defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+defaults write com.apple.universalaccess closeViewScrollWheelModifiersInt -int 262144
+
 #
 # Finder
 #
@@ -143,6 +147,24 @@ tell application "Terminal"
 	set default settings to settings set themeName
 end tell
 EOD
+
+#
+# Mail
+#
+
+# No sounds
+defaults write com.apple.mail PlayMailSounds -bool false
+
+# Display preferences
+defaults write com.apple.mail ShouldShowUnreadMessagesInBold -bool true
+defaults write com.apple.mail EnableToCcInMessageList -bool true
+defaults write com.apple.mail RichMessageList -bool false
+defaults write com.apple.mail ConversationViewSortDescending -bool true
+
+
+#
+# Done. Restart things...
+#
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 	"Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
