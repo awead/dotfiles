@@ -7,6 +7,8 @@
 	[
 		"Babel",
 		"Package Control",
+		"Sass",
+		"Syntax Highlighting for Sass",
 		"Theme - Lanzhou"
 	]
 }
