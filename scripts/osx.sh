@@ -70,6 +70,9 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess closeViewScrollWheelModifiersInt -int 262144
 
+# Disable screen saver
+defaults -currentHost write com.apple.screensaver idleTime -int 0
+
 #
 # Finder
 #
