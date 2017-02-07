@@ -164,6 +164,12 @@ defaults write com.apple.mail EnableToCcInMessageList -bool true
 defaults write com.apple.mail RichMessageList -bool false
 defaults write com.apple.mail ConversationViewSortDescending -bool true
 
+#
+# iCal
+#
+
+defaults write com.apple.iCal "TimeZone support enabled" -bool true
+
 
 #
 # Done. Restart things...
