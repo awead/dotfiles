@@ -157,6 +157,7 @@ EOD
 
 # No sounds
 defaults write com.apple.mail PlayMailSounds -bool false
+defaults write com.apple.mail NewMessagesSoundName -string ""
 
 # Display preferences
 defaults write com.apple.mail ShouldShowUnreadMessagesInBold -bool true

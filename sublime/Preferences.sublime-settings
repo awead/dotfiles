@@ -22,6 +22,7 @@
 		"Vintage"
 	],
 	"indent_subsequent_lines": true,
+	"rulers": [120],
 	"spell_check": true,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,

@@ -32,6 +32,7 @@
   ca = !git commit --amend && bundle exec rubocop -a
   car = !git commit --amend --no-edit && bundle exec rubocop -a
   ci = !git commit -v && bundle exec rubocop -a
+  wipit = !git add --all && git commit -m"wip" && bundle exec rubocop -a
 [diff]
 	tool = vimdiff
 [merge]
