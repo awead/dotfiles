@@ -24,6 +24,8 @@ alias killall-spring="ps -ax | grep spring | awk '{ print $1 }' | xargs kill -s 
 alias git-log-pretty='git log --pretty=format:" %cd : %s [%cn]" --date=short'
 alias be-rspec='bundle exec rspec'
 alias be-rake='bundle exec rake'
+alias be-r='bundle exec rubocop'
+alias be-ra='bundle exec rubocop -a'
 alias date-iso-8601='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 alias eject-data='hdiutil eject /Volumes/Data'
 
@@ -34,7 +36,7 @@ alias solr-sufia-dev="bundle exec solr_wrapper --config .internal_test_app/.solr
 alias solr-dev="bundle exec solr_wrapper --config .solr_wrapper > /dev/null 2>&1 &"
 alias solr-test="bundle exec solr_wrapper --config config/solr_wrapper_test.yml > /dev/null 2>&1 &"
 alias resque-pool-start="bundle exec resque-pool -E development start"
-alias clean-jetties="rm -Rf tmp/solr-development tmp/solr-test tmp/fcrepo4-test-data"
+alias clean-jetties="rm -Rf tmp/solr-development tmp/solr-test tmp/fcrepo4-test-data tmp/fcrepo4-development-data"
 
 # Postgres
 export PG_HOME="/usr/local/var/postgres"
@@ -82,8 +84,8 @@ LOCAL_IMPORT_DIR=~/Desktop
 export LOCAL_IMPORT_DIR
 #SOLR_DEVELOPMENT_PORT=8983 && export SOLR_DEVELOPMENT_PORT
 #SOLR_TEST_PORT=8985 && export SOLR_TEST_PORT
-FCREPO_DEVELOPMENT_PORT=8986 && export FCREPO_DEVELOPMENT_PORT
-FCREPO_TEST_PORT=8986 && export FCREPO_TEST_PORT
+#FCREPO_DEVELOPMENT_PORT=8986 && export FCREPO_DEVELOPMENT_PORT
+#FCREPO_TEST_PORT=8986 && export FCREPO_TEST_PORT
 
 function bgrep {
   ag "$@" $(bundle show --paths) .

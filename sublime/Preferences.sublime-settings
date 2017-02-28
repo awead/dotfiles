@@ -22,7 +22,10 @@
 		"Vintage"
 	],
 	"indent_subsequent_lines": true,
-	"rulers": [120],
+	"rulers":
+	[
+		120
+	],
 	"show_definitions": false,
 	"spell_check": true,
 	"tab_size": 2,
