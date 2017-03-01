@@ -41,3 +41,15 @@ find /usr/local -name "*redis.plist" -exec cp '{}' $HOME/Library/LaunchAgents \;
 rm -Rf "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 mkdir -p "$HOME/Library/Application Support/Sublime Text 3/Packages"
 ln -s $HOME/.dotfiles/sublime "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+
+# Third-party packages
+if [ -z $SAFE ]; then
+  echo "No safe found. Skipping..."
+else
+  # Ask for the administrator password upfront
+  sudo -v
+
+  # Keep-alive: update existing `sudo` time stamp until this has finished
+  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+  installer -target / -pkg "$SAFE/Library/Packages/PSU AnyConnect Installer.pkg"
+fi
