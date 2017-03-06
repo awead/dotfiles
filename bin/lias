@@ -1,20 +1,7 @@
 #!/bin/bash
 
-ACTION=$1
-CONNECTED=`scutil --nc status "LIAS VPN" | grep -c "Connected"`
-
-if [ -z $1 ]; then
-  echo "Use one of the following commands for scutil --nc"
-  `scutil --nc help`
-  exit 1;
-fi
-
-if [ $1 = 'start' ]; then
-  if [ $CONNECTED -ne 0 ]; then
-    echo "Alreday conected"
-    exit 0;
-  fi
-  scutil --nc start "LIAS VPN"
+if [ $1 = 'stop' ]; then
+  osascript -e 'quit app "Cisco AnyConnect Secure Mobility Client"'
 else
-  scutil --nc $1 "LIAS VPN"
+  open "/Applications/Cisco/Cisco AnyConnect Secure Mobility Client.app"
 fi
