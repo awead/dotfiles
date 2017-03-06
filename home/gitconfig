@@ -34,6 +34,7 @@
   car = !git commit --amend --no-edit && bundle exec rubocop -a
   ci = !git commit -v && bundle exec rubocop -a
   wipit = !git add --all && git commit -m"wip" && bundle exec rubocop -a
+  ppt = for-each-ref --sort=taggerdate --format '%(color:blue)%(refname) %(color:black)%(taggerdate)' refs/tags
 [diff]
 	tool = vimdiff
 [merge]
