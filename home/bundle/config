@@ -1,2 +1,3 @@
 ---
 BUNDLE_GIT__ALLOW_INSECURE: "true"
+BUNDLE_BUILD__LIBV8: "--with-system-v8"
