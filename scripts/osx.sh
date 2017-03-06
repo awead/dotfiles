@@ -73,6 +73,10 @@ defaults write com.apple.universalaccess closeViewScrollWheelModifiersInt -int 2
 # Disable screen saver
 defaults -currentHost write com.apple.screensaver idleTime -int 0
 
+# Use custom dictionary
+rm -f "$HOME/Library/Spelling/LocalDictionary"
+ln -s $HOME/.dotfiles/spelling/LocalDictionary "$HOME/Library/Spelling/LocalDictionary"
+
 #
 # Finder
 #
@@ -170,7 +174,6 @@ defaults write com.apple.mail ConversationViewSortDescending -bool true
 #
 
 defaults write com.apple.iCal "TimeZone support enabled" -bool true
-
 
 #
 # Done. Restart things...
