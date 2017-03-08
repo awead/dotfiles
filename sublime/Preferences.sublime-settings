@@ -1,4 +1,20 @@
 {
+	"added_words":
+	[
+		"Gemnasium",
+    "gemnasium",
+    "Skitch",
+    "Anie",
+    "anie",
+    "metadata",
+    "Solr",
+    "solr",
+    "Scholarsphere",
+    "Sufia",
+    "sufia",
+    "Hydra",
+    "hydra"
+	],
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Theme - Lanzhou/base16-ocean.dark.tmTheme",
 	"dictionary": "Packages/Language - English/en_US.dic",
