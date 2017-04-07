@@ -14,6 +14,7 @@ cask 'libreoffice'
 cask 'toggldesktop'
 cask 'github-desktop'
 cask 'p4merge'
+cask 'firefox'
 
 brew 'chruby'
 brew 'openssl'
