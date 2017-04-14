@@ -31,6 +31,7 @@ done
 # Update gem credentials
 read -p "Email for rubygems.org:" EMAIL
 curl -u $EMAIL https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials
+chmod 0600 ~/.gem/credentials
 
 # ClamAV
 cp /usr/local/etc/clamav/freshclam.conf.sample /usr/local/etc/clamav/freshclam.conf
