@@ -25,6 +25,7 @@
   pf = push -u --force-with-lease
   st = status
   s = stash -u
+  cp = cherry-pick
   mup = !git checkout master && git pull && git checkout -
   mupr = !git checkout master && git pull && git checkout - && git rebase master
   dup = !git checkout develop && git pull && git checkout -
