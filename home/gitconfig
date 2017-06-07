@@ -51,3 +51,5 @@
   default = current
 [fetch]
   prune = true
+[pretty]
+	csv = %h%x09%an%x09%ad%x09%s
