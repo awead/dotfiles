@@ -130,3 +130,7 @@ function rspec-changed {
 function rspec-save-results {
   cp tmp/rspec_results.html tmp/rspec_results_saved.html
 }
+
+function pdf-concat {
+  "/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py" -o "$@"
+}
