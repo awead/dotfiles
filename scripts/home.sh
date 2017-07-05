@@ -38,6 +38,6 @@ ln -Fs $HOME/Dropbox/Projects/private-dotfiles/bash_private $HOME/.bash_private
 # Create project directories
 mkdir -p $HOME/Projects/Github/aic-collections
 mkdir -p $HOME/Projects/Github/awead
-mkdir -p $HOME/Projects/Github/projecthydra
-mkdir -p $HOME/Projects/Github/projecthydra-labs
+mkdir -p $HOME/Projects/Github/samvera
+mkdir -p $HOME/Projects/Github/samvera-labs
 mkdir -p $HOME/Projects/Github/psu-stewardship
