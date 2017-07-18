@@ -1,2 +1,4 @@
 Host *
   SendEnv DUO_PASSCODE
+  ServerAliveInterval 100
+  AddressFamily inet
