@@ -1,3 +1,4 @@
 :set nu
 :set spell
 syntax on
+:set hlsearch
