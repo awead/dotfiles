@@ -2,3 +2,6 @@
 :set spell
 syntax on
 :set hlsearch
+:set ruler
+:set textwidth=72
+au BufRead,BufNewFile setlocal textwidth=72

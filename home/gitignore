@@ -2,3 +2,4 @@
 fits.log
 .yardoc/*
 doc/*
+.DS_Store
