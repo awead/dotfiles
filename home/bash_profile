@@ -38,6 +38,11 @@ alias solr-test="bundle exec solr_wrapper --config config/solr_wrapper_test.yml 
 alias resque-pool-start="bundle exec resque-pool -E development start"
 alias clean-jetties="rm -Rf tmp/solr-development tmp/solr-test tmp/fcrepo4-test-data tmp/fcrepo4-development-data"
 
+# Chrome
+alias chrome="~/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias chrome-canary="~/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
+alias chromium="~/Applications/Chromium.app/Contents/MacOS/Chromium"
+
 # Postgres
 export PG_HOME="/usr/local/var/postgres"
 alias pg-start="pg_ctl -D $PG_HOME -l $PG_HOME/server.log start"
