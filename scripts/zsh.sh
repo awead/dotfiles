@@ -11,4 +11,6 @@ fi
 # Install Oh My Zsh if it isn't already present
 if [[ ! -d $HOME/.oh-my-zsh/ ]]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+else
+  source $ZSH/tools/upgrade.sh
 fi
