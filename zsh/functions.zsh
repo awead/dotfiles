@@ -47,3 +47,20 @@ function rspec-save-results {
 function pdf-concat {
   "/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py" -o "$@"
 }
+
+# Switch to MariaDB
+function maria-switch {
+  brew unlink mysql
+  brew unlink mariadb && brew link mariadb
+  source $HOME/.dotfiles/mariadb/setup.sh
+}
+
+# Switch to MySQL
+# Download mysql because it is not in the brewfile.
+# You can't have both maria and mysql installed and linked. One must be linked with the other unlinked.
+function mysql-switch {
+  brew unlink mariadb
+  brew install mysql
+  brew unlink mysql && brew link mysql
+  source $HOME/.dotfiles/mysql/setup.sh
+}
