@@ -13,6 +13,10 @@ alias be-r='bundle exec rubocop'
 alias be-ra='bundle exec rubocop -a'
 alias date-iso-8601='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 alias eject-data='hdiutil eject /Volumes/Data'
+alias psu-libraries='cd ~/Projects/Github/psu-libraries'
+alias cho='cd ~/Projects/Github/psu-libraries/cho-req'
+alias psu-stewardship='cd ~/Projects/Github/psu-stewardship'
+alias ss='cd ~/Projects/Github/psu-stewardship/scholarsphere'
 
 # Dev shortcuts
 alias fcrepo-start="bundle exec fcrepo_wrapper --config ~/.fcrepo_wrapper > /dev/null 2>&1 &"
