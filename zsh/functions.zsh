@@ -64,3 +64,9 @@ function mysql-switch {
   brew unlink mysql && brew link mysql
   source $HOME/.dotfiles/mysql/setup.sh
 }
+
+# Reset Postgres
+# Completely removes postgres and reinstalls it to a default configuration
+function reset-postgres {
+  source $HOME/.dotfiles/postgres/setup.sh
+}
