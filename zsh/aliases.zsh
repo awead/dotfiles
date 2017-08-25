@@ -17,6 +17,7 @@ alias psu-libraries='cd ~/Projects/Github/psu-libraries'
 alias cho='cd ~/Projects/Github/psu-libraries/cho-req'
 alias psu-stewardship='cd ~/Projects/Github/psu-stewardship'
 alias ss='cd ~/Projects/Github/psu-stewardship/scholarsphere'
+alias g='git status'
 
 # Dev shortcuts
 alias fcrepo-start="bundle exec fcrepo_wrapper --config ~/.fcrepo_wrapper > /dev/null 2>&1 &"
