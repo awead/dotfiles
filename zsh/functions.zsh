@@ -70,3 +70,9 @@ function mysql-switch {
 function reset-postgres {
   source $HOME/.dotfiles/postgres/setup.sh
 }
+
+# Kill all processes based on a grep
+# Works far more effectively than plain, old killall
+function massacre {
+  ps -ax | grep "$@" | awk '{print $1}' | xargs kill -s KILL
+}
