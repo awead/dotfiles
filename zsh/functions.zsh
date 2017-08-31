@@ -76,3 +76,8 @@ function reset-postgres {
 function massacre {
   ps -ax | grep "$@" | awk '{print $1}' | xargs kill -s KILL
 }
+
+# Setup a new Rails project with my own defaults
+function rails-new {
+  rails new "$@" -m $HOME/.dotfiles/rails/template.rb --skip-spring
+}
