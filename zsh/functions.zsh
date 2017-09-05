@@ -81,3 +81,14 @@ function massacre {
 function rails-new {
   rails new "$@" -m $HOME/.dotfiles/rails/template.rb --skip-spring
 }
+
+function clean-jetties {
+  rm -Rf tmp/solr-development \
+         tmp/solr-test \
+         tmp/fcrepo4-test-data \
+         tmp/fcrepo4-development-data \
+         tmp/blacklight-core \
+         tmp/hydra-dev \
+         tmp/blacklight-core-test \
+         tmp/hydra-test
+}

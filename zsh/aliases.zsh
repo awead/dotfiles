@@ -26,7 +26,6 @@ alias solr-sufia-dev="bundle exec solr_wrapper --config .internal_test_app/.solr
 alias solr-dev="bundle exec solr_wrapper --config .solr_wrapper > /dev/null 2>&1 &"
 alias solr-test="bundle exec solr_wrapper --config config/solr_wrapper_test.yml > /dev/null 2>&1 &"
 alias resque-pool-start="bundle exec resque-pool -E development start"
-alias clean-jetties="rm -Rf tmp/solr-development tmp/solr-test tmp/fcrepo4-test-data tmp/fcrepo4-development-data"
 
 # Chrome
 alias chrome="~/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
