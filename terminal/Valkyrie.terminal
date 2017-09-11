@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WindowList</key>
+	<array>
+		<dict>
+			<key>Origin</key>
+			<string>{46, 1398}</string>
+			<key>ScrollerStyle</key>
+			<integer>1</integer>
+			<key>ShowsTabBar</key>
+			<false/>
+			<key>ShowsTabBarInFullScreen</key>
+			<false/>
+			<key>Window Settings</key>
+			<array>
+				<dict>
+					<key>Tab Column Count</key>
+					<integer>120</integer>
+					<key>Tab Row Count</key>
+					<integer>48</integer>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>E6800798-E747-4F31-A3E5-34F15AE1D2F4</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>ProfileCurrentVersion</key>
+						<real>2.0499999999999998</real>
+						<key>name</key>
+						<string>Custom</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>Custom</string>
+					<key>Tab Subtitle</key>
+					<string>Valkyrie Test Server</string>
+					<key>Tab Title</key>
+					<string></string>
+					<key>Tab Working Directory URL</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/samvera-labs/valkyrie/</string>
+					<key>Tab Working Directory URL String</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/samvera-labs/valkyrie</string>
+					<key>TabSelected</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>Tab Column Count</key>
+					<integer>120</integer>
+					<key>Tab Row Count</key>
+					<integer>48</integer>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>6EC3BC69-5AD6-4C2A-B567-A25EAAD0FEB8</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>ProfileCurrentVersion</key>
+						<real>2.0499999999999998</real>
+						<key>name</key>
+						<string>Custom</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>Custom</string>
+					<key>Tab Subtitle</key>
+					<string>MVP App</string>
+					<key>Tab Title</key>
+					<string>Valkyrie</string>
+					<key>Tab Working Directory URL</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/samvera-labs/valkyrie/</string>
+					<key>Tab Working Directory URL String</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/samvera-labs/valkyrie</string>
+					<key>TabSelected</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>Tab Column Count</key>
+					<integer>120</integer>
+					<key>Tab Row Count</key>
+					<integer>48</integer>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>E558147B-148D-41FD-8523-4048C28096FD</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>ProfileCurrentVersion</key>
+						<real>2.0499999999999998</real>
+						<key>name</key>
+						<string>Custom</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>Custom</string>
+					<key>Tab Subtitle</key>
+					<string>Gem</string>
+					<key>Tab Title</key>
+					<string>source ~/.zshrc</string>
+					<key>Tab Working Directory URL</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/samvera-labs/valkyrie/valkyrie/</string>
+					<key>Tab Working Directory URL String</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/samvera-labs/valkyrie/valkyrie</string>
+					<key>TabSelected</key>
+					<true/>
+				</dict>
+			</array>
+			<key>WindowNumber</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>name</key>
+	<string>Valkyrie</string>
+	<key>type</key>
+	<string>Window Group</string>
+</dict>
+</plist>
