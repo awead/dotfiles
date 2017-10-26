@@ -83,8 +83,8 @@ function rails-new {
 }
 
 function clean-jetties {
-  rm -Rf tmp/solr-development \
-         tmp/solr-test \
+  rm -Rf tmp/solr-development* \
+         tmp/solr-test* \
          tmp/fcrepo4-test-data \
          tmp/fcrepo4-development-data \
          tmp/blacklight-core \
