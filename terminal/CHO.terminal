@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WindowList</key>
+	<array>
+		<dict>
+			<key>Origin</key>
+			<string>{35, 952}</string>
+			<key>ScrollerStyle</key>
+			<integer>1</integer>
+			<key>ShowsTabBar</key>
+			<true/>
+			<key>ShowsTabBarInFullScreen</key>
+			<false/>
+			<key>Window Settings</key>
+			<array>
+				<dict>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>2A4F5054-C419-4019-8BCC-48EBA7F86D8D</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>ProfileCurrentVersion</key>
+						<real>2.0499999999999998</real>
+						<key>name</key>
+						<string>Custom</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>Custom</string>
+					<key>Tab Subtitle</key>
+					<string>Development</string>
+					<key>Tab Title</key>
+					<string>CHO</string>
+					<key>Tab Working Directory URL</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/psu-libraries/cho/</string>
+					<key>Tab Working Directory URL String</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/psu-libraries/cho</string>
+					<key>TabSelected</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>74440E8F-8A61-43A6-B4A1-90DD370345CA</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>ProfileCurrentVersion</key>
+						<real>2.0499999999999998</real>
+						<key>name</key>
+						<string>Custom</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>Custom</string>
+					<key>Tab Subtitle</key>
+					<string>Server Instance</string>
+					<key>Tab Working Directory URL</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/psu-libraries/cho/</string>
+					<key>Tab Working Directory URL String</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/psu-libraries/cho</string>
+					<key>TabSelected</key>
+					<false/>
+				</dict>
+			</array>
+			<key>WindowNumber</key>
+			<integer>4</integer>
+		</dict>
+	</array>
+	<key>name</key>
+	<string>CHO</string>
+	<key>type</key>
+	<string>Window Group</string>
+</dict>
+</plist>

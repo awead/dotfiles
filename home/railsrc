@@ -1,0 +1,5 @@
+# rails new --help for complete options
+--skip-test-unit
+--skip-bundle
+--database=postgresql
+--skip-turbolinks
