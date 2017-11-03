@@ -4,9 +4,6 @@
 # Run this after any OSX update to make sure everything else is current
 # --------------------------------------------------------------------------
 
-# brew complains about this file. It'll get added back when home.sh runs
-rm ~/.curlrc
-
 source $HOME/.dotfiles/scripts/brew.sh
 source $HOME/.dotfiles/scripts/dependencies.sh
 source $HOME/.dotfiles/scripts/zsh.sh

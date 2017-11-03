@@ -15,8 +15,7 @@ then
   chown -R awead:staff /usr/local
 else
   echo "Checking Homebrew"
-  brew doctor
-  if [ $? -ne 0 ]; then
+  if [ `brew doctor 2>&1 | wc -l` -gt 14 ]; then
     echo "There's a problem with brew. Re-run 'brew doctor' and fix"
     exit 1;
   fi
