@@ -41,6 +41,7 @@ brew 'graphicsmagick'
 brew 'imagemagick', args: ['with-ghostscript', 'with-openjpeg', 'with-x11']
 brew 'iperf'
 brew 'jpeg'
+brew 'jq'
 brew 'lame'
 brew 'libassuan'
 brew 'libffi'
