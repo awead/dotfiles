@@ -37,7 +37,7 @@ brew 'ghostscript'
 brew 'git'
 brew 'gnupg2'
 brew 'gpg-agent'
-brew 'graphicsmagick'
+brew 'graphicsmagick' args: ['with-jasper']
 brew 'imagemagick', args: ['with-ghostscript', 'with-openjpeg', 'with-x11']
 brew 'iperf'
 brew 'jpeg'
