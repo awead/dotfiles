@@ -3,3 +3,5 @@ fits.log
 .yardoc/*
 doc/*
 .DS_Store
+node_modules
+public/packs
