@@ -38,7 +38,7 @@ brew 'ghostscript'
 brew 'git'
 brew 'gnupg2'
 brew 'gpg-agent'
-brew 'graphicsmagick' args: ['with-jasper']
+brew 'graphicsmagick', args: ['with-jasper']
 brew 'imagemagick', args: ['with-ghostscript', 'with-openjpeg', 'with-x11']
 brew 'iperf'
 brew 'jpeg'
@@ -59,7 +59,6 @@ brew 'libvorbis'
 brew 'libvpx'
 brew 'libyaml'
 brew 'little-cms2'
-brew 'mariadb'
 brew 'maven'
 brew 'npm'
 brew 'openjpeg'
