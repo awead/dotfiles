@@ -36,7 +36,6 @@ brew 'gdbm'
 brew 'gettext'
 brew 'ghostscript'
 brew 'git'
-brew 'gnupg2'
 brew 'gpg-agent'
 brew 'graphicsmagick', args: ['with-jasper']
 brew 'imagemagick', args: ['with-ghostscript', 'with-openjpeg', 'with-x11']
