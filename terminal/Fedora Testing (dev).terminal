@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WindowList</key>
+	<array>
+		<dict>
+			<key>Origin</key>
+			<string>{10, 1410}</string>
+			<key>ScrollerStyle</key>
+			<integer>1</integer>
+			<key>ShowsTabBar</key>
+			<true/>
+			<key>ShowsTabBarInFullScreen</key>
+			<false/>
+			<key>Window Settings</key>
+			<array>
+				<dict>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>20BD8837-3F41-4206-8B74-647BD857CFE4</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>ProfileCurrentVersion</key>
+						<real>2.0499999999999998</real>
+						<key>name</key>
+						<string>Custom</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>Custom</string>
+					<key>Tab Subtitle</key>
+					<string>Choish</string>
+					<key>Tab Title</key>
+					<string>Fedora Testing (dev)</string>
+					<key>Tab Working Directory URL</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/awead/choish/</string>
+					<key>Tab Working Directory URL String</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/awead/choish</string>
+					<key>TabSelected</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>B0246ABA-A4A9-44D1-BA31-C7D04B9C1F41</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>ProfileCurrentVersion</key>
+						<real>2.0499999999999998</real>
+						<key>name</key>
+						<string>Custom</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>Custom</string>
+					<key>Tab Subtitle</key>
+					<string>Hyrax</string>
+					<key>Tab Title</key>
+					<string>Fedora Testing (dev)</string>
+					<key>Tab Working Directory URL</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/awead/hyrax-testing/</string>
+					<key>Tab Working Directory URL String</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/awead/hyrax-testing</string>
+					<key>TabSelected</key>
+					<true/>
+				</dict>
+			</array>
+			<key>WindowNumber</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>name</key>
+	<string>Fedora Testing (dev)</string>
+	<key>type</key>
+	<string>Window Group</string>
+</dict>
+</plist>

@@ -157,6 +157,10 @@ tell application "Terminal"
 	set default settings to settings set themeName
 	do shell script "open '$HOME/.dotfiles/terminal/Valkyrie.terminal'"
 	do shell script "open '$HOME/.dotfiles/terminal/Scholarsphere.terminal'"
+	do shell script "open '$HOME/.dotfiles/terminal/AIC.terminal'"
+	do shell script "open '$HOME/.dotfiles/terminal/CHO.terminal'"
+	do shell script "open '$HOME/.dotfiles/terminal/Fedora Testing (data).terminal'"
+	do shell script "open '$HOME/.dotfiles/terminal/Fedora Testing (dev).terminal'"
 end tell
 EOD
 
