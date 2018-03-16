@@ -64,3 +64,6 @@ source ~/.bash_profile
 
 # Allow [ or ] whereever you want
 unsetopt nomatch
+
+# added by travis gem
+[ -f /Users/awead/.travis/travis.sh ] && source /Users/awead/.travis/travis.sh

@@ -5,3 +5,5 @@ doc/*
 .DS_Store
 node_modules
 public/packs
+node_modules
+config/hydra-ldap.yml
