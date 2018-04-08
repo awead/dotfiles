@@ -5,7 +5,4 @@
 
 # Moneydance
 # Alternatively, try brew install moneydance
-cd ~/Downloads
-wget -q https://infinitekind.com/stabledl/current/Moneydance.zip
-unzip ~/Downloads/Moneydance.zip
-mv ~/Downloads/Moneydance.zip ~/Applications
+./moneydance/install.sh
