@@ -36,7 +36,7 @@
   ci = !git commit -v && bundle exec rubocop -a
   wipit = !git add --all && git commit -m"wip" && bundle exec rubocop -a
   ppt = for-each-ref --sort=taggerdate --format '%(color:blue)%(refname) %(color:black)%(taggerdate)' refs/tags
-  gem-diff = "!sh -c \"git diff `bundle show $1`/$2 $2\""
+  gem-diff = "!sh -c \"git diff -w `bundle show $1`/$2 $2\""
 [diff]
 	tool = vimdiff
 [merge]
