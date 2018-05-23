@@ -67,3 +67,6 @@ unsetopt nomatch
 
 # added by travis gem
 [ -f /Users/awead/.travis/travis.sh ] && source /Users/awead/.travis/travis.sh
+
+# asdf initialization
+source $HOME/.dotfiles/asdf/include.sh
