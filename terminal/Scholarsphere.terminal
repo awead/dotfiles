@@ -6,44 +6,6 @@
 	<array>
 		<dict>
 			<key>Origin</key>
-			<string>{15, 1408}</string>
-			<key>ScrollerStyle</key>
-			<integer>1</integer>
-			<key>ShowsTabBar</key>
-			<false/>
-			<key>ShowsTabBarInFullScreen</key>
-			<false/>
-			<key>Window Settings</key>
-			<array>
-				<dict>
-					<key>Tab Scrollback Restorable</key>
-					<true/>
-					<key>Tab Session Class ID</key>
-					<string>3DE26A72-83DC-4B3B-B285-397741AE21C9</string>
-					<key>Tab Settings</key>
-					<dict>
-						<key>ProfileCurrentVersion</key>
-						<real>2.0499999999999998</real>
-						<key>name</key>
-						<string>Custom</string>
-						<key>type</key>
-						<string>Window Settings</string>
-					</dict>
-					<key>Tab Settings Name</key>
-					<string>Custom</string>
-					<key>Tab Working Directory URL</key>
-					<string>file://pooh.local/Users/awead/.dotfiles/</string>
-					<key>Tab Working Directory URL String</key>
-					<string>file://pooh.local/Users/awead/.dotfiles</string>
-					<key>TabSelected</key>
-					<true/>
-				</dict>
-			</array>
-			<key>WindowNumber</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>Origin</key>
 			<string>{47, 992}</string>
 			<key>ScrollerStyle</key>
 			<integer>1</integer>
