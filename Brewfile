@@ -20,6 +20,7 @@ cask 'libreoffice'
 cask 'p4merge'
 cask 'sublime-text'
 cask 'toggldesktop'
+cask 'vlc'
 cask 'wireshark'
 
 brew 'chromedriver'
