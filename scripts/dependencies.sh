@@ -3,33 +3,8 @@
 # Update and configure our dependencies
 # --------------------------------------------------------------------------
 
-# Settings
-RUBIES=(2.3.3 2.3.7 2.4.1)
-
 # Ruby
-if test ! $(which ruby-install); then
-  echo "ruby-install isn't installed"
-  exit 1;
-fi
-
-for version in ${RUBIES[@]}
-do
-  ruby-install --no-reinstall ruby $version
-  chflags hidden ~/src
-
-  for path in `find $HOME/.rubies -name gems`
-  do
-    rm -Rf $path/*
-  done
-
-  source /usr/local/share/chruby/chruby.sh
-  chruby $version
-  gem update --system
-  gem install bundler
-done
-
-# Update gem credentials
-source scripts/rubygems.sh
+source ruby/install.sh
 
 # ClamAV
 cp /usr/local/etc/clamav/freshclam.conf.sample /usr/local/etc/clamav/freshclam.conf
