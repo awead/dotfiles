@@ -30,11 +30,11 @@
   mupr = !git checkout master && git pull && git checkout - && git rebase master
   dup = !git checkout develop && git pull && git checkout -
   dupr = !git checkout develop && git pull && git checkout - && git rebase develop
-  roll = !git add --all && git commit --amend --no-edit && bundle exec rubocop -a
-  ca = !git commit --amend && bundle exec rubocop -a
-  car = !git commit --amend --no-edit && bundle exec rubocop -a
-  ci = !git commit -v && bundle exec rubocop -a
-  wipit = !git add --all && git commit -m"wip" && bundle exec rubocop -a
+  roll = !git add --all && git commit --amend --no-edit && bundle exec rubocop -P
+  ca = !git commit --amend && bundle exec rubocop -P
+  car = !git commit --amend --no-edit && bundle exec rubocop -P
+  ci = !git commit -v && bundle exec rubocop -P
+  wipit = !git add --all && git commit -m"wip" && bundle exec rubocop -P
   ppt = for-each-ref --sort=taggerdate --format '%(color:blue)%(refname) %(color:black)%(taggerdate)' refs/tags
   gem-diff = "!sh -c \"git diff -w `bundle show $1`/$2 $2\""
 [diff]
