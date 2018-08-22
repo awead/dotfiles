@@ -24,6 +24,7 @@ cask 'toggldesktop'
 cask 'vlc'
 cask 'wireshark'
 
+brew 'atomicparsley'
 brew 'chruby'
 brew 'clamav'
 brew 'cmake'
