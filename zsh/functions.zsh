@@ -1,7 +1,7 @@
 # Functions
 
 function bgrep {
-  ag "$@" $(bundle show --paths) .
+  rg "$@" $(bundle show --paths) .
 }
 
 function bfind {
