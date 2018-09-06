@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Origin</key>
-			<string>{47, 992}</string>
+			<string>{15, 925}</string>
 			<key>ScrollerStyle</key>
 			<integer>1</integer>
 			<key>ShowsTabBar</key>
@@ -16,10 +16,14 @@
 			<key>Window Settings</key>
 			<array>
 				<dict>
+					<key>Tab Column Count</key>
+					<integer>144</integer>
+					<key>Tab Row Count</key>
+					<integer>48</integer>
 					<key>Tab Scrollback Restorable</key>
 					<true/>
 					<key>Tab Session Class ID</key>
-					<string>D39C14D9-B33C-4BBD-ABF8-E1B9ED6667DF</string>
+					<string>4D2AD70D-2AF7-4C82-B364-BD3CA7724C0B</string>
 					<key>Tab Settings</key>
 					<dict>
 						<key>ProfileCurrentVersion</key>
@@ -38,13 +42,17 @@
 					<key>Tab Working Directory URL String</key>
 					<string>file://pooh.local/Users/awead/Projects/Github/psu-stewardship/scholarsphere</string>
 					<key>TabSelected</key>
-					<true/>
+					<false/>
 				</dict>
 				<dict>
+					<key>Tab Column Count</key>
+					<integer>144</integer>
+					<key>Tab Row Count</key>
+					<integer>48</integer>
 					<key>Tab Scrollback Restorable</key>
 					<true/>
 					<key>Tab Session Class ID</key>
-					<string>C150E4F3-EFA7-4738-9AA0-AE475EFEC4A1</string>
+					<string>8AF796C2-ADD5-4FE5-9A50-1E48181DA698</string>
 					<key>Tab Settings</key>
 					<dict>
 						<key>ProfileCurrentVersion</key>
@@ -57,7 +65,7 @@
 					<key>Tab Settings Name</key>
 					<string>Custom</string>
 					<key>Tab Subtitle</key>
-					<string>Development</string>
+					<string>Rails Server</string>
 					<key>Tab Title</key>
 					<string>Scholarsphere</string>
 					<key>Tab Working Directory URL</key>
@@ -66,6 +74,35 @@
 					<string>file://pooh.local/Users/awead/Projects/Github/psu-stewardship/scholarsphere</string>
 					<key>TabSelected</key>
 					<false/>
+				</dict>
+				<dict>
+					<key>Tab Column Count</key>
+					<integer>144</integer>
+					<key>Tab Row Count</key>
+					<integer>48</integer>
+					<key>Tab Scrollback Restorable</key>
+					<true/>
+					<key>Tab Session Class ID</key>
+					<string>6D57490D-35D8-4B73-963A-3CBEEEA4036D</string>
+					<key>Tab Settings</key>
+					<dict>
+						<key>ProfileCurrentVersion</key>
+						<real>2.0499999999999998</real>
+						<key>name</key>
+						<string>Custom</string>
+						<key>type</key>
+						<string>Window Settings</string>
+					</dict>
+					<key>Tab Settings Name</key>
+					<string>Custom</string>
+					<key>Tab Subtitle</key>
+					<string>Repository</string>
+					<key>Tab Working Directory URL</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/psu-stewardship/scholarsphere/public/</string>
+					<key>Tab Working Directory URL String</key>
+					<string>file://pooh.local/Users/awead/Projects/Github/psu-stewardship/scholarsphere/public</string>
+					<key>TabSelected</key>
+					<true/>
 				</dict>
 			</array>
 			<key>WindowNumber</key>
