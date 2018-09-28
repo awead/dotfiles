@@ -20,7 +20,9 @@
 		"Versioned",
 		"Versioning",
 		"versioned",
-		"versioning"
+		"versioning",
+		"Spellchecking",
+		"spellcheck"
 	],
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Theme - Lanzhou/base16-ocean.dark.tmTheme",
