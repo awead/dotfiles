@@ -1,0 +1,26 @@
+#!/Users/awead/.rubies/ruby-2.2.3/bin/ruby
+
+require 'optparse'
+require 'ostruct'
+require 'pp'
+
+options = OpenStruct.new
+
+ARGV.options do |opts|
+  opts.on("-t", "--title=", String)   						{ |val| options.title = val }
+  opts.on("-y", "--year=", String, "Release year (YYYY)")   { |val| options.year = val }
+  opts.on("-p", "--picture=", String, "jpg file")   		{ |val| options.picture = val }
+  
+  opts.on_tail("-h", "--help") do
+  	puts opts
+  	exit
+  end
+  
+  opts.parse!
+end
+
+raise ArgumentError, "Title, year and picture are required" unless (options.year && options.title && options.picture)
+raise ArgumentError, "Picture must be a jpg" unless options.picture.match(/jpg$/)
+
+system("mp4tags -i movie -s \"#{options.title}\" -y #{options.year} -P #{options.picture} -r R \"#{ARGV.first}\"")
+system("mp4tags -r R \"#{ARGV.first}\"")

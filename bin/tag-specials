@@ -1,0 +1,65 @@
+#!/Users/awead/.rubies/ruby-2.4.1/bin/ruby
+
+require 'optparse'
+require 'ostruct'
+require 'pp'
+require 'byebug'
+require 'pathname'
+
+def options
+  @options ||= OpenStruct.new
+end
+
+ARGV.options do |opts|
+  opts.on("-t", "--show=", String)   						                    { |val| options.show = val }
+  opts.on("-s", "--season=", String, "Season number")               { |val| options.season = val }
+  opts.on("-y", "--year=", String, "Year of release")               { |val| options.year = val }
+  opts.on("-r", "--run", "Rename the files")                        { |val| options.run = true }
+
+  opts.on_tail("-h", "--help") do
+  	puts opts
+  	exit
+  end
+
+  opts.parse!
+end
+
+
+unless (options.show && options.year && options.season)
+  raise ArgumentError,
+    "See example: tag-specials --show Doctor Who --season 1 --year 2005"
+end
+
+def titles
+  @titles ||= derive_filenames
+end
+
+def derive_filenames
+  files = Pathname.pwd.children.reject { |file| file.basename.to_s.match(/^\./) }
+
+  files.map do |file|
+    file.basename(".m4v").to_s
+  end
+end
+
+def episodes
+  Dir.glob("*.m4v")
+end
+
+def command(episode, index)
+  "AtomicParsley \"#{episode}\" "\
+    "--stik \"TV Show\" "\
+    "--TVShowName \"#{options.show}\" "\
+    "--TVSeasonNum #{options.season} "\
+    "--title \"#{titles[index] ||"Extras"}\" "\
+    "--year #{options.year} "\
+    "--overWrite"
+end
+
+episodes.each_with_index do |episode, index|
+  if options.run
+    system command(episode, index)
+  else
+    puts command(episode, index)
+  end
+end

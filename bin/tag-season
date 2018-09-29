@@ -1,0 +1,80 @@
+#!/Users/awead/.rubies/ruby-2.4.1/bin/ruby
+
+require 'optparse'
+require 'ostruct'
+require 'pp'
+require 'byebug'
+require 'pathname'
+
+def options
+  @options ||= OpenStruct.new
+end
+
+ARGV.options do |opts|
+  opts.on("-t", "--show=", String)   						                    { |val| options.show = val }
+  opts.on("-s", "--season=", String, "Season number")               { |val| options.season = val }
+  opts.on("-p", "--picture=", String, "Image file")     		        { |val| options.picture = val }
+  opts.on("-l", "--list=", String, "File with list of episodes")    { |val| options.list = val }
+  opts.on("-y", "--year=", String, "Year of release")               { |val| options.year = val }
+  opts.on("-r", "--run", "Rename the files")                        { |val| options.run = true }
+  opts.on("-U", "--use-filename", "Use the filename for the title") { |val| options.use_filename = true }
+
+  opts.on_tail("-h", "--help") do
+  	puts opts
+  	exit
+  end
+
+  opts.parse!
+end
+
+if options.use_filename
+  unless (options.show && options.season && options.picture && options.year)
+    raise ArgumentError,
+      "See example: tag-season --season 1 --show Doctor Who --picture cover.png -U"
+  end
+else
+  unless (options.show && options.season && options.picture && options.list && options.year)
+    raise ArgumentError,
+      "See example: tag-season --season 2 --show House --picture cover.png --list episodes.txt"
+  end
+end
+
+def titles
+  @titles ||= if options.use_filename
+                derive_filenames
+              else
+                File.open(options.list).each_line.map(&:chomp)
+              end
+end
+
+def derive_filenames
+  files = Pathname.pwd.children.reject { |file| file.basename.to_s.match(/^\./) }
+
+  files.map do |file|
+    file.basename(".m4v").to_s.split(" - ").last
+  end
+end
+
+def episodes
+  Dir.glob("*.m4v")
+end
+
+def command(episode, index)
+  "AtomicParsley \"#{episode}\" "\
+    "--stik \"TV Show\" "\
+    "--TVShowName \"#{options.show}\" "\
+    "--TVSeasonNum #{options.season} "\
+    "--TVEpisodeNum #{index+1} "\
+    "--title \"#{titles[index] ||"Extras"}\" "\
+    "--artwork #{options.picture} "\
+    "--year #{options.year} "\
+    "--overWrite"
+end
+
+episodes.each_with_index do |episode, index|
+  if options.run
+    system command(episode, index)
+  else
+    puts command(episode, index)
+  end
+end

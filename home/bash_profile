@@ -39,6 +39,8 @@ export PG_HOME="/usr/local/var/postgres"
 # custom-install directories.
 PATH=/usr/local/bin:/usr/local/sbin:/opt/npm/bin:$PATH:$DROPBOX_BIN:$LATEX_BIN:$SUBLIME_BIN:$FOX_BIN:$LO_BIN:$DF_BIN
 export PATH
+LOAD_LIB=$HOME/.dotfiles/lib
+export LOAD_LIB
 
 # Java
 JAVA_HOME=$(/usr/libexec/java_home)

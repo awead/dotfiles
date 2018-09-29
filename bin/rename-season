@@ -1,0 +1,102 @@
+#!/usr/local/bin/ruby
+
+require 'fileutils'
+require 'pathname'
+require 'byebug'
+require 'optparse'
+require 'optparse/time'
+require 'ostruct'
+require 'pp'
+
+
+class OptparseExample
+
+  def self.parse(args)
+    # The options specified on the command line will be collected in *options*.
+    # We set default values here.
+    options = OpenStruct.new
+    options.run = false
+    options.ignore = []
+
+    opt_parser = OptionParser.new do |opts|
+      opts.banner = "Usage: rename-season [OPTIONS]"
+
+      opts.on("-s", "--season SEASON_NUMBER", "Season is required") do |season|
+        options.season = season
+      end
+
+      opts.on("-S", "--show SHOW_NAME", "Show is required") do |show|
+        options.show = show
+      end
+
+      opts.on("--ignore file1,file2,file3", Array, "List of files to ignore when renaming") do |list|
+        options.ignore = list
+      end
+
+      # Boolean switch.
+      opts.on("-r", "--run", "Rename the files") do |v|
+        options.run = true
+      end
+
+      # No argument, shows at tail.  This will print an options summary.
+      # Try it and see!
+      opts.on_tail("-h", "--help", "Show this message") do
+        puts opts
+        exit
+      end
+    end
+
+    opt_parser.parse!(args)
+    options
+  end
+end
+
+options = OptparseExample.parse(ARGV)
+
+def directory_size(path)
+  size=0
+  Dir.glob(File.join(path, '**', '*')) { |file| size+=File.size(file) }
+  size
+end
+
+root = Pathname.pwd
+
+episode_number = 1
+extras_number = 1
+
+root.children.sort_by! { |file| file.mtime }.each do |child|
+
+  unless child.basename.to_s =~ /^\./
+
+    size = directory_size(child)
+
+    if options.ignore.include?(child.basename.to_s)
+      puts "Skipping #{child.basename}"
+    elsif size < 500000000
+      new_name = "#{options.show}-#{options.season}-extras-#{"%02d" % extras_number}.dvdmedia"
+      new_path = child.dirname.join(new_name)
+
+      if options.run
+        child.rename(new_path)
+      else
+        puts "Rename #{child.basename} -- #{new_path.basename}"
+      end
+
+      extras_number = extras_number + 1
+
+    else
+      new_name = "#{options.show}-#{options.season}-#{"%02d" % episode_number}.dvdmedia"
+      new_path = child.dirname.join(new_name)
+
+      if options.run
+        child.rename(new_path)
+      else
+        puts "Rename #{child.basename} -- #{new_path.basename}"
+      end
+
+      episode_number = episode_number + 1
+    end
+  end
+end
+
+puts "Finished: #{episode_number - 1} episodes, and #{extras_number - 1} extras"

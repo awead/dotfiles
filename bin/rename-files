@@ -1,0 +1,77 @@
+#!/Users/awead/.rubies/ruby-2.4.1/bin/ruby
+
+$LOAD_PATH.unshift(ENV['LOAD_LIB'])
+
+require 'byebug'
+require 'optparse'
+require 'ostruct'
+require 'pp'
+require 'tvdb'
+
+def options
+  @options ||= OpenStruct.new
+end
+
+ARGV.options do |opts|
+  opts.banner = "Usage: rename-files --season 2 --show House"
+  opts.separator ""
+  opts.separator "Renames files to match Plex TV show format. If no list is supplied, the existing"
+  opts.separator "file name is used."
+  opts.separator ""
+  opts.separator "Specific options:"
+
+  opts.on("-r", "--run", "Rename the files")                      { |val| options.run = true }
+  opts.on("-t", "--show=", String)                                { |val| options.show = val }
+  opts.on("-s", "--season=", String, "Season number")             { |val| options.season = val }
+  opts.on("-l", "--list=", String, "File with list of episodes")  { |val| options.list = val }
+  opts.on("-x", "--extension=", String, "Specify file extension") { |val| options.extension = val }
+  opts.on("-i", "--episode_id=", String, "TVDB episode id")       { |val| options.episode_id = val }
+
+  opts.on_tail("-h", "--help") do
+    puts opts
+    exit
+  end
+
+  opts.parse!
+end
+
+unless (options.show && options.season)
+  puts "Show and season are required. Use --help for more information."
+  exit 1
+end
+
+def files
+  Dir.glob("*#{options.extension}").reject { |path| path.match(/^\./) }
+end
+
+def titles
+  @titles ||= options.episode_id ? tvdb : File.open(options.list).each_line.map(&:chomp)
+end
+
+def filename(index)
+  return unless options.list || options.episode_id
+  titles[index]
+end
+
+def tvdb
+  tvdb = TVDB.new
+  episodes =  tvdb.get_episodes_by_id(options.episode_id)
+  season = episodes.parsed_response["data"].select { |r| r["airedSeason"] == options.season.to_i }
+  sorted = season.sort {|a,b| a["airedEpisodeNumber"] <=> b["airedEpisodeNumber"]}
+  names = sorted.map { |s| s["episodeName"] }
+  names.map { |n| n.gsub(/\s+\(.*\)$/, "") }
+end
+
+def command(file, index)
+  episode = (index + 1).to_s
+  new_filename = filename(index) || file
+  "mv \"#{file}\" \"#{options.show} - s#{options.season.rjust(2, "0")}e#{episode.rjust(2, "0")} - #{new_filename}#{options.extension}\""
+end
+
+files.each_with_index do |file, index|
+  if options.run
+    system command(file, index)
+  else
+    puts command(file, index)
+  end
+end
