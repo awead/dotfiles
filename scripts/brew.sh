@@ -3,6 +3,11 @@
 # Install/Update Homebrew
 # --------------------------------------------------------------------------
 
+HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_NO_INSECURE_REDIRECT
+HOMEBREW_CASK_OPTS=--require-sha
+export HOMEBREW_CASK_OPTS
+
 if test ! $(which brew)
 then
   echo "Homebrew is not installed. You should do this next part manually"
@@ -15,7 +20,8 @@ then
   chown -R awead:staff /usr/local
 else
   echo "Checking Homebrew"
-  if [ `brew doctor 2>&1 | wc -l` -gt 14 ]; then
+  brew doctor
+  if [ $? -ne 0 ]; then
     echo "There's a problem with brew. Re-run 'brew doctor' and fix"
     exit 1;
   fi

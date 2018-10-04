@@ -8,7 +8,7 @@
 [credential]
 	helper = osxkeychain
 [core]
-	excludesfile = /Users/awead/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vim
 [alias]
 	quick-stats = ! $HOME/.dotfiles/bin/git-quick-stats

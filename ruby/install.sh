@@ -3,26 +3,25 @@
 # Install rubies, gem, and bundler
 # --------------------------------------------------------------------------
 
-RUBIES=`cat ~/.my-ruby-versions`
+RUBIES="2.3.3 2.3.7 2.4.1"
 
-if test ! $(which ruby-install); then
-  echo "ruby-install isn't installed"
+if test ! $(which asdf); then
+  echo "asdf isn't installed"
   exit 1;
 fi
 
 # Install each Ruby version
 for version in ${RUBIES[@]}
 do
-  ruby-install --no-reinstall ruby $version
-  chflags hidden ~/src
+  asdf install ruby $version
+  source $HOME/.asdf/asdf.sh
+  asdf local ruby $version
 
-  for path in `find $HOME/.rubies -name gems`
+  # Remove default gem specifications and install latest
+  for path in `find ~/.asdf/installs/ruby/${version} -name default`
   do
     rm -Rf $path/*
   done
-
-  source /usr/local/share/chruby/chruby.sh
-  chruby $version
   gem update --system
   gem install bundler
 done

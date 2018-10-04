@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/awead/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -66,7 +66,7 @@ source ~/.bash_profile
 unsetopt nomatch
 
 # added by travis gem
-[ -f /Users/awead/.travis/travis.sh ] && source /Users/awead/.travis/travis.sh
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 # asdf initialization
 source $HOME/.dotfiles/asdf/include.sh

@@ -7,13 +7,20 @@ OS X Setup
 
 ## Things I Can't Do Automatically
 
-### Disable Unneeded Services
+### System Preferences
 
-On select systems, I don't want iPhoto-related services running.
+* turn off fast user switching
+* setup scrolling
+* tap-clicks
+* three-fingered drag
 
-1. Boot into recovery mode (⌘-R)
-2. Open Terminal
-3. run `csrutil disable`
-4. Reboot
-5. `sudo scripts/disable-services.sh`
-6. Reboot into recovery mode and `csrutil enable`
+### Terminal
+
+* 16 pt. Inconsolata font
+
+### GPG Import/Export
+
+    gpg --export-secret-keys > my-secret-keyring.gpg
+    gpg --export-options export-local-sigs --export > my-public-keyring.gpg
+    gpg --import my-secret-keyring.gpg
+    gpg --import-options import-local-sigs my-public-keyring.gpg

@@ -13,9 +13,8 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export DUO_PASSCODE=push
 export EDITOR=/usr/local/bin/vim
 
-# Chruby settings
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+# GPG
+export GPG_TTY=$(tty)
 
 # Additional bin directories
 export DROPBOX_BIN="$HOME/Dropbox/bin"
@@ -43,7 +42,7 @@ LOAD_LIB=$HOME/.dotfiles/lib
 export LOAD_LIB
 
 # Java
-JAVA_HOME=$(/usr/libexec/java_home)
+JAVA_HOME=$HOME/.asdf/installs/java/`grep java $HOME/.tool-versions | awk '{print $2}'`
 export JAVA_HOME
 
 # Imagemagick
