@@ -38,9 +38,9 @@
 					<key>Tab Title</key>
 					<string>Scholarsphere</string>
 					<key>Tab Working Directory URL</key>
-					<string>file://pooh.local/Users/awead/Projects/Github/psu-stewardship/scholarsphere/</string>
+					<string>~/Projects/Github/psu-stewardship/scholarsphere/</string>
 					<key>Tab Working Directory URL String</key>
-					<string>file://pooh.local/Users/awead/Projects/Github/psu-stewardship/scholarsphere</string>
+					<string>~/Projects/Github/psu-stewardship/scholarsphere</string>
 					<key>TabSelected</key>
 					<false/>
 				</dict>
@@ -69,9 +69,9 @@
 					<key>Tab Title</key>
 					<string>Scholarsphere</string>
 					<key>Tab Working Directory URL</key>
-					<string>file://pooh.local/Users/awead/Projects/Github/psu-stewardship/scholarsphere/</string>
+					<string>~/Projects/Github/psu-stewardship/scholarsphere/</string>
 					<key>Tab Working Directory URL String</key>
-					<string>file://pooh.local/Users/awead/Projects/Github/psu-stewardship/scholarsphere</string>
+					<string>~/Projects/Github/psu-stewardship/scholarsphere</string>
 					<key>TabSelected</key>
 					<false/>
 				</dict>
@@ -98,9 +98,9 @@
 					<key>Tab Subtitle</key>
 					<string>Repository</string>
 					<key>Tab Working Directory URL</key>
-					<string>file://pooh.local/Users/awead/Projects/Github/psu-stewardship/scholarsphere/public/</string>
+					<string>~/Projects/Github/psu-stewardship/scholarsphere/public/</string>
 					<key>Tab Working Directory URL String</key>
-					<string>file://pooh.local/Users/awead/Projects/Github/psu-stewardship/scholarsphere/public</string>
+					<string>~/Projects/Github/psu-stewardship/scholarsphere/public</string>
 					<key>TabSelected</key>
 					<true/>
 				</dict>

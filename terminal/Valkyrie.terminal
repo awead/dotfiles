@@ -38,9 +38,9 @@
 					<key>Tab Title</key>
 					<string>Valkyrie</string>
 					<key>Tab Working Directory URL</key>
-					<string>file://pooh.local/Users/awead/Projects/Github/samvera-labs/valkyrie/</string>
+					<string>~/Projects/Github/samvera-labs/valkyrie/</string>
 					<key>Tab Working Directory URL String</key>
-					<string>file://pooh.local/Users/awead/Projects/Github/samvera-labs/valkyrie</string>
+					<string>~/Projects/Github/samvera-labs/valkyrie</string>
 					<key>TabSelected</key>
 					<true/>
 				</dict>

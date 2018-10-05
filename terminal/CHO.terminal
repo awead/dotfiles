@@ -36,9 +36,9 @@
 					<key>Tab Title</key>
 					<string>CHO</string>
 					<key>Tab Working Directory URL</key>
-					<string>file://pooh.local/Users/awead/Projects/Github/psu-libraries/cho/</string>
+					<string>~/Projects/Github/psu-libraries/cho/</string>
 					<key>Tab Working Directory URL String</key>
-					<string>file://pooh.local/Users/awead/Projects/Github/psu-libraries/cho</string>
+					<string>~/Projects/Github/psu-libraries/cho</string>
 					<key>TabSelected</key>
 					<true/>
 				</dict>
@@ -61,9 +61,9 @@
 					<key>Tab Subtitle</key>
 					<string>Server Instance</string>
 					<key>Tab Working Directory URL</key>
-					<string>file://pooh.local/Users/awead/Projects/Github/psu-libraries/cho/</string>
+					<string>~/Projects/Github/psu-libraries/cho/</string>
 					<key>Tab Working Directory URL String</key>
-					<string>file://pooh.local/Users/awead/Projects/Github/psu-libraries/cho</string>
+					<string>~/Projects/Github/psu-libraries/cho</string>
 					<key>TabSelected</key>
 					<false/>
 				</dict>

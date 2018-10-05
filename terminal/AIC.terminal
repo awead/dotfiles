@@ -36,9 +36,9 @@
 					<key>Tab Title</key>
 					<string>Lakeshore</string>
 					<key>Tab Working Directory URL</key>
-					<string>file://eeyore.local/Users/awead/Projects/Github/aic-collections/aicdams-lakeshore/</string>
+					<string>~/Projects/Github/aic-collections/aicdams-lakeshore/</string>
 					<key>Tab Working Directory URL String</key>
-					<string>file://eeyore.local/Users/awead/Projects/Github/aic-collections/aicdams-lakeshore</string>
+					<string>~/Projects/Github/aic-collections/aicdams-lakeshore</string>
 					<key>TabSelected</key>
 					<true/>
 				</dict>
@@ -63,9 +63,9 @@
 					<key>Tab Title</key>
 					<string>Lakeshore</string>
 					<key>Tab Working Directory URL</key>
-					<string>file://eeyore.local/Users/awead/Projects/Github/aic-collections/aicdams-lakeshore/</string>
+					<string>~/Projects/Github/aic-collections/aicdams-lakeshore/</string>
 					<key>Tab Working Directory URL String</key>
-					<string>file://eeyore.local/Users/awead/Projects/Github/aic-collections/aicdams-lakeshore</string>
+					<string>~/Projects/Github/aic-collections/aicdams-lakeshore</string>
 					<key>TabSelected</key>
 					<false/>
 				</dict>
