@@ -28,14 +28,14 @@ ARGV.options do |opts|
 end
 
 if options.use_filename
-  unless (options.show && options.season && options.picture && options.year)
+  unless (options.show && options.season && options.year)
     raise ArgumentError,
-      "See example: tag-season --season 1 --show Doctor Who --picture cover.png -U"
+      "See example: tag-season --season 1 --show Doctor Who -U"
   end
 else
-  unless (options.show && options.season && options.picture && options.list && options.year)
+  unless (options.show && options.season && options.list && options.year)
     raise ArgumentError,
-      "See example: tag-season --season 2 --show House --picture cover.png --list episodes.txt"
+      "See example: tag-season --season 2 --show House --list episodes.txt"
   end
 end
 
@@ -59,16 +59,21 @@ def episodes
   Dir.glob("*.m4v")
 end
 
-def command(episode, index)
+def base_command(episode, index)
   "AtomicParsley \"#{episode}\" "\
     "--stik \"TV Show\" "\
     "--TVShowName \"#{options.show}\" "\
     "--TVSeasonNum #{options.season} "\
     "--TVEpisodeNum #{index+1} "\
     "--title \"#{titles[index] ||"Extras"}\" "\
-    "--artwork #{options.picture} "\
     "--year #{options.year} "\
     "--overWrite"
+end
+
+def command(episode, index)
+  base = base_command(episode, index)
+  return base unless options.picture
+  "#{base} --artwork #{options.picture}"
 end
 
 episodes.each_with_index do |episode, index|
