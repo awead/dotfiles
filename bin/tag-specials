@@ -25,20 +25,32 @@ ARGV.options do |opts|
 end
 
 
-unless (options.show && options.year && options.season)
+unless (options.show)
   raise ArgumentError,
-    "See example: tag-specials --show Doctor Who --season 1 --year 2005"
+    "See example: tag-specials --show Doctor Who"
 end
 
 def titles
   @titles ||= derive_filenames
 end
 
+def episode_numbers
+  @episode_numbers ||= derive_episodes
+end
+
 def derive_filenames
   files = Pathname.pwd.children.reject { |file| file.basename.to_s.match(/^\./) }
 
   files.map do |file|
-    file.basename(".m4v").to_s
+    file.basename(".m4v").to_s.split(" - ").drop(2).join(": ")
+  end
+end
+
+def derive_episodes
+  files = Pathname.pwd.children.reject { |file| file.basename.to_s.match(/^\./) }
+
+  files.map do |file|
+    file.basename(".m4v").to_s.split(" - ")[1].split("e").last.gsub(/^0/,"")
   end
 end
 
@@ -50,9 +62,9 @@ def command(episode, index)
   "AtomicParsley \"#{episode}\" "\
     "--stik \"TV Show\" "\
     "--TVShowName \"#{options.show}\" "\
-    "--TVSeasonNum #{options.season} "\
+    "--TVSeasonNum 0 "\
+    "--TVEpisodeNum #{episode_numbers[index]} "\
     "--title \"#{titles[index] ||"Extras"}\" "\
-    "--year #{options.year} "\
     "--overWrite"
 end
 
