@@ -28,12 +28,12 @@ ARGV.options do |opts|
 end
 
 if options.use_filename
-  unless (options.show && options.season && options.year)
+  unless (options.show && options.season)
     raise ArgumentError,
       "See example: tag-season --season 1 --show Doctor Who -U"
   end
 else
-  unless (options.show && options.season && options.list && options.year)
+  unless (options.show && options.season && options.list)
     raise ArgumentError,
       "See example: tag-season --season 2 --show House --list episodes.txt"
   end
@@ -51,7 +51,7 @@ def derive_filenames
   files = Pathname.pwd.children.reject { |file| file.basename.to_s.match(/^\./) }
 
   files.map do |file|
-    file.basename(".m4v").to_s.split(" - ").last
+    file.basename(".m4v").to_s.split(" - ").drop(2).join(": ")
   end
 end
 
@@ -66,14 +66,14 @@ def base_command(episode, index)
     "--TVSeasonNum #{options.season} "\
     "--TVEpisodeNum #{index+1} "\
     "--title \"#{titles[index] ||"Extras"}\" "\
-    "--year #{options.year} "\
     "--overWrite"
 end
 
 def command(episode, index)
   base = base_command(episode, index)
-  return base unless options.picture
-  "#{base} --artwork #{options.picture}"
+  base << " --artwork #{options.picture}" if options.picture
+  base << " --year #{options.year}" if options.year
+  base
 end
 
 episodes.each_with_index do |episode, index|
