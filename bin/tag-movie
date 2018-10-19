@@ -1,26 +1,55 @@
-#!/Users/awead/.rubies/ruby-2.2.3/bin/ruby
+#!/Users/awead/.rubies/ruby-2.4.1/bin/ruby
 
 require 'optparse'
 require 'ostruct'
-require 'pp'
+require 'byebug'
+require 'pathname'
 
-options = OpenStruct.new
+def options
+  @options ||= OpenStruct.new
+end
 
 ARGV.options do |opts|
-  opts.on("-t", "--title=", String)   						{ |val| options.title = val }
-  opts.on("-y", "--year=", String, "Release year (YYYY)")   { |val| options.year = val }
-  opts.on("-p", "--picture=", String, "jpg file")   		{ |val| options.picture = val }
-  
+  opts.on("-t", "--title=", String)   						                  { |val| options.title = val }
+  opts.on("-y", "--year=", String, "Release year (YYYY)")           { |val| options.year = val }
+  opts.on("-p", "--picture=", String, "jpg file")   		            { |val| options.picture = val }
+  opts.on("-r", "--run", "Tag the file")                            { |val| options.run = true }
+
   opts.on_tail("-h", "--help") do
   	puts opts
   	exit
   end
-  
+
   opts.parse!
 end
 
-raise ArgumentError, "Title, year and picture are required" unless (options.year && options.title && options.picture)
+raise ArgumentError, "Title, year and picture are required" unless (options.year && options.picture)
 raise ArgumentError, "Picture must be a jpg" unless options.picture.match(/jpg$/)
 
-system("mp4tags -i movie -s \"#{options.title}\" -y #{options.year} -P #{options.picture} -r R \"#{ARGV.first}\"")
-system("mp4tags -r R \"#{ARGV.first}\"")
+def title
+  return options.title if options.title
+  ARGV[0].split(/\./).first.capitalize
+end
+
+def picture
+  picture = Pathname.new(options.picture)
+  return picture if picture.exist?
+  picture = Pathname.new(ENV['HOME']).join("Downloads", options.picture)
+  return picture if picture.exist?
+  raise ArgumentError, "#{options.picture} not found"
+end
+
+def command
+  "AtomicParsley \"#{ARGV[0]}\" "\
+    "--stik \"Movie\" "\
+    "--year #{options.year} "\
+    "--artwork \"#{picture}\" "\
+    "--title \"#{title}\" "\
+    "--overWrite"
+end
+
+if options.run
+  system command
+else
+  puts command
+end
