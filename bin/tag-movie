@@ -10,10 +10,11 @@ def options
 end
 
 ARGV.options do |opts|
-  opts.on("-t", "--title=", String)   						                  { |val| options.title = val }
-  opts.on("-y", "--year=", String, "Release year (YYYY)")           { |val| options.year = val }
-  opts.on("-p", "--picture=", String, "jpg file")   		            { |val| options.picture = val }
-  opts.on("-r", "--run", "Tag the file")                            { |val| options.run = true }
+  opts.on("-t", "--title=", String)                       { |val| options.title = val }
+  opts.on("-T", "--title-sort=", String)   						    { |val| options.title_sort = val }
+  opts.on("-y", "--year=", String, "Release year (YYYY)") { |val| options.year = val }
+  opts.on("-p", "--picture=", String, "jpg file")   		  { |val| options.picture = val }
+  opts.on("-r", "--run", "Tag the file")                  { |val| options.run = true }
 
   opts.on_tail("-h", "--help") do
   	puts opts
@@ -23,7 +24,7 @@ ARGV.options do |opts|
   opts.parse!
 end
 
-raise ArgumentError, "Title, year and picture are required" unless (options.year && options.picture)
+raise ArgumentError, "Yean and picture is required" unless (options.year && options.picture)
 raise ArgumentError, "Picture must be a jpg" unless options.picture.match(/jpg$/)
 
 def title
