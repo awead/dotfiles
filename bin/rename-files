@@ -26,6 +26,7 @@ ARGV.options do |opts|
   opts.on("-l", "--list=", String, "File with list of episodes")  { |val| options.list = val }
   opts.on("-x", "--extension=", String, "Specify file extension") { |val| options.extension = val }
   opts.on("-i", "--episode_id=", String, "TVDB episode id")       { |val| options.episode_id = val }
+  opts.on("-o", "--offset=", Integer, "Offset episode numbering") { |val| options.offset = val }
 
   opts.on_tail("-h", "--help") do
     puts opts
@@ -62,8 +63,13 @@ def tvdb
   names.map { |n| n.gsub(/\s+\(.*\)$/, "") }
 end
 
+def offset
+  return 0 unless options.offset
+  options.offset
+end
+
 def command(file, index)
-  episode = (index + 1).to_s
+  episode = (index + offset + 1).to_s
   new_filename = filename(index) || file
   "mv \"#{file}\" \"#{options.show} - s#{options.season.rjust(2, "0")}e#{episode.rjust(2, "0")} - #{new_filename}#{options.extension}\""
 end
