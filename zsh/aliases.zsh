@@ -1,11 +1,6 @@
 # Aliases
 alias ls='ls -Gh'
-alias d2='wine .wine/drive_c/Program\ Files/Diablo\ II/Diablo\ II.exe'
-alias d2nt='wine .wine/drive_c/Program\ Files/D2NT/D2NT\ Manager.exe'
-alias nuke-rockets="git grep -l '=>'| xargs perl -pi -e 's/(?<!:):(\w+)\s?=>\s?/$1: /g'"
 alias firefox="~/Applications/Firefox.app/Contents/MacOS/firefox-bin"
-alias killall-resque="ps -ax | grep resque | awk '{ print $1 }' | xargs kill -s KILL"
-alias killall-spring="ps -ax | grep spring | awk '{ print $1 }' | xargs kill -s KILL"
 alias git-log-pretty='git log --pretty=format:" %cd : %s [%cn]" --date=short'
 alias be-rspec='bundle exec rspec'
 alias be-rake='bundle exec rake'
