@@ -1,6 +1,7 @@
 ---
-BUNDLE_GIT__ALLOW_INSECURE: "true"
-BUNDLE_BUILD__LIBV8: "--with-system-v8"
 BUNDLE_GEM__TEST: "rspec"
 BUNDLE_GEM__MIT: "false"
 BUNDLE_GEM__COC: "false"
+BUNDLE_BUILD__CLAMAV: "--with-clamav-include=/usr/local/Cellar/clamav/0.100.1/include --with-clamav-lib=/usr/local/Cellar/clamav/0.100.1/lib --with-cppflags=-I/usr/local/opt/openssl/include"
+BUNDLE_BUILD__MYSQL2: "--srcdir=/usr/local/include/mysql"
+BUNDLE_BUILD__SQLITE3: "--with-sqlite3-dir=/usr/local/Cellar/sqlite/3.25.2 "
