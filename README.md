@@ -24,3 +24,10 @@ OS X Setup
     gpg --export-options export-local-sigs --export > my-public-keyring.gpg
     gpg --import my-secret-keyring.gpg
     gpg --import-options import-local-sigs my-public-keyring.gpg
+
+### Disabling Unneeded Services
+
+    mkdir ~/Library/Disabled/LaunchAgents
+    mkdir ~/Library/Disabled/LaunchDaemons
+
+Move selected plist files out of /Library/LaunchAgents and Daemons.
