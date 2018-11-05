@@ -9,3 +9,5 @@ node_modules
 config/hydra-ldap.yml
 cc-test-reporter
 tmp
+public/test_repository
+public/development_repository
