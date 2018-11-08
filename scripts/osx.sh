@@ -144,9 +144,6 @@ done < "$HOME/.dotfiles/scripts/conf/dock.conf"
 
 cp $HOME/.dotfiles/terminal/*.ttf ~/Library/Fonts
 
-# Delete all window groups - they'll be re-added below
-defaults delete com.apple.Terminal "Window Groups"
-
 osascript <<EOD
 tell application "Terminal"
 	set themeName to "Custom"
@@ -155,12 +152,6 @@ tell application "Terminal"
 	delay 1
 	(* Set the custom theme as the default terminal theme. *)
 	set default settings to settings set themeName
-	do shell script "open '$HOME/.dotfiles/terminal/Valkyrie.terminal'"
-	do shell script "open '$HOME/.dotfiles/terminal/Scholarsphere.terminal'"
-	do shell script "open '$HOME/.dotfiles/terminal/AIC.terminal'"
-	do shell script "open '$HOME/.dotfiles/terminal/CHO.terminal'"
-	do shell script "open '$HOME/.dotfiles/terminal/Fedora Testing (data).terminal'"
-	do shell script "open '$HOME/.dotfiles/terminal/Fedora Testing (dev).terminal'"
 end tell
 EOD
 
