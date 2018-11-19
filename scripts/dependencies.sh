@@ -4,6 +4,7 @@
 # --------------------------------------------------------------------------
 
 # Ruby
+source asdf/install.sh
 source ruby/install.sh
 
 # ClamAV

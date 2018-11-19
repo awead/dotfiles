@@ -9,10 +9,14 @@ OS X Setup
 
 ### System Preferences
 
+* FileVault
+* Firewall: stealth, no autos
+* Privacy settings: analytics, advertising
 * turn off fast user switching
 * setup scrolling
 * tap-clicks
 * three-fingered drag
+* full disk access to: Terminal, bash (see https://github.com/mathiasbynens/dotfiles/issues/849)
 
 ### Terminal
 

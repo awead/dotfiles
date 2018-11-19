@@ -7,5 +7,3 @@
 # Alternatively, try brew install moneydance
 ./moneydance/install.sh
 
-# asdf
-./asdf/install./sh

@@ -42,7 +42,7 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Disable “natural” (Lion-style) scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -int 1
+defaults write NSGlobalDomain com.apple.swipescrolldirection -int 0
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
@@ -82,7 +82,9 @@ ln -s $HOME/.dotfiles/spelling/LocalDictionary "$HOME/Library/Spelling/LocalDict
 #
 
 # Show the Library folder
-chflags nohidden ~/Library
+# TODO: This no longer works. Instead command-J from the Find for view options
+#       Don't know where the file for this is kept.
+# chflags nohidden ~/Library
 
 # Disable the warning when changing file extensions
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
@@ -121,6 +123,7 @@ defaults write com.apple.finder CreateDesktop false
 # Clear it out
 defaults delete com.apple.dock persistent-apps
 defaults delete com.apple.dock persistent-others
+defaults write com.apple.dock show-recents -bool false
 
 # Add my own
 while IFS= read -r line; do
