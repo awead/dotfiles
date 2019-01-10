@@ -1,4 +1,4 @@
-#!/Users/awead/.rubies/ruby-2.4.1/bin/ruby
+#!/Users/awead/.asdf/shims/ruby
 
 require 'optparse'
 require 'ostruct'
@@ -24,7 +24,7 @@ ARGV.options do |opts|
   opts.parse!
 end
 
-raise ArgumentError, "Yean and picture is required" unless (options.year && options.picture)
+raise ArgumentError, "Year and picture is required" unless (options.year && options.picture)
 raise ArgumentError, "Picture must be a jpg" unless options.picture.match(/jpg$/)
 
 def title
