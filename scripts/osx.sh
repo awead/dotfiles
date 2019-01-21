@@ -7,11 +7,11 @@
 # System Preferences
 #
 
-# Set appearance to graphite
-defaults write NSGlobalDomain AppleAquaColorVariant -float 6
+# Set appearance to "Light"
+defaults delete -g AppleInterfaceStyle
 
 # Set highlight color to yellow
-defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.937255 0.690196"
+defaults write -g AppleHighlightColor -string "1.000000 0.937255 0.690196"
 
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
@@ -34,19 +34,21 @@ defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0
 
-# Trackpad: enable tap to click for this user and for the login screen
+# Trackpad features: tap-click, three-fingered drag,
+defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
+defaults write -g com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag 1
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerSwipeGesture -int 1
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -bool true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
 
 # Disable “natural” (Lion-style) scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -int 0
+defaults write -g com.apple.swipescrolldirection -bool false
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+defaults write -g AppleKeyboardUIMode -int 3
 
 # Annoying Bluetooth audio problems
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Max (editable)" 80
@@ -63,10 +65,11 @@ defaults write com.apple.menuextra.clock FlashDateSeparators 0
 defaults write com.apple.menuextra.clock IsAnalog 0
 
 # Disable auto capitalize
-defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write -g NSAutomaticCapitalizationEnabled -bool false
+defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Enable accessibility zoom with control key
+# Note: This may not work on some machines
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess closeViewScrollWheelModifiersInt -int 262144
 
@@ -81,11 +84,6 @@ ln -s $HOME/.dotfiles/spelling/LocalDictionary "$HOME/Library/Spelling/LocalDict
 # Finder
 #
 
-# Show the Library folder
-# TODO: This no longer works. Instead command-J from the Find for view options
-#       Don't know where the file for this is kept.
-# chflags nohidden ~/Library
-
 # Disable the warning when changing file extensions
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
@@ -95,17 +93,14 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
-# Disable the “Are you sure you want to open this application?” dialog
-defaults write com.apple.LaunchServices LSQuarantine -bool false
-
 # Disable the crash reporter
 defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Expand save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 
 # Finder: show all filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write -g AppleShowAllExtensions -bool true
 
 # Show Status bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -121,9 +116,14 @@ defaults write com.apple.finder CreateDesktop false
 #
 
 # Clear it out
-defaults delete com.apple.dock persistent-apps
-defaults delete com.apple.dock persistent-others
+defaults delete com.apple.dock
 defaults write com.apple.dock show-recents -bool false
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock orientation -string "right"
+defaults write com.apple.dock expose-group-by-app -bool false
+defaults write com.apple.dock mru-spaces -bool false
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Add my own
 while IFS= read -r line; do
