@@ -15,6 +15,8 @@ ARGV.options do |opts|
   opts.on("-y", "--year=", String, "Release year (YYYY)") { |val| options.year = val }
   opts.on("-p", "--picture=", String, "jpg file")   		  { |val| options.picture = val }
   opts.on("-r", "--run", "Tag the file")                  { |val| options.run = true }
+  opts.on("-a", "--auto-fix", "Fix existing tags")        { |val| options.auto = true }
+  opts.on("-c", "--check", "Checks for required tags")    { |val| options.check = true }
 
   opts.on_tail("-h", "--help") do
   	puts opts
@@ -24,12 +26,113 @@ ARGV.options do |opts|
   opts.parse!
 end
 
-raise ArgumentError, "Year and picture is required" unless (options.year && options.picture)
-raise ArgumentError, "Picture must be a jpg" unless options.picture.match(/jpg$/)
+unless (options.auto || options.check)
+  raise ArgumentError, "Year and picture is required" unless (options.year && options.picture)
+  raise ArgumentError, "Picture must be a jpg" unless options.picture.match(/jpg$/)
+end
+
+PLEX_TYPES = [
+  "-behindthescenes",
+  "-deleted",
+  "-featurette",
+  "-interview",
+  "-scene",
+  "-short",
+  "-trailer"
+]
+
+class FileCheck
+  attr_reader :results, :errors, :title
+
+  def initialize(title)
+    @title = title
+    @results = `AtomicParsley "#{ARGV[0]}" -t`
+    @errors = []
+  end
+
+  def valid?
+    check_tags
+    errors.empty?
+  end
+
+  def movie?
+    tag_hash.fetch("stik", nil) == "Movie"
+  end
+
+  def titled?
+    tag_hash.fetch("©nam", nil) == title
+  end
+
+  def tagged?
+    denied_tags.empty?
+  end
+
+  def validate
+    check_tags
+    return if errors.empty?
+    puts "#{ARGV[0]} FAILED: #{errors.join(", ")}"
+    exit 1
+  end
+
+  private
+
+    def tags
+      tag_hash.keys
+    end
+
+    def tag_hash
+      @tag_hash ||= build_tag_hash
+    end
+
+    def build_tag_hash
+      hash = {}
+      results.gsub(/"/,"").split(/\n/).each do |line|
+        hash[key(line)] = value(line)
+      end
+      hash
+    end
+
+    def key(line)
+      line.split(" ")[1]
+    end
+
+    def value(line)
+      parts = line.split(" ")
+      length = parts.length
+      parts[3..length].join(" ")
+    end
+
+    def check_tags
+      errors.push("not tagged as a movie") unless movie?
+      errors.push("wrong title: #{tag_hash.fetch("©nam", "NONE")}") unless titled?
+      errors.push("denied tags found: #{denied_tags.join(", ")}") unless denied_tags.empty?
+    end
+
+    def denied_tags
+      tags - allowed_tags
+    end
+
+    def allowed_tags
+      ["©nam", "stik", "©day", "©enc", "covr", "©too", "sonm"]
+    end
+end
+
 
 def title
   return options.title if options.title
-  ARGV[0].split(/\./).first.capitalize
+  path = Pathname.new(ARGV[0])
+  remove_plex_types(path.basename(".*").to_s)
+    .gsub(" - ", ": ")
+    .gsub(/\(.*\)/, "")
+    .gsub(/^\d+ /, "")
+    .gsub(/\s+$/, "")
+end
+
+def remove_plex_types(name)
+  PLEX_TYPES.map do |type|
+    name.gsub!(/#{type}/, "")
+  end
+  name
 end
 
 def picture
@@ -40,7 +143,7 @@ def picture
   raise ArgumentError, "#{options.picture} not found"
 end
 
-def command
+def manual_command
   "AtomicParsley \"#{ARGV[0]}\" "\
     "--stik \"Movie\" "\
     "--year #{options.year} "\
@@ -49,8 +152,31 @@ def command
     "--overWrite"
 end
 
+def auto_command
+  check = FileCheck.new(title)
+  return "echo 'No fix needed'" if check.valid?
+  unless check.tagged?
+    puts "Cannot auto-fix! This must be done manually"
+    exit 1
+  end
+  result = "AtomicParsley \"#{ARGV[0]}\" --overWrite"
+  result << " --stik \"Movie\"" unless check.movie?
+  result << " --title \"#{title}\"" unless check.titled?
+  result
+end
+
+def command
+  if options.auto
+    auto_command
+  else
+    manual_command
+  end
+end
+
 if options.run
   system command
+elsif options.check
+  FileCheck.new(title).validate
 else
   puts command
 end
