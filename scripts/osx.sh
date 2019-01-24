@@ -116,7 +116,7 @@ defaults write com.apple.finder CreateDesktop false
 #
 
 # Clear it out
-defaults delete com.apple.dock
+defaults delete com.apple.dock persistent-apps
 defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock orientation -string "right"
@@ -124,22 +124,6 @@ defaults write com.apple.dock expose-group-by-app -bool false
 defaults write com.apple.dock mru-spaces -bool false
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
-
-# Add my own
-while IFS= read -r line; do
-	defaults write com.apple.dock persistent-apps -array-add "<dict>
-		<key>tile-data</key>
-		<dict>
-			<key>file-data</key>
-			<dict>
-				<key>_CFURLString</key>
-				<string>$line</string>
-				<key>_CFURLStringType</key>
-				<integer>0</integer>
-			</dict>
-		</dict>
-	</dict>"
-done < "$HOME/.dotfiles/scripts/conf/dock.conf"
 
 #
 # Terminal
