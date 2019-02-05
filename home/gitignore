@@ -11,3 +11,4 @@ cc-test-reporter
 tmp
 public/test_repository
 public/development_repository
+.tool-versions
