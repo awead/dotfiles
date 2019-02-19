@@ -9,6 +9,4 @@ asdf plugin-add nodejs
 asdf plugin-add ruby
 asdf plugin-add java
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-asdf install nodejs 8.11.2
-asdf install nodejs 9.11.1
-asdf install java oracle-8.181
+asdf install nodejs 11.8.0

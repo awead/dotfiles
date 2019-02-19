@@ -60,3 +60,15 @@ export LOCAL_IMPORT_DIR
 #SOLR_TEST_PORT=8985 && export SOLR_TEST_PORT
 FCREPO_DEVELOPMENT_PORT=8986 && export FCREPO_DEVELOPMENT_PORT
 FCREPO_TEST_PORT=8986 && export FCREPO_TEST_PORT
+
+# OpenSSL
+# We can build different things using the openssl from Homebrew as a dependency,
+# but not actually *use* it. We're still using the MacOS-included one. If you
+# want to fully use the version from Homebrew, uncomment the following.
+# Note: This is taken from  $ brew link openssl and I've seen reports to the effect
+# that MacOS doesn't even use the CPPFLAGS and LDFLAGS, so this may not be worth it:
+# PATH=/usr/local/opt/openssl/bin:$PATH
+# export PATH
+# export LDFLAGS="-L/usr/local/opt/openssl/lib"
+# export CPPFLAGS="-I/usr/local/opt/openssl/include"
+# export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"

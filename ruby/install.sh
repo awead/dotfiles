@@ -23,7 +23,7 @@ do
     rm -Rf $path/*
   done
   gem update --system
-  gem install bundler -v '1.17.1'
+  gem install bundler
 done
 
 # Update gem credentials
