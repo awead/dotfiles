@@ -1,4 +1,4 @@
-#!/Users/awead/.rubies/ruby-2.4.1/bin/ruby
+#!/Users/awead/.asdf/shims/ruby
 
 require 'optparse'
 require 'ostruct'
