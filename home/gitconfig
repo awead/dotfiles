@@ -3,7 +3,7 @@
 	email = amsterdamos@gmail.com
 	signingkey = 26B15197
 [commit]
-	gpgsign = true
+	gpgsign = false
 	template = ~/.gitmessage
 [credential]
 	helper = osxkeychain
