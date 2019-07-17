@@ -3,7 +3,7 @@
 # Install rubies, gem, and bundler
 # --------------------------------------------------------------------------
 
-RUBIES="2.3.3 2.3.7 2.4.1 2.6.3"
+RUBIES="2.3.7 2.4.6 2.6.3"
 
 if test ! $(which asdf); then
   echo "asdf isn't installed"
