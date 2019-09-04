@@ -79,7 +79,7 @@ function massacre {
 
 # Setup a new Rails project with my own defaults
 function rails-new {
-  rails new "$@" -m $HOME/.dotfiles/rails/template.rb --skip-spring
+  rails new "$@" -m $HOME/.dotfiles/rails/template.rb -T -d postgresql
 }
 
 function clean-jetties {
