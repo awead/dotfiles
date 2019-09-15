@@ -25,7 +25,7 @@
 		"spellcheck"
 	],
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Theme - Lanzhou/base16-ocean.dark.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"dictionary": "Packages/Language - English/en_US.dic",
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
@@ -44,7 +44,6 @@
 	"font_size": 17,
 	"ignored_packages":
 	[
-		"Vintage"
 	],
 	"indent_subsequent_lines": true,
 	"rulers":
@@ -54,7 +53,7 @@
 	"show_definitions": false,
 	"spell_check": true,
 	"tab_size": 2,
-	"theme": "Boxy Tomorrow.sublime-theme",
+	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }

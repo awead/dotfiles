@@ -1,9 +1,6 @@
 # dotfiles
+
 OS X Setup
-
-## Pre-Requisites
-
-* Dev tools installed
 
 ## Things I Can't Do Automatically
 
@@ -17,6 +14,7 @@ OS X Setup
 * tap-clicks
 * three-fingered drag
 * full disk access to: Terminal, bash (see https://github.com/mathiasbynens/dotfiles/issues/849)
+* update login picture
 
 ### Terminal
 
