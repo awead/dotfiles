@@ -26,6 +26,8 @@ gem_group :test do
   gem 'webdrivers'
 end
 
+run "bundle install"
+
 environment 'config.generators { |generator| generator.test_framework :rspec }'
 
 file '.rubocop.yml', <<-CODE
@@ -49,6 +51,9 @@ CODE
 run 'touch .rubocop_todo.yml'
 
 run 'rm -Rf test'
+
+# Rails seems to use the wrong format for ruby-version files
+run "sed -i '' 's/ruby-//g' .ruby-version"
 
 after_bundle do
   generate "rspec:install"
