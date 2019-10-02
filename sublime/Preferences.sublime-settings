@@ -44,6 +44,7 @@
 	"font_size": 17,
 	"ignored_packages":
 	[
+		"Vintage"
 	],
 	"indent_subsequent_lines": true,
 	"rulers":
