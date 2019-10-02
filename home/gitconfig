@@ -60,3 +60,5 @@
 	clean = git-lfs clean -- %f
 [pager]
   branch = false
+[init]
+	templatedir = ~/.git-templates

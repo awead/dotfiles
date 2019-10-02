@@ -1,0 +1,5 @@
+--exclude=.git
+--exclude=log
+--recurse=yes
+--tag-relative=yes
+--languages=ruby

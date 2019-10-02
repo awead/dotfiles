@@ -1,7 +1,95 @@
-:set nu
-:set spell
+set encoding=utf-8
+
+set autowrite     " Automatically :write before running commands
+set backspace=2   " Backspace deletes like most programs in insert mode
+set history=50
+set hlsearch
+set incsearch     " do incremental searching
+set laststatus=2  " Always display the status line
+set modelines=0   " Disable modelines as a security precaution
+set nobackup
+set nomodeline
+set noswapfile
+set nowritebackup
+set nu
+set ruler
+set showcmd       " display incomplete commands
+set spell
+set tags+=.tags
+set textwidth=72
+
+" Enable syntax highlighting
 syntax on
-:set hlsearch
-:set ruler
-:set textwidth=72
+
+" Leader prefix to create local versions for commands
+let mapleader = " "
+
+" Set text width for well-formatted commit messages
 au BufRead,BufNewFile setlocal textwidth=72
+
+" Tree Navigation
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+
+"
+" Shortcuts
+"
+
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+" Move around splits like you do normal navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"
+" Vim plugins with Minpac
+"
+
+" Initialize the package manager
+packadd minpac
+call minpac#init()
+
+" Create some commands to more easily use minpac
+command! PackUpdate call minpac#update()
+command! PackClean call minpac#clean()
+
+" Vim-Test runs tests in vim
+call minpac#add('janko/vim-test')
+nnoremap <silent> <Leader>r :TestFile<CR>
+nnoremap <silent> <Leader>R :TestNearest<CR>
+nnoremap <silent> <Leader>l :TestLast<CR>
+nnoremap <silent> <Leader>a :TestSuite<CR>
+nnoremap <silent> <Leader>gt :TestVisit<CR>
+
+" FZF plugin for fuzzy searching
+" * sets up the local fzf command
+" * installs the plugin
+" * activate with Ctrl-P
+set rtp+=/usr/local/opt/fzf
+call minpac#add('junegunn/fzf.vim')
+nnoremap <C-p> :<C-u>FZF<CR>
+
+call minpac#add('benmills/vimux') " allows tests to execute in another tmux pane
+call minpac#add('christoomey/vim-tmux-navigator') " Navigate between vim and tmux
+call minpac#add('k-takata/minpac', {'type': 'opt'}) " make minpac update itself
+call minpac#add('tpope/vim-bundler') " run bundler through vim
+call minpac#add('tpope/vim-endwise') " adds 'end' intelligently in ruby
+call minpac#add('tpope/vim-eunuch') " integration with unix commands
+call minpac#add('tpope/vim-fugitive') " git integration
+call minpac#add('tpope/vim-projectionist') " semantically browse projects
+call minpac#add('tpope/vim-rails') " rails integration
+call minpac#add('tpope/vim-rake') " rake integration
+call minpac#add('tpope/vim-repeat') " makes . command work with fancy cmds
+call minpac#add('tpope/vim-sensible') " run bundler through vim
+call minpac#add('tpope/vim-surround') " surround stuff with other stuff
+call minpac#add('tpope/vim-unimpaired') " pairs of commands that do stuff
+call minpac#add('vim-ruby/vim-ruby') " ruby integration
+call minpac#add('vim-scripts/tComment') " quickly comment lines
+call minpac#add('w0rp/ale') " asynchronous linting
+call minpac#add('machakann/vim-highlightedyank') " Highlight yanked text
+call minpac#add('chriskempson/vim-tomorrow-theme') " Tomorrow color theme
+call minpac#add('mtth/scratch.vim') " easy  scratch buffer
+call minpac#add('pangloss/vim-javascript') " Javascript syntax

@@ -12,3 +12,4 @@ tmp
 public/test_repository
 public/development_repository
 .tool-versions
+.tags

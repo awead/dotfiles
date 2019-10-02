@@ -35,6 +35,19 @@ fi
 # .bash_private
 ln -Fs $HOME/Dropbox/Projects/private-dotfiles/bash_private $HOME/.bash_private
 
+# .vim
+rm -Rf $HOME/.vim
+mkdir -p $HOME/.vim/pack/minpac/opt/minpac
+git clone https://github.com/k-takata/minpac.git $HOME/.vim/pack/minpac/opt/minpac
+vim +PackUpdate +qall
+
+# fzf config
+/usr/local/opt/fzf/install --all 
+
+# git
+rm -Rf $HOME/.git-templates
+ln -Fs $HOME/.dotfiles/home/git-templates $HOME/.git-templates
+
 # Create project directories
 mkdir -p $HOME/Projects/Github/aic-collections
 mkdir -p $HOME/Projects/Github/awead
