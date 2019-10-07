@@ -27,7 +27,7 @@ cask 'github'
 cask 'xquartz'
 
 brew 'atomicparsley'
-brew 'clamav'
+# brew 'clamav'
 brew 'cmake'
 brew 'coreutils'
 brew 'ctags'
