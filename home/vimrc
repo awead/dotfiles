@@ -16,7 +16,15 @@ set ruler
 set showcmd       " display incomplete commands
 set spell
 set tags+=.tags
-set textwidth=72
+set textwidth=120
+set colorcolumn=120
+set tabstop=8
+set softtabstop=0
+set expandtab
+set shiftwidth=2
+set autoindent
+set smartindent
+set smarttab
 
 " Enable syntax highlighting
 syntax on
@@ -26,6 +34,7 @@ let mapleader = " "
 
 " Set text width for well-formatted commit messages
 au BufRead,BufNewFile setlocal textwidth=72
+au FileType gitcommit setlocal textwidth=72
 
 " Tree Navigation
 let g:netrw_banner = 0
@@ -44,6 +53,23 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Vim's internal grep commands use `rg`
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
+" Buffers
+nnoremap <leader>1 :b1<CR>
+nnoremap <leader>2 :b2<CR>
+nnoremap <leader>3 :b3<CR>
+nnoremap <leader>4 :b4<CR>
+nnoremap <leader>5 :b5<CR>
+nnoremap <leader>6 :b6<CR>
+nnoremap <leader>7 :b7<CR>
+nnoremap <leader>8 :b8<CR>
+nnoremap <leader>9 :b9<CR>
+
 "
 " Vim plugins with Minpac
 "
@@ -56,14 +82,6 @@ call minpac#init()
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
-" Vim-Test runs tests in vim
-call minpac#add('janko/vim-test')
-nnoremap <silent> <Leader>r :TestFile<CR>
-nnoremap <silent> <Leader>R :TestNearest<CR>
-nnoremap <silent> <Leader>l :TestLast<CR>
-nnoremap <silent> <Leader>a :TestSuite<CR>
-nnoremap <silent> <Leader>gt :TestVisit<CR>
-
 " FZF plugin for fuzzy searching
 " * sets up the local fzf command
 " * installs the plugin
@@ -73,8 +91,42 @@ call minpac#add('junegunn/fzf.vim')
 nnoremap <C-p> :<C-u>FZF<CR>
 
 call minpac#add('benmills/vimux') " allows tests to execute in another tmux pane
+let g:VimuxHeight = "33"
+
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+
+" Inspect runner pane
+map <Leader>vi :VimuxInspectRunner<CR>
+ 
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>vq :VimuxCloseRunner<CR>
+ 
+" Interrupt any command running in the runner pane
+map <Leader>vx :VimuxInterruptRunner<CR>
+
+" Zoom the runner pane (use <bind-key> z to restore runner pane)
+map <Leader>vz :call VimuxZoomRunner()<CR>
+
+
+" Vim-Test runs tests in vim, with tmux where applicable
+call minpac#add('janko/vim-test')
+nnoremap <silent> <Leader>r :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
+nnoremap <silent> <Leader>R :TestNearest<CR>
+nnoremap <silent> <Leader>l :TestLast<CR>
+nnoremap <silent> <Leader>a :TestSuite<CR>
+nnoremap <silent> <Leader>gt :TestVisit<CR>
+
+" Theme
+call minpac#add('chriskempson/base16-vim') " Tomorrow color theme
+call minpac#add('danilo-augusto/vim-afterglow') 
+"colorscheme base16-default-dark
+colorscheme afterglow
+
 call minpac#add('christoomey/vim-tmux-navigator') " Navigate between vim and tmux
-call minpac#add('k-takata/minpac', {'type': 'opt'}) " make minpac update itself
 call minpac#add('tpope/vim-bundler') " run bundler through vim
 call minpac#add('tpope/vim-endwise') " adds 'end' intelligently in ruby
 call minpac#add('tpope/vim-eunuch') " integration with unix commands
@@ -88,8 +140,7 @@ call minpac#add('tpope/vim-surround') " surround stuff with other stuff
 call minpac#add('tpope/vim-unimpaired') " pairs of commands that do stuff
 call minpac#add('vim-ruby/vim-ruby') " ruby integration
 call minpac#add('vim-scripts/tComment') " quickly comment lines
-call minpac#add('w0rp/ale') " asynchronous linting
+"call minpac#add('w0rp/ale') " asynchronous linting
 call minpac#add('machakann/vim-highlightedyank') " Highlight yanked text
-call minpac#add('chriskempson/vim-tomorrow-theme') " Tomorrow color theme
 call minpac#add('mtth/scratch.vim') " easy  scratch buffer
 call minpac#add('pangloss/vim-javascript') " Javascript syntax
