@@ -21,6 +21,10 @@ rm -Rf "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 mkdir -p "$HOME/Library/Application Support/Sublime Text 3/Packages"
 ln -s $HOME/.dotfiles/sublime "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
+# puma-dev
+sudo puma-dev -setup
+puma-dev -install
+
 # Third-party packages
 if [ -z $SAFE ]; then
   echo "No safe found. Skipping..."
