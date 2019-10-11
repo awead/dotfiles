@@ -27,7 +27,6 @@ cask 'github'
 cask 'xquartz'
 
 brew 'atomicparsley'
-brew 'clamav'
 brew 'cmake'
 brew 'coreutils'
 brew 'ctags'
@@ -89,3 +88,6 @@ brew 'xvid'
 brew 'xz'
 brew 'yasm'
 brew 'zsh'
+
+# Disabled packages
+# brew 'clamav` because the gem is outdated and needs an older version
