@@ -42,7 +42,7 @@ LOAD_LIB=$HOME/.dotfiles/lib
 export LOAD_LIB
 
 # Java
-JAVA_HOME='/Library/Java/JavaVirtualMachines/openjdk-13.jdk/Contents/Home'
+JAVA_HOME='/Library/Java/JavaVirtualMachines/openjdk-12.0.2.jdk/Contents/Home'
 export JAVA_HOME
 
 # Imagemagick
