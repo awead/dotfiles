@@ -13,6 +13,8 @@ alias cho='cd ~/Projects/Github/psu-libraries/cho'
 alias cho-vue='cd ~/Projects/Github/psu-libraries/cho-vue'
 alias psu-stewardship='cd ~/Projects/Github/psu-stewardship'
 alias ss='cd ~/Projects/Github/psu-stewardship/scholarsphere'
+alias ss4='cd ~/Projects/Github/psu-stewardship/scholarsphere-4'
+alias dotfiles='cd ~/.dotfiles'
 alias g='git status'
 
 # Dev shortcuts
