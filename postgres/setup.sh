@@ -12,5 +12,9 @@ brew services stop postgres
 rm -Rf /usr/local/var/postgres
 brew uninstall --force postgres
 brew install postgres
+mkdir -p ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 brew services start postgres
 createdb `whoami`
