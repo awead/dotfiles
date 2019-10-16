@@ -80,6 +80,9 @@ defaults -currentHost write com.apple.screensaver idleTime -int 0
 rm -f "$HOME/Library/Spelling/LocalDictionary"
 ln -s $HOME/.dotfiles/spelling/LocalDictionary "$HOME/Library/Spelling/LocalDictionary"
 
+# Disable phone calls to FaceTime
+defaults write com.apple.TelephonyUtilities relayCallingDisabled -bool true
+
 #
 # Finder
 #
