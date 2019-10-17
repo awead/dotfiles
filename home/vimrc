@@ -121,10 +121,13 @@ nnoremap <silent> <Leader>a :TestSuite<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
 
 " Theme
-call minpac#add('chriskempson/base16-vim') " Tomorrow color theme
-call minpac#add('danilo-augusto/vim-afterglow') 
+"call minpac#add('chriskempson/base16-vim') " Tomorrow color theme
+"call minpac#add('danilo-augusto/vim-afterglow') 
+call minpac#add('morhetz/gruvbox')
 "colorscheme base16-default-dark
-colorscheme afterglow
+"colorscheme afterglow
+colorscheme gruvbox
+set bg=dark
 
 call minpac#add('christoomey/vim-tmux-navigator') " Navigate between vim and tmux
 call minpac#add('tpope/vim-bundler') " run bundler through vim
