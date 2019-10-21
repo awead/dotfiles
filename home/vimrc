@@ -117,7 +117,7 @@ call minpac#add('janko/vim-test')
 nnoremap <silent> <Leader>r :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
 nnoremap <silent> <Leader>R :TestNearest<CR>
 nnoremap <silent> <Leader>l :TestLast<CR>
-nnoremap <silent> <Leader>a :TestSuite<CR>
+nnoremap <silent> <Leader>a :call VimuxRunCommand("clear; rspec ")<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
 
 " Theme
