@@ -93,7 +93,3 @@ function clean-jetties {
          tmp/hydra-test
 }
 
-function ss4 {
-  cd ~/Projects/Github/psu-stewardship/scholarsphere-4
-  tmux new -s ss4
-}
