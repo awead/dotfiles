@@ -31,6 +31,7 @@ export HOMEBREW_CASK_OPTS=--require-sha
 
 # Postgres
 export PG_HOME="/usr/local/var/postgres"
+export POSTGRES_USER=`whoami`
 
 # Pathing
 #
