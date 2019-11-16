@@ -20,6 +20,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias tls="tmux ls"
 alias ta="tmux attach -t"
 alias tn="tmux new -s"
+alias autocop="bundle exec rubocop -P -f fi | xargs bundle exec rubocop -a"
 
 # Dev shortcuts
 alias fcrepo-start="bundle exec fcrepo_wrapper --config ~/.fcrepo_wrapper > /dev/null 2>&1 &"
