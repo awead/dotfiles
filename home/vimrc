@@ -6,6 +6,14 @@ set history=50
 set hlsearch
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
+set statusline=  
+set statusline+=%n\                     " buffer number  
+set statusline+=%f\                          " filename   
+set statusline+=%h%m%r%w                     " status flags  
+set statusline+=%=                           " right align remainder  
+set statusline+=0x%-8B                       " character value  
+set statusline+=%-14(%l,%c%V%)               " line, character  
+set statusline+=%<%P                         " file position 
 set modelines=0   " Disable modelines as a security precaution
 set nobackup
 set nomodeline
@@ -14,7 +22,6 @@ set nowritebackup
 set nu
 set ruler
 set showcmd       " display incomplete commands
-set spell
 set tags+=.tags
 set textwidth=120
 set colorcolumn=120
@@ -25,6 +32,13 @@ set shiftwidth=2
 set autoindent
 set smartindent
 set smarttab
+
+" Spellcheck
+set spell spelllang=en_us
+hi clear SpellBad
+hi SpellBad cterm=underline
+" Set style for gVim
+hi SpellBad gui=undercurl
 
 " Enable syntax highlighting
 syntax on
