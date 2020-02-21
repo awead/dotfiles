@@ -12,3 +12,5 @@ public/test_repository
 public/development_repository
 .tool-versions
 .tags
+config/scholarsphere-client.yml
+config/application.yml
