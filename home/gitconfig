@@ -1,7 +1,7 @@
 [user]
 	name = Adam Wead
-	email = amsterdamos@gmail.com
-	signingkey = 26B15197
+	email = awead@users.noreply.github.com
+	signingkey = AA1192A6DA05165D!
 [commit]
 	gpgsign = true
 	template = ~/.gitmessage
