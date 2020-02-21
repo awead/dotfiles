@@ -32,13 +32,46 @@ set shiftwidth=2
 set autoindent
 set smartindent
 set smarttab
-
-" Spellcheck
 set spell spelllang=en_us
-hi clear SpellBad
-hi SpellBad cterm=underline
-" Set style for gVim
-hi SpellBad gui=undercurl
+autocmd FileType gitcommit setlocal spell
+
+" Color scheme
+augroup my_spellcheck_colors
+  autocmd!
+  autocmd ColorScheme *
+        \ highlight SpellBad
+        \   cterm=Underline
+        \   ctermfg=NONE
+        \   ctermbg=NONE
+        \   term=Reverse
+        \   gui=Undercurl
+        \   guisp=Red
+  autocmd ColorScheme *
+        \ highlight SpellCap
+        \   cterm=Underline
+        \   ctermfg=NONE
+        \   ctermbg=NONE
+        \   term=Reverse
+        \   gui=Undercurl
+        \   guisp=Red
+  autocmd ColorScheme *
+        \ highlight SpellLocal
+        \   cterm=Underline
+        \   ctermfg=NONE
+        \   ctermbg=NONE
+        \   term=Reverse
+        \   gui=Undercurl
+        \   guisp=Red
+  autocmd ColorScheme *
+        \ highlight SpellRare
+        \   cterm=Underline
+        \   ctermfg=NONE
+        \   ctermbg=NONE
+        \   term=Reverse
+        \   gui=Undercurl
+        \   guisp=Red
+augroup END
+colorscheme zellner
 
 " Enable syntax highlighting
 syntax on
@@ -125,7 +158,6 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 " Zoom the runner pane (use <bind-key> z to restore runner pane)
 map <Leader>vz :call VimuxZoomRunner()<CR>
 
-
 " Vim-Test runs tests in vim, with tmux where applicable
 call minpac#add('janko/vim-test')
 nnoremap <silent> <Leader>r :call VimuxRunCommand("clear; bin/rspec " . bufname("%"))<CR>
@@ -133,15 +165,6 @@ nnoremap <silent> <Leader>R :TestNearest<CR>
 nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>a :call VimuxRunCommand("clear; bin/rspec ")<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
-
-" Theme
-"call minpac#add('chriskempson/base16-vim') " Tomorrow color theme
-"call minpac#add('danilo-augusto/vim-afterglow') 
-call minpac#add('morhetz/gruvbox')
-"colorscheme base16-default-dark
-"colorscheme afterglow
-colorscheme gruvbox
-set bg=dark
 
 call minpac#add('christoomey/vim-tmux-navigator') " Navigate between vim and tmux
 call minpac#add('tpope/vim-bundler') " run bundler through vim
