@@ -74,3 +74,6 @@ source $HOME/.dotfiles/asdf/include.sh
 # Set up FZF and tell it to use ripgrep
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --smart-case'
+
+# Yarn added this, I think, but it might interfere with asdf
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
