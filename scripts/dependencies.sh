@@ -25,6 +25,9 @@ ln -s $HOME/.dotfiles/sublime "$HOME/Library/Application Support/Sublime Text 3/
 sudo puma-dev -setup
 puma-dev -install
 
+# kubectl
+kubectl krew install oidc-login
+
 # Third-party packages
 if [ -z $SAFE ]; then
   echo "No safe found. Skipping..."

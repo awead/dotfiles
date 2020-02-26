@@ -23,6 +23,7 @@ export SUBLIME_BIN="~/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 export LO_BIN="$HOME/Applications/LibreOffice.app/Contents/MacOS"
 export FOX_BIN="$HOME/Applications/Firefox.app/Contents/MacOS"
 export DF_BIN="$HOME/.dotfiles/bin"
+export KREW_BIN="$HOME/.krew/bin"
 
 # Homebrew Settings
 export HOMEBREW_NO_ANALYTICS=1
@@ -37,7 +38,7 @@ export POSTGRES_USER=`whoami`
 #
 # Look in Homebrew installs first, under /usr/local, then OSX binaries. Lastly, look in the
 # custom-install directories.
-PATH=/usr/local/bin:/usr/local/sbin:/opt/npm/bin:$PATH:$DROPBOX_BIN:$LATEX_BIN:$SUBLIME_BIN:$FOX_BIN:$LO_BIN:$DF_BIN
+PATH=/usr/local/bin:/usr/local/sbin:/opt/npm/bin:$PATH:$DROPBOX_BIN:$LATEX_BIN:$SUBLIME_BIN:$FOX_BIN:$LO_BIN:$DF_BIN:$KREW_BIN
 export PATH
 LOAD_LIB=$HOME/.dotfiles/lib
 export LOAD_LIB
