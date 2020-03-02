@@ -5,7 +5,7 @@
 
 # Ruby
 source asdf/install.sh
-source ruby/install.sh
+source ruby/install-all.sh
 
 # ClamAV
 cp /usr/local/etc/clamav/freshclam.conf.sample /usr/local/etc/clamav/freshclam.conf

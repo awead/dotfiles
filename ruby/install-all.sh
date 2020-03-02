@@ -1,16 +1,18 @@
 #!/bin/bash
 # --------------------------------------------------------------------------
-# Install a single ruby version with a correct set of default gems
+# Installs all rubies with appropriate default gems.
 # --------------------------------------------------------------------------
+
+RUBIES="2.3.7 2.4.6 2.6.3 2.6.5"
 
 if test ! $(which asdf); then
   echo "asdf isn't installed"
   exit 1;
 fi
 
-for version in ${1}
+# Install each Ruby version
+for version in ${RUBIES[@]}
 do
-  echo "Installing Ruby $version"
   asdf install ruby $version
   source $HOME/.asdf/asdf.sh
   asdf local ruby $version
@@ -29,3 +31,6 @@ do
   gem update --system
   gem install -Nf bundler
 done
+
+# Update gem credentials
+source scripts/rubygems.sh
