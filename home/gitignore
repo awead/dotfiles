@@ -14,3 +14,4 @@ public/development_repository
 .tags
 config/scholarsphere-client.yml
 config/application.yml
+vendor/cache
