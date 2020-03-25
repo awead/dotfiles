@@ -160,7 +160,7 @@ map <Leader>vz :call VimuxZoomRunner()<CR>
 
 " Vim-Test runs tests in vim, with tmux where applicable
 call minpac#add('janko/vim-test')
-nnoremap <silent> <Leader>r :call VimuxRunCommand("clear; bin/rspec " . bufname("%"))<CR>
+nnoremap <silent> <Leader>r :TestFile<CR>
 nnoremap <silent> <Leader>R :TestNearest<CR>
 nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>a :call VimuxRunCommand("clear; bin/rspec ")<CR>
