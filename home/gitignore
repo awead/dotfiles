@@ -15,3 +15,5 @@ public/development_repository
 config/scholarsphere-client.yml
 config/application.yml
 vendor/cache
+.envrc-local
+.envrc-docker
