@@ -48,6 +48,9 @@ vim +PackUpdate +qall
 rm -Rf $HOME/.git-templates
 ln -Fs $HOME/.dotfiles/home/git-templates $HOME/.git-templates
 
+# cheat
+source $HOME/cheat/install.sh
+
 # Create project directories
 mkdir -p $HOME/Projects/Github/aic-collections
 mkdir -p $HOME/Projects/Github/awead

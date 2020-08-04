@@ -1,0 +1,22 @@
+# Authorization: preface commands with a path to your config file
+KUBECONFIG=~/.kube/config-oidc-dev kubectl 
+
+# Get shell access
+kubectl exec -it scholarsphere-migration-5df9b6685f-8pdqs /bin/bash.
+
+# Delete a container
+kubectl delete po scholarsphere-migration-5bb99b6874-n8c7q
+
+# Copy a file to a container
+kubectl cp ~/Downloads/statistics.csv.gz scholarsphere-migration-67654cb6bf-rljd7:/app
+
+# View the logs from a container (and keep it open)
+kubectl logs scholarsphere-migration-5f89f6bf8f-b2g8w -f
+
+# Get a listing of the current containers (pods) for a given namespace
+kubectl get pods
+
+# Get a listing of all the current namespaces
+# Note: select a namespace with kubens
+kubectl get ns
+

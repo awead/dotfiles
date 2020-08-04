@@ -28,6 +28,7 @@ cask 'github'
 cask 'xquartz'
 
 brew 'atomicparsley'
+brew 'cheat'
 brew 'cmake'
 brew 'coreutils'
 brew 'ctags'
