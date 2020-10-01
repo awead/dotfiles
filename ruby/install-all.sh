@@ -3,7 +3,7 @@
 # Installs all rubies with appropriate default gems.
 # --------------------------------------------------------------------------
 
-RUBIES="2.4.6 2.5.7 2.6.3 2.6.5"
+RUBIES="2.7.1"
 
 if test ! $(which asdf); then
   echo "asdf isn't installed"
@@ -32,5 +32,3 @@ do
   gem install -Nf bundler
 done
 
-# Update gem credentials
-source scripts/rubygems.sh

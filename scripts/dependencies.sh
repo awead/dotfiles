@@ -4,22 +4,12 @@
 # --------------------------------------------------------------------------
 
 # Ruby
-source asdf/install.sh
-source ruby/install-all.sh
-
-# ClamAV
-cp /usr/local/etc/clamav/freshclam.conf.sample /usr/local/etc/clamav/freshclam.conf
-cp /usr/local/etc/clamav/clamd.conf.sample /usr/local/etc/clamav/clamd.conf
-perl -pi -e 's/^/#/ if /^Example/' /usr/local/etc/clamav/freshclam.conf
-freshclam
+# source asdf/install.sh
+# source ruby/install-all.sh
+# source scripts/rubygems.sh
 
 # Redis
 find /usr/local -name "*redis.plist" -exec cp '{}' $HOME/Library/LaunchAgents \;
-
-# Sublime settings
-rm -Rf "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
-mkdir -p "$HOME/Library/Application Support/Sublime Text 3/Packages"
-ln -s $HOME/.dotfiles/sublime "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
 # puma-dev
 sudo puma-dev -setup

@@ -15,6 +15,12 @@ OS X Setup
 * three-fingered drag
 * full disk access to: Terminal, bash (see https://github.com/mathiasbynens/dotfiles/issues/849)
 * update login picture
+* name computer
+
+### Installs
+
+* XCode
+* Dropbox
 
 ### Terminal
 
