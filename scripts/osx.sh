@@ -114,6 +114,10 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Don't show files on the Desktop
 defaults write com.apple.finder CreateDesktop false
 
+# Open new windows in the home directory
+defaults write com.apple.finder NewWindowTarget -string 'PfHm'
+defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME"
+
 #
 # Dock
 #
