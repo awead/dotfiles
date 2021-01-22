@@ -119,6 +119,12 @@ nnoremap <leader>9 :b9<CR>
 nnoremap <leader>j :bn<CR>
 nnoremap <leader>k :bp<CR>
 
+" Custom commands
+
+" Saves and (re)generates the Yard docs
+command -nargs=* Yard :w !bundle exec yard
+nnoremap <leader>y :Yard<CR>
+
 "
 " Vim plugins with Minpac
 "

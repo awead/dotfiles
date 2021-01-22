@@ -3,6 +3,7 @@ KUBECONFIG=~/.kube/config-oidc-dev kubectl
 
 # Get shell access
 kubectl exec -it scholarsphere-migration-5df9b6685f-8pdqs /bin/bash.
+kubectl exec -it deployment/scholarsphere -- /app/bin/vaultshell
 
 # Delete a container
 kubectl delete po scholarsphere-migration-5bb99b6874-n8c7q
