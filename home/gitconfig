@@ -26,8 +26,8 @@
   st = status
   s = stash -u
   cp = cherry-pick
-  mup = !git checkout master && git pull && git checkout -
-  mupr = !git checkout master && git pull && git checkout - && git rebase master
+  mup = !git checkout main && git pull && git checkout -
+  mupr = !git checkout main && git pull && git checkout - && git rebase main
   dup = !git checkout develop && git pull && git checkout -
   dupr = !git checkout develop && git pull && git checkout - && git rebase develop
   roll = !git add --all && git commit --amend --no-edit && bundle exec rubocop -P
