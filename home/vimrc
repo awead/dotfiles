@@ -125,6 +125,10 @@ nnoremap <leader>k :bp<CR>
 command -nargs=* Yard :w !bundle exec yard
 nnoremap <leader>y :Yard<CR>
 
+" Saves and (re)generates OpenAPI docs
+command -nargs=* Api :w !bundle exec yarn build-docs
+nnoremap <leader>o :Api<CR>
+
 "
 " Vim plugins with Minpac
 "
