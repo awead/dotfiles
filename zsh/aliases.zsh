@@ -23,6 +23,8 @@ alias ta="tmux attach -t"
 alias tn="tmux new -s"
 alias autocop="bundle exec rubocop -P -f fi | xargs bundle exec rubocop -a"
 alias plistbuddy="/usr/libexec/PlistBuddy"
+alias k="kubectl"
+alias dc="docker-compose" # NB: this overrides /usr/bin/dc which is a calculator program
 
 # Dev shortcuts
 alias fcrepo-start="bundle exec fcrepo_wrapper --config ~/.fcrepo_wrapper > /dev/null 2>&1 &"

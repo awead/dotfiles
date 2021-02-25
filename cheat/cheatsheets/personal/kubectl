@@ -1,23 +1,34 @@
 # Authorization: preface commands with a path to your config file
-KUBECONFIG=~/.kube/config-oidc-dev kubectl 
+
+  KUBECONFIG=~/.kube/config-oidc-dev
 
 # Get shell access
-kubectl exec -it scholarsphere-migration-5df9b6685f-8pdqs /bin/bash.
-kubectl exec -it deployment/scholarsphere -- /app/bin/vaultshell
+
+  kubectl exec -it scholarsphere-migration-5df9b6685f-8pdqs /bin/bash.
+  kubectl exec -it deployment/scholarsphere -- /app/bin/vaultshell
 
 # Delete a container
-kubectl delete po scholarsphere-migration-5bb99b6874-n8c7q
+  
+  kubectl delete po scholarsphere-migration-5bb99b6874-n8c7q
 
 # Copy a file to a container
-kubectl cp ~/Downloads/statistics.csv.gz scholarsphere-migration-67654cb6bf-rljd7:/app
+
+  kubectl cp ~/Downloads/statistics.csv.gz scholarsphere-migration-67654cb6bf-rljd7:/app
 
 # View the logs from a container (and keep it open)
-kubectl logs scholarsphere-migration-5f89f6bf8f-b2g8w -f
+  
+  kubectl logs scholarsphere-migration-5f89f6bf8f-b2g8w -f
 
 # Get a listing of the current containers (pods) for a given namespace
-kubectl get pods
+
+  kubectl get pods
 
 # Get a listing of all the current namespaces
 # Note: select a namespace with kubens
-kubectl get ns
 
+  kubectl get ns
+
+# Restarting
+
+  kubectl rollout restart deployment/scholarsphere
+  kubectl rollout status deployment/scholarsphere
