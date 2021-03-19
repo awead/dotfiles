@@ -32,3 +32,21 @@
 
   kubectl rollout restart deployment/scholarsphere
   kubectl rollout status deployment/scholarsphere
+
+# Port Forwarding
+
+Access a port on a pod. This is useful if you want to get to Solr or some other web service that's running in a
+container but isn't publicly available.
+
+  kubectl port-forward [container-name] [local-port]:[remote-port]
+
+Example: Connect to Solr's 8983 port, but use my *local* 9983 port:
+
+  kubectl port-forward scholarsphere-qa-solrcloud-0 9983:8983 
+
+# Envrironment Variables
+
+Get a listling of all the environment variables for a given container. This is useful if you need to see what settings
+are what, or if you need to get the credentials for a service.
+
+  kubectl exec [container-name]  -- /usr/bin/env
