@@ -16,6 +16,9 @@ export EDITOR=/usr/local/bin/vim
 # GPG
 export GPG_TTY=$(tty)
 
+# Kubernetes
+export KUBECONFIG=~/.kube/config-oidc-dev
+
 # Additional bin directories
 export DROPBOX_BIN="$HOME/Dropbox/bin"
 export LATEX_BIN="/usr/local/texlive/2013/bin/x86_64-darwin"
