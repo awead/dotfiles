@@ -56,5 +56,4 @@ mkdir -p $HOME/Projects/Github/aic-collections
 mkdir -p $HOME/Projects/Github/awead
 mkdir -p $HOME/Projects/Github/samvera
 mkdir -p $HOME/Projects/Github/samvera-labs
-mkdir -p $HOME/Projects/Github/psu-stewardship
 mkdir -p $HOME/Projects/Github/psu-libraries
