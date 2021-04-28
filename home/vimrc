@@ -172,12 +172,13 @@ map <Leader>vz :call VimuxZoomRunner()<CR>
 
 " Vim-Test runs tests in vim, with tmux where applicable
 call minpac#add('janko/vim-test')
-" let test#ruby#rspec#executable = 'docker-compose exec listener bundle exec rspec'
+"let test#ruby#rspec#executable = 'docker-compose exec listener bundle exec rspec'
 nnoremap <silent> <Leader>r :TestFile<CR>
 nnoremap <silent> <Leader>R :TestNearest<CR>
 nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>a :call VimuxRunCommand("clear; bin/rspec ")<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
+nnoremap <silent> <Leader>d :let test#ruby#rspec#executable = 'docker-compose exec listener bundle exec rspec'<CR>
 
 call minpac#add('christoomey/vim-tmux-navigator') " Navigate between vim and tmux
 call minpac#add('tpope/vim-bundler') " run bundler through vim
