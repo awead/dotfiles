@@ -1,67 +1,69 @@
 [user]
-	name = Adam Wead
-	email = awead@users.noreply.github.com
-	signingkey = AA1192A6DA05165D!
+  name = Adam Wead
+  email = awead@users.noreply.github.com
+  signingkey = AA1192A6DA05165D!
 [commit]
-	gpgsign = true
-	template = ~/.gitmessage
+  gpgsign = true
+  template = ~/.gitmessage
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim
+  excludesfile = ~/.gitignore
+  editor = vim
 [alias]
-	quick-stats = ! $HOME/.dotfiles/bin/git-quick-stats
-	d = difftool
-	sla = log --oneline --decorate --graph --all
-	lp = log --pretty=format:' %cd : %s [%cn]' --date=short
-	lpc = log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'
-	glog = log -E -i --grep
   aa = add --all
+  alias = "!git config --get-regexp alias"
   ap = add --patch
-  b = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
-  co = checkout
-  p = push -u
-  pf = push -u --force-with-lease
-  st = status
-  s = stash -u
-  cp = cherry-pick
-  mup = !git checkout main && git pull && git checkout -
-  mupr = !git checkout main && git pull && git checkout - && git rebase main
-  dup = !git checkout develop && git pull && git checkout -
-  dupr = !git checkout develop && git pull && git checkout - && git rebase develop
-  roll = !git add --all && git commit --amend --no-edit && bundle exec rubocop -P
   ca = !git commit --amend && bundle exec rubocop -P
   car = !git commit --amend --no-edit && bundle exec rubocop -P
   ci = !git commit -v && bundle exec rubocop -P
-  wipit = !git add --all && git commit -m"wip" && bundle exec rubocop -P
-  ppt = for-each-ref --sort=taggerdate --format '%(color:blue)%(refname) %(color:black)%(taggerdate)' refs/tags
+  co = checkout
+  cp = cherry-pick
+  d = difftool
+  dup = !git checkout develop && git pull && git checkout -
+  dupr = !git checkout develop && git pull && git checkout - && git rebase develop
+  gbr = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
   gem-diff = "!sh -c \"git diff -w `bundle show $1`/$2 $2\""
+  glog = log -E -i --grep
+  lp = log --pretty=format:' %cd : %s [%cn]' --date=short
+  lpc = log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'
+  mup = !git checkout main && git pull && git checkout -
+  mupr = !git checkout main && git pull && git checkout - && git rebase main
+  p = push -u
+  pf = push -u --force-with-lease
+  ppt = for-each-ref --sort=taggerdate --format '%(color:blue)%(refname) %(color:black)%(taggerdate)' refs/tags
+  quick-stats = ! $HOME/.dotfiles/bin/git-quick-stats
+  recent = branch --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:white)%(color:bold)%(refname:short)\"
+  roll = !git add --all && git commit --amend --no-edit && bundle exec rubocop -P
+  s = stash -u
+  sla = log --oneline --decorate --graph --all
+  st = status
+  wipit = !git add --all && git commit -m"wip" && bundle exec rubocop -P
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [merge]
-	tool = extMerge
-	ff = only
+  tool = extMerge
+  ff = only
 [mergetool "extMerge"]
-	cmd = extMerge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-	trustExitCode = false
+  cmd = extMerge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+  trustExitCode = false
 [difftool]
-	prompt = false
+  prompt = false
 [push]
   default = current
 [fetch]
   prune = true
 [pretty]
-	csv = %h%x09%an%x09%ad%x09%s
+  csv = %h%x09%an%x09%ad%x09%s
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
 [pager]
-  branch = false
+ branch = false
 [init]
-	templatedir = ~/.git-templates
-        defaultBranch = main
+  templatedir = ~/.git-templates
+  defaultBranch = main
 [pull]
-	ff = only
+  ff = only

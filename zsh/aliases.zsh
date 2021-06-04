@@ -1,7 +1,6 @@
 # Aliases
 alias ls='ls -Gh'
 alias firefox="~/Applications/Firefox.app/Contents/MacOS/firefox-bin"
-alias git-log-pretty='git log --pretty=format:" %cd : %s [%cn]" --date=short'
 alias be-rspec='bundle exec rspec'
 alias be-rake='bundle exec rake'
 alias be-r='bundle exec rubocop'
@@ -18,7 +17,6 @@ alias metadata-listener='cd ~/Projects/Github/psu-libraries/metadata-listener'
 alias catalog='cd ~/Projects/Github/psu-libraries/psulib_blacklight'
 alias traject='cd ~/Projects/Github/psu-libraries/psulib_traject'
 alias dotfiles='cd ~/.dotfiles'
-alias g='git status'
 alias tmux="TERM=screen-256color-bce tmux"
 alias tls="tmux ls"
 alias ta="tmux attach -t"
@@ -44,3 +42,9 @@ alias chromium="~/Applications/Chromium.app/Contents/MacOS/Chromium"
 # Postgres
 alias pg-start="pg_ctl -D $PG_HOME -l $PG_HOME/server.log start"
 alias pg-stop="pg_ctl -D $PG_HOME stop -s -m fast"
+
+# Git
+# Note: Most of these are to override the zsh git plugin
+# See: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+alias g='git status'
+alias gb='git recent'
