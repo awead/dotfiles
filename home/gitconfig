@@ -23,7 +23,7 @@
   dup = !git checkout develop && git pull && git checkout -
   dupr = !git checkout develop && git pull && git checkout - && git rebase develop
   gbr = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
-  gem-diff = "!sh -c \"git diff -w `bundle show $1`/$2 $2\""
+  gem-diff = "!sh -c \"git diff -w `bundle info --path $1`/$2 $2\""
   glog = log -E -i --grep
   lp = log --pretty=format:' %cd : %s [%cn]' --date=short
   lpc = log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'
