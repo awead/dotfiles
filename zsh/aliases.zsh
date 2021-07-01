@@ -7,15 +7,6 @@ alias be-r='bundle exec rubocop'
 alias be-ra='bundle exec rubocop -a'
 alias date-iso-8601='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 alias eject-data='hdiutil eject /Volumes/Data'
-alias cho='cd ~/Projects/Github/psu-libraries/cho'
-alias cho-vue='cd ~/Projects/Github/psu-libraries/cho-vue'
-alias psu-libraries='cd ~/Projects/Github/psu-libraries'
-alias ss='cd ~/Projects/Github/psu-libraries/scholarsphere'
-alias s-config='cd ~/Projects/Github/psu-libraries/scholarsphere-config'
-alias s-client='cd ~/Projects/Github/psu-libraries/scholarsphere-client'
-alias metadata-listener='cd ~/Projects/Github/psu-libraries/metadata-listener'
-alias catalog='cd ~/Projects/Github/psu-libraries/psulib_blacklight'
-alias traject='cd ~/Projects/Github/psu-libraries/psulib_traject'
 alias dotfiles='cd ~/.dotfiles'
 alias tmux="TERM=screen-256color-bce tmux"
 alias tls="tmux ls"
@@ -25,6 +16,15 @@ alias autocop="bundle exec rubocop -P -f fi | xargs bundle exec rubocop -a"
 alias plistbuddy="/usr/libexec/PlistBuddy"
 alias k="kubectl"
 alias dc="docker-compose" # NB: this overrides /usr/bin/dc which is a calculator program
+
+# Github repos
+alias psu-libraries='cd ~/Projects/Github/psu-libraries'
+alias ss='cd ~/Projects/Github/psu-libraries/scholarsphere'
+alias catalog='cd ~/Projects/Github/psu-libraries/psulib_blacklight'
+alias traject='cd ~/Projects/Github/psu-libraries/psulib_traject'
+alias metadata-listener='cd ~/Projects/Github/psu-libraries/metadata-listener'
+alias s-config='cd ~/Projects/Github/psu-libraries/scholarsphere-config'
+alias s-client='cd ~/Projects/Github/psu-libraries/scholarsphere-client'
 
 # Dev shortcuts
 alias fcrepo-start="bundle exec fcrepo_wrapper --config ~/.fcrepo_wrapper > /dev/null 2>&1 &"
