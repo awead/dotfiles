@@ -18,3 +18,4 @@ vendor/cache
 .envrc-local
 .envrc-docker
 .develop_node_modules
+.envrc
