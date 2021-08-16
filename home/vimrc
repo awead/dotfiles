@@ -184,7 +184,7 @@ call minpac#add('christoomey/vim-tmux-navigator') " Navigate between vim and tmu
 call minpac#add('tpope/vim-bundler') " run bundler through vim
 call minpac#add('tpope/vim-endwise') " adds 'end' intelligently in ruby
 call minpac#add('tpope/vim-eunuch') " integration with unix commands
-call minpac#add('tpope/vim-fugitive') " git integration
+"call minpac#add('tpope/vim-fugitive') " git integration
 call minpac#add('tpope/vim-projectionist') " semantically browse projects
 call minpac#add('tpope/vim-rails') " rails integration
 call minpac#add('tpope/vim-rake') " rake integration
