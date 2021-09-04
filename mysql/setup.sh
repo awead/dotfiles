@@ -9,10 +9,10 @@ if test ! $(which mysql); then
 fi
 
 killall mysqld
-rm -Rf /usr/local/var/mysql
-rm -Rf /usr/local/etc/my.cnf.d
-mkdir /usr/local/var/mysql
-mkdir /usr/local/etc/my.cnf.d
+rm -Rf $HOMEBREW_PREFIX/var/mysql
+rm -Rf $HOMEBREW_PREFIX/etc/my.cnf.d
+mkdir $HOMEBREW_PREFIX/var/mysql
+mkdir $HOMEBREW_PREFIX/etc/my.cnf.d
 mysqld --initialize-insecure --explicit_defaults_for_timestamp
 mysql.server start
 mysql_secure_installation

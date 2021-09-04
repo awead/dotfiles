@@ -40,7 +40,7 @@ git clone https://github.com/k-takata/minpac.git $HOME/.vim/pack/minpac/opt/minp
 vim +PackUpdate +qall
 
 # fzf config
-/usr/local/opt/fzf/install --all 
+$HOMEBREW_PREFIX/opt/fzf/install --all 
 
 # git
 rm -Rf $HOME/.git-templates
@@ -50,8 +50,4 @@ ln -Fs $HOME/.dotfiles/home/git-templates $HOME/.git-templates
 source $HOME/cheat/install.sh
 
 # Create project directories
-mkdir -p $HOME/Projects/Github/aic-collections
 mkdir -p $HOME/Projects/Github/awead
-mkdir -p $HOME/Projects/Github/samvera
-mkdir -p $HOME/Projects/Github/samvera-labs
-mkdir -p $HOME/Projects/Github/psu-libraries

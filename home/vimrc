@@ -145,7 +145,7 @@ command! PackClean call minpac#clean()
 " * sets up the local fzf command
 " * installs the plugin
 " * activate with Ctrl-P
-set rtp+=/usr/local/opt/fzf
+set rtp+=$HOMEBREW_PREFIX/opt/fzf
 call minpac#add('junegunn/fzf.vim')
 nnoremap <C-p> :<C-u>FZF<CR>
 

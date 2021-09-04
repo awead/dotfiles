@@ -11,7 +11,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # Env
 export DUO_PASSCODE=push
-export EDITOR=/usr/local/bin/vim
+export EDITOR=$HOMEBREW_PREFIX/bin/vim
 
 # GPG
 export GPG_TTY=$(tty)
@@ -21,7 +21,7 @@ export KUBECONFIG=~/.kube/config-oidc-dev
 
 # Additional bin directories
 export DROPBOX_BIN="$HOME/Dropbox/bin"
-export LATEX_BIN="/usr/local/texlive/2013/bin/x86_64-darwin"
+export LATEX_BIN="$HOMEBREW_PREFIX/texlive/2013/bin/x86_64-darwin"
 export SUBLIME_BIN="~/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 export LO_BIN="$HOME/Applications/LibreOffice.app/Contents/MacOS"
 export FOX_BIN="$HOME/Applications/Firefox.app/Contents/MacOS"
@@ -34,14 +34,14 @@ export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS="--require-sha --appdir=~/Applications"
 
 # Postgres
-export PG_HOME="/usr/local/var/postgres"
+export PG_HOME="$HOMEBREW_PREFIX/var/postgres"
 export POSTGRES_USER=`whoami`
 
 # Pathing
 #
-# Look in Homebrew installs first, under /usr/local, then OSX binaries. Lastly, look in the
+# Look in Homebrew installs first, under $HOMEBREW_PREFIX, then OSX binaries. Lastly, look in the
 # custom-install directories.
-PATH=/usr/local/bin:/usr/local/sbin:/opt/npm/bin:$PATH:$DROPBOX_BIN:$LATEX_BIN:$SUBLIME_BIN:$FOX_BIN:$LO_BIN:$DF_BIN:$KREW_BIN
+PATH=$HOMEBREW_PREFIX/bin:/usr/local/sbin:/opt/npm/bin:$PATH:$DROPBOX_BIN:$LATEX_BIN:$SUBLIME_BIN:$FOX_BIN:$LO_BIN:$DF_BIN:$KREW_BIN
 export PATH
 LOAD_LIB=$HOME/.dotfiles/lib
 export LOAD_LIB
@@ -72,8 +72,8 @@ FCREPO_TEST_PORT=8986 && export FCREPO_TEST_PORT
 # want to fully use the version from Homebrew, uncomment the following.
 # Note: This is taken from  $ brew link openssl and I've seen reports to the effect
 # that MacOS doesn't even use the CPPFLAGS and LDFLAGS, so this may not be worth it:
-# PATH=/usr/local/opt/openssl/bin:$PATH
+# PATH=$HOMEBREW_PREFIX/opt/openssl/bin:$PATH
 # export PATH
-# export LDFLAGS="-L/usr/local/opt/openssl/lib"
-# export CPPFLAGS="-I/usr/local/opt/openssl/include"
-# export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+# export LDFLAGS="-L$HOMEBREW_PREFIX/opt/openssl/lib"
+# export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/openssl/include"
+# export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/openssl/lib/pkgconfig"

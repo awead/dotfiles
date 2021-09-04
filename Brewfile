@@ -1,20 +1,18 @@
 # Brewfile
 # git brew bundle
 
-tap 'homebrew/cask'
 tap 'homebrew/bundle'
+tap 'homebrew/cask'
+tap 'homebrew/cask-versions'
 tap 'homebrew/core'
 tap 'homebrew/services'
-tap 'homebrew/cask-versions'
+tap 'puma/puma'
 
 cask_args appdir: '~/Applications'
 cask 'docker'
-cask 'firefox'
 cask 'handbrake'
-cask 'keybase'
 cask 'makemkv'
 cask 'moom'
-cask 'sublime-text'
 cask 'vlc'
 cask 'github'
 
@@ -35,7 +33,7 @@ brew 'lolcat'
 brew 'marcli'
 brew 'mkvtoolnix'
 brew 'postgresql'
-brew 'puma/puma/puma-dev'
+brew 'puma-dev'
 brew 'redis'
 brew 'ripgrep'
 brew 'tmux'
@@ -43,5 +41,4 @@ brew 'tree'
 brew 'vim'
 brew 'wget'
 brew 'yasm'
-brew 'zsh'
 

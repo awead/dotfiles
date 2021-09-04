@@ -9,8 +9,8 @@ if test ! $(which mysql); then
 fi
 
 killall mysqld
-rm -Rf /usr/local/var/mysql
-mkdir /usr/local/var/mysql
+rm -Rf $HOMEBREW_PREFIX/var/mysql
+mkdir $HOMEBREW_PREFIX/var/mysql
 mysql_install_db
 mysql.server start
 mysql -u root --skip-password < $HOME/.dotfiles/mariadb/init

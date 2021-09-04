@@ -15,7 +15,8 @@ then
   xcode-select --install
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   sudo su -
-  chown -R awead:staff /usr/local/*
+  cd $HOMEBREW_PREFIX
+  chown -R `whoami`:staff *
 else
   echo "Checking Homebrew"
   brew doctor
