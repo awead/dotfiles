@@ -25,6 +25,7 @@ alias traject='cd ~/Projects/Github/psu-libraries/psulib_traject'
 alias metadata-listener='cd ~/Projects/Github/psu-libraries/metadata-listener'
 alias s-config='cd ~/Projects/Github/psu-libraries/scholarsphere-config'
 alias s-client='cd ~/Projects/Github/psu-libraries/scholarsphere-client'
+alias rmd='cd ~/Projects/Github/psu-stewardship/researcher-metadata'
 
 # Dev shortcuts
 alias fcrepo-start="bundle exec fcrepo_wrapper --config ~/.fcrepo_wrapper > /dev/null 2>&1 &"
