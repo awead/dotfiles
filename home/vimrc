@@ -118,6 +118,11 @@ nnoremap <leader>8 :b8<CR>
 nnoremap <leader>9 :b9<CR>
 nnoremap <leader>j :bn<CR>
 nnoremap <leader>k :bp<CR>
+nnoremap <leader>b :<C-u>Buffers<CR>
+
+" Tags
+nnoremap <leader>t :<C-u>Tags<CR>
+nnoremap <leader>T :<C-u>BTags<CR>
 
 " Custom commands
 
@@ -145,9 +150,9 @@ command! PackClean call minpac#clean()
 " * sets up the local fzf command
 " * installs the plugin
 " * activate with Ctrl-P
-set rtp+=$HOMEBREW_PREFIX/opt/fzf
+call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
-nnoremap <C-p> :<C-u>FZF<CR>
+nnoremap <C-p> :<C-u>Files<CR>
 
 call minpac#add('benmills/vimux') " allows tests to execute in another tmux pane
 let g:VimuxHeight = "33"
@@ -171,7 +176,7 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 map <Leader>vz :call VimuxZoomRunner()<CR>
 
 " Vim-Test runs tests in vim, with tmux where applicable
-call minpac#add('janko/vim-test')
+call minpac#add('vim-test/vim-test')
 "let test#ruby#rspec#executable = 'docker-compose exec listener bundle exec rspec'
 nnoremap <silent> <Leader>r :TestFile<CR>
 nnoremap <silent> <Leader>R :TestNearest<CR>
@@ -184,7 +189,7 @@ call minpac#add('christoomey/vim-tmux-navigator') " Navigate between vim and tmu
 call minpac#add('tpope/vim-bundler') " run bundler through vim
 call minpac#add('tpope/vim-endwise') " adds 'end' intelligently in ruby
 call minpac#add('tpope/vim-eunuch') " integration with unix commands
-"call minpac#add('tpope/vim-fugitive') " git integration
+call minpac#add('tpope/vim-fugitive') " git integration
 call minpac#add('tpope/vim-projectionist') " semantically browse projects
 call minpac#add('tpope/vim-rails') " rails integration
 call minpac#add('tpope/vim-rake') " rake integration
