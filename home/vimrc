@@ -192,6 +192,13 @@ nnoremap <silent> <Leader>a :call VimuxRunCommand("clear; bin/rspec ")<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
 nnoremap <silent> <Leader>d :let test#ruby#rspec#executable = 'docker-compose exec listener bundle exec rspec'<CR>
 
+" NerdTree for tree navigation of the current directory
+call minpac#add('preservim/nerdtree')
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 call minpac#add('christoomey/vim-tmux-navigator') " Navigate between vim and tmux
 call minpac#add('tpope/vim-bundler') " run bundler through vim
 call minpac#add('tpope/vim-endwise') " adds 'end' intelligently in ruby
