@@ -11,7 +11,7 @@ alias dotfiles='cd ~/.dotfiles'
 alias tmux="TERM=screen-256color-bce tmux"
 alias tls="tmux ls"
 alias ta="tmux attach -t"
-alias tn="tmux new -s"
+alias tn="TERM=screen-256color-bce tmux -v new -s"
 alias autocop="bundle exec rubocop -P -f fi | xargs bundle exec rubocop -a"
 alias plistbuddy="/usr/libexec/PlistBuddy"
 alias k="kubectl"
