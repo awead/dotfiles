@@ -1,5 +1,14 @@
---exclude=.git
---exclude=log
 --recurse=yes
 --tag-relative=yes
---languages=ruby
+
+--languages=ruby,javascript
+
+--exclude=.git
+--exclude=coverage
+--exclude=fixtures
+--exclude=log
+--exclude=node_modules
+--exclude=solr
+--exclude=tmp
+--exclude=vendor
+

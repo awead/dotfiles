@@ -2,4 +2,4 @@
 #
 # Git post-commit hook
 
-ctags -f .tags $(bundle list --paths) .
+ctags -f .tags .
