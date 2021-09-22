@@ -1,19 +1,28 @@
-set encoding=utf-8
+" -----------------------------------------------------------------------------
+"
+" VIM Configuration
+"
+" -----------------------------------------------------------------------------
 
+" -----------------------------------------------------------------------------
+" Load plugins using pathogen (see vim/install.sh for specifics)
+" -----------------------------------------------------------------------------
+execute pathogen#infect()
+
+" -----------------------------------------------------------------------------
+" Basic Settings
+" -----------------------------------------------------------------------------
+
+set autoindent
 set autowrite     " Automatically :write before running commands
 set backspace=2   " Backspace deletes like most programs in insert mode
+set colorcolumn=120
+set encoding=utf-8
+set expandtab
 set history=50
 set hlsearch
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
-set statusline=  
-set statusline+=%n\                     " buffer number  
-set statusline+=%f\                          " filename   
-set statusline+=%h%m%r%w                     " status flags  
-set statusline+=%=                           " right align remainder  
-set statusline+=0x%-8B                       " character value  
-set statusline+=%-14(%l,%c%V%)               " line, character  
-set statusline+=%<%P                         " file position 
 set modelines=0   " Disable modelines as a security precaution
 set nobackup
 set nomodeline
@@ -21,21 +30,67 @@ set noswapfile
 set nowritebackup
 set nu
 set ruler
-set showcmd       " display incomplete commands
-set tags+=.tags
-set textwidth=120
-set colorcolumn=120
-set tabstop=8
-set softtabstop=0
-set expandtab
 set shiftwidth=2
-set autoindent
+set showcmd       " display incomplete commands
 set smartindent
 set smarttab
+set softtabstop=0
 set spell spelllang=en_us
-autocmd FileType gitcommit setlocal spell
+set tabstop=8
+set textwidth=120
 
-" Color scheme
+" Customized status line
+set statusline=  
+set statusline+=%n\              " buffer number  
+set statusline+=%f\              " filename   
+set statusline+=%h%m%r%w         " status flags  
+set statusline+=%=               " right align remainder  
+set statusline+=0x%-8B           " character value  
+set statusline+=%-14(%l,%c%V%)   " line, character  
+set statusline+=%<%P             " file position 
+
+" Enable syntax highlighting
+syntax on
+
+" Vim's internal grep commands use `rg`
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
+" -----------------------------------------------------------------------------
+" Git Integration
+"   * ensure commit messages are no longer than 72 characters
+"   * enable spell checking for commit messages
+" -----------------------------------------------------------------------------
+
+au BufRead,BufNewFile setlocal textwidth=72
+au FileType gitcommit setlocal textwidth=72
+autocmd FileType gitcommit setlocal spell
+ 
+" -----------------------------------------------------------------------------
+" CTags
+"   * add our local tags file
+"   * look through installed gems for additional tag files
+"
+" Note: Requires a git post-commit hook
+"       (see home/git-templates/hooks/post-commit)
+" -----------------------------------------------------------------------------
+
+set tags+=.tags
+
+autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
+      \ pathogen#split(&tags) +
+      \ map(split(system('bundle list --paths')), 'v:val."/tags"')))
+
+" -----------------------------------------------------------------------------
+" Colors
+"   * use only underlining for misspelled words
+"   * set our color scheme
+"
+" Note: Order is important. Setting spellcheck colors must come first.
+" -----------------------------------------------------------------------------
+
 augroup my_spellcheck_colors
   autocmd!
   autocmd ColorScheme *
@@ -71,40 +126,18 @@ augroup my_spellcheck_colors
         \   gui=Undercurl
         \   guisp=Red
 augroup END
+
 colorscheme zellner
 
-" Enable syntax highlighting
-syntax on
-
-" Leader prefix to create local versions for commands
-let mapleader = " "
-
-" Set text width for well-formatted commit messages
-au BufRead,BufNewFile setlocal textwidth=72
-au FileType gitcommit setlocal textwidth=72
-
-" Tree Navigation
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-
-"
+" -----------------------------------------------------------------------------
 " Shortcuts
-"
+" -----------------------------------------------------------------------------
+
+" Use a space as the leader prefix to create local versions for commands
+let mapleader = " "
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
-
-" Move around splits like you do normal navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-" Vim's internal grep commands use `rg`
-if executable("rg")
-  set grepprg=rg\ --vimgrep\ --no-heading
-  set grepformat=%f:%l:%c:%m,%f:%l:%m
-endif
 
 " Buffers
 nnoremap <leader>1 :b1<CR>
@@ -118,20 +151,22 @@ nnoremap <leader>8 :b8<CR>
 nnoremap <leader>9 :b9<CR>
 nnoremap <leader>j :bn<CR>
 nnoremap <leader>k :bp<CR>
-nnoremap <leader>b :<C-u>Buffers<CR>
-
-" Tags
-nnoremap <leader>t :<C-u>Tags<CR>
-nnoremap <leader>T :<C-u>BTags<CR>
 
 " Splits
+" Move around splits like you do normal navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 " Maps arrow keys to resize windows
 nnoremap <leader><Left> :vertical resize -5<CR>
 nnoremap <leader><Right> :vertical resize +5<CR>
 nnoremap <leader><Up> :resize -5<CR>
 nnoremap <leader><Down> :resize +5<CR>
 
+" -----------------------------------------------------------------------------
 " Custom commands
+" -----------------------------------------------------------------------------
 
 " Saves and (re)generates the Yard docs
 command -nargs=* Yard :w !bundle exec yard
@@ -141,50 +176,38 @@ nnoremap <leader>y :Yard<CR>
 command -nargs=* Api :w !bundle exec yarn build-docs
 nnoremap <leader>o :Api<CR>
 
+" -----------------------------------------------------------------------------
 "
-" Vim plugins with Minpac
+" Plugin Settings
 "
+" -----------------------------------------------------------------------------
 
-" Initialize the package manager
-packadd minpac
-call minpac#init()
+" -----------------------------------------------------------------------------
+" FZF: fuzzy searching
+" -----------------------------------------------------------------------------
 
-" Create some commands to more easily use minpac
-command! PackUpdate call minpac#update()
-command! PackClean call minpac#clean()
-
-" FZF plugin for fuzzy searching
-" * sets up the local fzf command
-" * installs the plugin
-" * activate with Ctrl-P
-call minpac#add('junegunn/fzf')
-call minpac#add('junegunn/fzf.vim')
 nnoremap <C-p> :<C-u>Files<CR>
+nnoremap <leader>b :<C-u>Buffers<CR>
+nnoremap <leader>t :<C-u>Tags<CR>
+nnoremap <leader>T :<C-u>BTags<CR>
 
-call minpac#add('benmills/vimux') " allows tests to execute in another tmux pane
+" -----------------------------------------------------------------------------
+" Vimux: allows tests to execute in another tmux pane
+" -----------------------------------------------------------------------------
+
 let g:VimuxHeight = "33"
 
-" Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
-
-" Run last command executed by VimuxRunCommand
 map <Leader>vl :VimuxRunLastCommand<CR>
-
-" Inspect runner pane
 map <Leader>vi :VimuxInspectRunner<CR>
- 
-" Close vim tmux runner opened by VimuxRunCommand
 map <Leader>vq :VimuxCloseRunner<CR>
- 
-" Interrupt any command running in the runner pane
 map <Leader>vx :VimuxInterruptRunner<CR>
-
-" Zoom the runner pane (use <bind-key> z to restore runner pane)
 map <Leader>vz :call VimuxZoomRunner()<CR>
 
-" Vim-Test runs tests in vim, with tmux where applicable
-call minpac#add('vim-test/vim-test')
-"let test#ruby#rspec#executable = 'docker-compose exec listener bundle exec rspec'
+" -----------------------------------------------------------------------------
+" Vim-Test: runs tests in vim, with tmux where applicable
+" -----------------------------------------------------------------------------
+
 nnoremap <silent> <Leader>r :TestFile<CR>
 nnoremap <silent> <Leader>R :TestNearest<CR>
 nnoremap <silent> <Leader>l :TestLast<CR>
@@ -192,29 +215,12 @@ nnoremap <silent> <Leader>a :call VimuxRunCommand("clear; bin/rspec ")<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
 nnoremap <silent> <Leader>d :let test#ruby#rspec#executable = 'docker-compose exec listener bundle exec rspec'<CR>
 
-" NerdTree for tree navigation of the current directory
-call minpac#add('preservim/nerdtree')
+" -----------------------------------------------------------------------------
+" NerdTree: tree navigation of the current directory
+" -----------------------------------------------------------------------------
+
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-call minpac#add('christoomey/vim-tmux-navigator') " Navigate between vim and tmux
-call minpac#add('tpope/vim-bundler') " run bundler through vim
-call minpac#add('tpope/vim-endwise') " adds 'end' intelligently in ruby
-call minpac#add('tpope/vim-eunuch') " integration with unix commands
-call minpac#add('tpope/vim-fugitive') " git integration
-call minpac#add('tpope/vim-projectionist') " semantically browse projects
-call minpac#add('tpope/vim-rails') " rails integration
-call minpac#add('tpope/vim-rake') " rake integration
-call minpac#add('tpope/vim-repeat') " makes . command work with fancy cmds
-call minpac#add('tpope/vim-sensible') " run bundler through vim
-call minpac#add('tpope/vim-surround') " surround stuff with other stuff
-call minpac#add('tpope/vim-unimpaired') " pairs of commands that do stuff
-call minpac#add('vim-ruby/vim-ruby') " ruby integration
-call minpac#add('vim-scripts/tComment') " quickly comment lines
-"call minpac#add('w0rp/ale') " asynchronous linting
-call minpac#add('machakann/vim-highlightedyank') " Highlight yanked text
-call minpac#add('mtth/scratch.vim') " easy  scratch buffer
-call minpac#add('pangloss/vim-javascript') " Javascript syntax
-call minpac#add('bcicen/vim-jfmt') " JSON formatter
