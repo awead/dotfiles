@@ -124,6 +124,13 @@ nnoremap <leader>b :<C-u>Buffers<CR>
 nnoremap <leader>t :<C-u>Tags<CR>
 nnoremap <leader>T :<C-u>BTags<CR>
 
+" Splits
+" Maps arrow keys to resize windows
+nnoremap <leader><Left> :vertical resize -5<CR>
+nnoremap <leader><Right> :vertical resize +5<CR>
+nnoremap <leader><Up> :resize -5<CR>
+nnoremap <leader><Down> :resize +5<CR>
+
 " Custom commands
 
 " Saves and (re)generates the Yard docs
