@@ -11,6 +11,7 @@ cd $HOME/.vim/bundle
 git clone https://github.com/bcicen/vim-jfmt.git
 git clone https://github.com/benmills/vimux.git
 git clone https://github.com/christoomey/vim-tmux-navigator.git
+git clone https://github.com/danchoi/ri.vim
 git clone https://github.com/junegunn/fzf.git
 git clone https://github.com/junegunn/fzf.vim.git
 git clone https://github.com/machakann/vim-highlightedyank.git

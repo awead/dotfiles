@@ -243,3 +243,12 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+" -----------------------------------------------------------------------------
+" RI: Search Ruby documentation via ri
+" -----------------------------------------------------------------------------
+
+let g:ri_no_mappings=1
+
+command -nargs=* Ri :call ri#OpenSearchPrompt(0)<CR>
+command -nargs=* RiV :call ri#OpenSearchPrompt(1)<CR>
+
