@@ -185,6 +185,16 @@ nnoremap <leader>y :Yard<CR>
 command -nargs=* Api :w !bundle exec yarn build-docs
 nnoremap <leader>o :Api<CR>
 
+" View coverage report
+function Coverage()
+  if isdirectory('coverage') == 1
+    call system('open coverage/index.html')
+  else
+    echo 'No coverage report found'
+  endif
+endfunction
+command -nargs=* Coverage :call Coverage()
+
 " -----------------------------------------------------------------------------
 "
 " Plugin Settings
