@@ -64,24 +64,33 @@ endif
 "   * enable spell checking for commit messages
 " -----------------------------------------------------------------------------
 
-au BufRead,BufNewFile setlocal textwidth=72
-au FileType gitcommit setlocal textwidth=72
+autocmd BufRead,BufNewFile setlocal textwidth=72
+autocmd FileType gitcommit setlocal textwidth=72
 autocmd FileType gitcommit setlocal spell
  
 " -----------------------------------------------------------------------------
 " CTags
-"   * add our local tags file
-"   * look through installed gems for additional tag files
+"
+" Adds local tags and a "tags" directory from every included gem via bundler.
+" Previously, this was done via an autocmd FileType ruby, but it was behaving
+" strangely. With this implementation, it assumes we have a .bundle directory
+" and adds all the directories at runtime. It's possible this will behave
+" strangely when switching to different directories in the same sessions, but
+" I usually don't do that.
 "
 " Note: Requires a git post-commit hook
 "       (see home/git-templates/hooks/post-commit)
 " -----------------------------------------------------------------------------
 
-set tags+=.tags
+function! BundleTagPaths() abort
+  if isdirectory('.bundle') == 1
+    return map(split(system('bundle list --paths')), 'v:val."/tags"')
+  else
+    return []
+  endif
+endfunction
 
-autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
-      \ pathogen#split(&tags) +
-      \ map(split(system('bundle list --paths')), 'v:val."/tags"')))
+let &tags= pathogen#legacyjoin(pathogen#uniq(['tags', '.tags'] + BundleTagPaths()))
 
 " -----------------------------------------------------------------------------
 " Colors
