@@ -211,30 +211,6 @@ nnoremap <leader>t :<C-u>Tags<CR>
 nnoremap <leader>T :<C-u>BTags<CR>
 
 " -----------------------------------------------------------------------------
-" Vimux: allows tests to execute in another tmux pane
-" -----------------------------------------------------------------------------
-
-let g:VimuxHeight = "33"
-
-map <Leader>vp :VimuxPromptCommand<CR>
-map <Leader>vl :VimuxRunLastCommand<CR>
-map <Leader>vi :VimuxInspectRunner<CR>
-map <Leader>vq :VimuxCloseRunner<CR>
-map <Leader>vx :VimuxInterruptRunner<CR>
-map <Leader>vz :call VimuxZoomRunner()<CR>
-
-" -----------------------------------------------------------------------------
-" Vim-Test: runs tests in vim, with tmux where applicable
-" -----------------------------------------------------------------------------
-
-nnoremap <silent> <Leader>r :TestFile<CR>
-nnoremap <silent> <Leader>R :TestNearest<CR>
-nnoremap <silent> <Leader>l :TestLast<CR>
-nnoremap <silent> <Leader>a :call VimuxRunCommand("clear; bin/rspec ")<CR>
-nnoremap <silent> <Leader>gt :TestVisit<CR>
-nnoremap <silent> <Leader>d :let test#ruby#rspec#executable = 'docker-compose exec listener bundle exec rspec'<CR>
-
-" -----------------------------------------------------------------------------
 " NerdTree: tree navigation of the current directory
 " -----------------------------------------------------------------------------
 
@@ -251,4 +227,56 @@ let g:ri_no_mappings=1
 
 command -nargs=* Ri :call ri#OpenSearchPrompt(0)<CR>
 command -nargs=* RiV :call ri#OpenSearchPrompt(1)<CR>
+
+" -----------------------------------------------------------------------------
+" Vimux: allows tests to execute in another tmux pane
+" -----------------------------------------------------------------------------
+
+let g:VimuxHeight = "33"
+
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
+map <Leader>vi :VimuxInspectRunner<CR>
+map <Leader>vq :VimuxCloseRunner<CR>
+map <Leader>vx :VimuxInterruptRunner<CR>
+map <Leader>vz :call VimuxZoomRunner()<CR>
+ 
+" -----------------------------------------------------------------------------
+" Vim-Rails
+"   * custom projections for Rails components
+" -----------------------------------------------------------------------------
+
+let g:rails_projections = {
+    \ "app/components/*.rb": {
+    \   "type": "component",
+    \   "alternate": [
+    \     "app/components/{}.html.erb",
+    \     "spec/components/{}_spec.rb"
+    \   ]
+    \ },
+    \ "app/components/*.html.erb": {
+    \   "type": "component",
+    \   "alternate": [
+    \     "spec/components/{}_spec.rb",
+    \     "app/components/{}.rb"
+    \   ]
+    \ },
+    \ "spec/components/*_spec.rb": {
+    \   "type": "component",
+    \   "alternate": [
+    \     "app/components/{}.rb",
+    \     "app/components/{}.html.erb"
+    \   ]
+    \ }}
+
+" -----------------------------------------------------------------------------
+" Vim-Test: runs tests in vim, with tmux where applicable
+" -----------------------------------------------------------------------------
+
+nnoremap <silent> <Leader>r :TestFile<CR>
+nnoremap <silent> <Leader>R :TestNearest<CR>
+nnoremap <silent> <Leader>l :TestLast<CR>
+nnoremap <silent> <Leader>a :call VimuxRunCommand("clear; bin/rspec ")<CR>
+nnoremap <silent> <Leader>gt :TestVisit<CR>
+nnoremap <silent> <Leader>d :let test#ruby#rspec#executable = 'docker-compose exec listener bundle exec rspec'<CR>
 

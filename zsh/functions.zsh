@@ -48,10 +48,6 @@ function pdf-concat {
   "/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py" -o "$@"
 }
 
-function update-vim-projections {
-  ln -sf ~/.dotfiles/vim/projections.json .projections.json
-}
-
 # Switch to MariaDB
 function maria-switch {
   brew unlink mysql
