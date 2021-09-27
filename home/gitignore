@@ -5,7 +5,6 @@
 .envrc-docker
 .envrc-local
 .projections.json
-.tags
 .tool-versions
 .yardoc/*
 cc-test-reporter
@@ -14,9 +13,9 @@ config/hydra-ldap.yml
 config/scholarsphere-client.yml
 fits.log
 node_modules
-node_modules
 public/development_repository
 public/packs
 public/test_repository
+tags
 tmp
 vendor/cache
