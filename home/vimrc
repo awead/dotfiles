@@ -145,6 +145,9 @@ colorscheme zellner
 " Use a space as the leader prefix to create local versions for commands
 let mapleader = " "
 
+" Boutique escaping
+imap <silent> df <ESC>
+
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
@@ -211,6 +214,15 @@ nnoremap <leader>t :<C-u>Tags<CR>
 nnoremap <leader>T :<C-u>BTags<CR>
 
 " -----------------------------------------------------------------------------
+" Lightline
+" -----------------------------------------------------------------------------
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+
+
+" -----------------------------------------------------------------------------
 " NerdTree: tree navigation of the current directory
 " -----------------------------------------------------------------------------
 
@@ -234,13 +246,25 @@ command -nargs=* RiV :call ri#OpenSearchPrompt(1)<CR>
 
 let g:VimuxHeight = "33"
 
-map <Leader>vp :VimuxPromptCommand<CR>
-map <Leader>vl :VimuxRunLastCommand<CR>
-map <Leader>vi :VimuxInspectRunner<CR>
-map <Leader>vq :VimuxCloseRunner<CR>
-map <Leader>vx :VimuxInterruptRunner<CR>
-map <Leader>vz :call VimuxZoomRunner()<CR>
+nnoremap <Leader>vp :VimuxPromptCommand<CR>
+nnoremap <Leader>vl :VimuxRunLastCommand<CR>
+nnoremap <Leader>vi :VimuxInspectRunner<CR>
+nnoremap <Leader>vq :VimuxCloseRunner<CR>
+nnoremap <Leader>vx :VimuxInterruptRunner<CR>
+nnoremap <Leader>vz :call VimuxZoomRunner()<CR>
  
+" -----------------------------------------------------------------------------
+" Vim-Gitgutter
+"   * disabled by default
+"   * use local shortcuts to selectively show diffs
+" -----------------------------------------------------------------------------
+
+let g:gitgutter_enabled = 0
+let g:gitgutter_highlight_lines = 0
+nnoremap <Leader>gg :GitGutterToggle<CR>
+nnoremap <Leader>gh :GitGutterLineHighlightsToggle<CR>
+highlight SignColumn guibg=#000000 ctermbg=Black
+
 " -----------------------------------------------------------------------------
 " Vim-Rails
 "   * custom projections for Rails components
