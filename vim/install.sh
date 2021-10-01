@@ -20,6 +20,7 @@ git clone https://github.com/machakann/vim-highlightedyank.git
 git clone https://github.com/mtth/scratch.vim.git
 git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/preservim/nerdtree.git
+git clone https://github.com/skalnik/vim-vroom
 git clone https://github.com/tpope/vim-bundler.git
 git clone https://github.com/tpope/vim-endwise.git
 git clone https://github.com/tpope/vim-eunuch.git
@@ -28,7 +29,6 @@ git clone https://github.com/tpope/vim-projectionist.git
 git clone https://github.com/tpope/vim-rails.git
 git clone https://github.com/tpope/vim-rake.git
 git clone https://github.com/tpope/vim-repeat.git
-git clone https://github.com/tpope/vim-sensible.git
 git clone https://github.com/tpope/vim-sensible.git
 git clone https://github.com/tpope/vim-surround.git
 git clone https://github.com/tpope/vim-unimpaired.git

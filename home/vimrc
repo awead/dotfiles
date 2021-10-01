@@ -36,6 +36,8 @@ set smartindent
 set smarttab
 set softtabstop=0
 set spell spelllang=en_us
+set splitbelow
+set splitright
 set tabstop=8
 set textwidth=120
 
@@ -252,6 +254,7 @@ nnoremap <Leader>vi :VimuxInspectRunner<CR>
 nnoremap <Leader>vq :VimuxCloseRunner<CR>
 nnoremap <Leader>vx :VimuxInterruptRunner<CR>
 nnoremap <Leader>vz :call VimuxZoomRunner()<CR>
+nnoremap <Leader>a :call VimuxRunCommand("clear; bin/rspec ")<CR>
  
 " -----------------------------------------------------------------------------
 " Vim-Gitgutter
@@ -297,10 +300,15 @@ let g:rails_projections = {
 " Vim-Test: runs tests in vim, with tmux where applicable
 " -----------------------------------------------------------------------------
 
-nnoremap <silent> <Leader>r :TestFile<CR>
-nnoremap <silent> <Leader>R :TestNearest<CR>
-nnoremap <silent> <Leader>l :TestLast<CR>
-nnoremap <silent> <Leader>a :call VimuxRunCommand("clear; bin/rspec ")<CR>
-nnoremap <silent> <Leader>gt :TestVisit<CR>
-nnoremap <silent> <Leader>d :let test#ruby#rspec#executable = 'docker-compose exec listener bundle exec rspec'<CR>
+nnoremap <Leader>gt :TestVisit<CR>
+nnoremap <Leader>d :let test#ruby#rspec#executable = 'docker-compose exec listener bundle exec rspec'<CR>
 
+" -----------------------------------------------------------------------------
+" Vim-Vroom: runs Ruby tests via vimux
+" -----------------------------------------------------------------------------
+
+let g:vroom_use_vimux = 1
+
+nnoremap <Leader>r :call vroom#RunTestFile()<CR>
+nnoremap <Leader>R :call vroom#RunNearestTest()<CR>
+nnoremap <Leader>l :call vroom#RunLastTest()<CR>
