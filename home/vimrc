@@ -154,6 +154,23 @@ augroup END
 colorscheme zellner
 
 " -----------------------------------------------------------------------------
+" Colemak Key Bindings
+" -----------------------------------------------------------------------------
+
+" Keep the home keys in the same place
+noremap i l
+noremap e k
+noremap n j
+
+" Swap i for m
+" This seems to be a reasonable change as "m" doesn't seem to be used much, and
+" it mnemonically goes with "middle" so "cmw" is "change from middle of word".
+" The insert function also implies that you're putting something in the midst
+" of something else.
+noremap m i
+
+
+" -----------------------------------------------------------------------------
 " Shortcuts
 " -----------------------------------------------------------------------------
 
@@ -258,8 +275,8 @@ let g:lightline = {
 " NerdTree: tree navigation of the current directory
 " -----------------------------------------------------------------------------
 
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
+"nnoremap <leader>n :NERDTreeFocus<CR>
+"nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
