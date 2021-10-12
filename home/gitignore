@@ -5,6 +5,7 @@
 .envrc-docker
 .envrc-local
 .projections.json
+.tags
 .tool-versions
 .yardoc/*
 cc-test-reporter
@@ -18,4 +19,4 @@ public/packs
 public/test_repository
 tags
 tmp
-vendor/cache
+coverage
