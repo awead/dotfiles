@@ -148,7 +148,7 @@ colorscheme zellner
 let mapleader = " "
 
 " Boutique escaping
-imap <silent> df <ESC>
+"imap <silent> df <ESC>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -214,6 +214,9 @@ nnoremap <C-p> :<C-u>Files<CR>
 nnoremap <leader>b :<C-u>Buffers<CR>
 nnoremap <leader>t :<C-u>Tags<CR>
 nnoremap <leader>T :<C-u>BTags<CR>
+
+" Search using the word under the cursor 
+nnoremap <leader>f :<C-u>Rg <C-r><C-w><CR>
 
 " -----------------------------------------------------------------------------
 " Lightline
