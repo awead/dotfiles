@@ -1,5 +1,7 @@
 # rails new --help for complete options
---skip-test-unit
+--skip-unit
+--skip-system-test
+--skip-sprockets
 --skip-bundle
---database=postgresql
---skip-turbolinks
+--database=sqlite3
+--webpack=stimulus
