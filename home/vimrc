@@ -61,6 +61,19 @@ if executable("rg")
 endif
 
 " -----------------------------------------------------------------------------
+" Custom Functions 
+" -----------------------------------------------------------------------------
+
+" Return string of bundle paths (if present)
+function! BundlePaths() abort
+  if isdirectory('.bundle') == 1
+    return system('bundle list --paths')
+  else
+    return ''
+  endif
+endfunction
+
+" -----------------------------------------------------------------------------
 " Git Integration
 "   * ensure commit messages are no longer than 72 characters
 "   * enable spell checking for commit messages
@@ -215,8 +228,22 @@ nnoremap <leader>b :<C-u>Buffers<CR>
 nnoremap <leader>t :<C-u>Tags<CR>
 nnoremap <leader>T :<C-u>BTags<CR>
 
+" Bg (bundle grep) command that uses rg to search the current directory as well
+" as all paths to bundled gems. See bgrep under zsh/functions.zsh
+
+function! BgrepFzf(query, fullscreen)
+  let bundle_paths = substitute(BundlePaths(), '\n', ' ', 'g')
+  let command_fmt = "rg --column --line-number --no-heading --color=always --smart-case -- %s . %s"
+  let bgrep_command = printf(command_fmt, shellescape(a:query), bundle_paths)
+  let spec = {'options': '--delimiter : --nth 4..'}
+
+  call fzf#vim#grep(bgrep_command, 1, fzf#vim#with_preview(spec, 'up', 'ctrl-/'), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang Bg call BgrepFzf(<q-args>, <bang>0)
+
 " Search using the word under the cursor 
-nnoremap <leader>f :<C-u>Rg <C-r><C-w><CR>
+nnoremap <leader>f :<C-u>Bg <C-r><C-w><CR>
 
 " -----------------------------------------------------------------------------
 " Lightline
