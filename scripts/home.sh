@@ -30,15 +30,6 @@ else
   cp $SAFE/Keys/* $HOME/.ssh
 fi
 
-# .bash_private
-ln -Fs $HOME/Dropbox/Projects/private-dotfiles/bash_private $HOME/.bash_private
-
-# .vim
-rm -Rf $HOME/.vim
-mkdir -p $HOME/.vim/pack/minpac/opt/minpac
-git clone https://github.com/k-takata/minpac.git $HOME/.vim/pack/minpac/opt/minpac
-vim +PackUpdate +qall
-
 # fzf config
 $HOMEBREW_PREFIX/opt/fzf/install --all 
 
@@ -47,7 +38,10 @@ rm -Rf $HOME/.git-templates
 ln -Fs $HOME/.dotfiles/home/git-templates $HOME/.git-templates
 
 # cheat
-source $HOME/cheat/install.sh
+source $HOME/.dotfiles/cheat/install.sh
 
 # Create project directories
 mkdir -p $HOME/Projects/Github/awead
+
+# Kitty
+source $HOME/.dotfiles/kitty/install.sh

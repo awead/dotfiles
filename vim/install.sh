@@ -1,8 +1,6 @@
 #!/bin/bash
 
-rm -Rf $HOME/.vim/autoload
-rm -Rf $HOME/.vim/bundle
-
+rm -Rf $HOME/.vim
 mkdir -p $HOME/.vim/autoload $HOME/.vim/bundle
 curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 

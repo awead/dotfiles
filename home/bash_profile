@@ -3,8 +3,6 @@
 # Bash Profile
 # ----------------------------------------------
 
-source $HOME/.bash_private
-
 # Colored listings
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
