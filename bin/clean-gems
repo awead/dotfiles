@@ -25,4 +25,4 @@ done
 
 gem uninstall -aIx --force
 gem update --system
-gem install -Nf bundler pry gem-ctags
+gem install -Nf bundler pry 

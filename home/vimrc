@@ -160,9 +160,6 @@ colorscheme zellner
 " Use a space as the leader prefix to create local versions for commands
 let mapleader = " "
 
-" Boutique escaping
-"imap <silent> df <ESC>
-
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
@@ -225,8 +222,8 @@ command -nargs=* Coverage :call Coverage()
 
 nnoremap <C-p> :<C-u>Files<CR>
 nnoremap <leader>b :<C-u>Buffers<CR>
-nnoremap <leader>t :<C-u>Tags<CR>
-nnoremap <leader>T :<C-u>BTags<CR>
+"nnoremap <leader>t :<C-u>Tags<CR>
+"nnoremap <leader>T :<C-u>BTags<CR>
 
 " Bg (bundle grep) command that uses rg to search the current directory as well
 " as all paths to bundled gems. See bgrep under zsh/functions.zsh
@@ -244,6 +241,9 @@ command! -nargs=* -bang Bg call BgrepFzf(<q-args>, <bang>0)
 
 " Search using the word under the cursor 
 nnoremap <leader>f :<C-u>Bg <C-r><C-w><CR>
+
+" Properly escape out of the navigator because of neoterm
+autocmd! FileType fzf tnoremap <buffer> <esc> <c-c>
 
 " -----------------------------------------------------------------------------
 " Lightline
@@ -264,6 +264,32 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " -----------------------------------------------------------------------------
+" Neoterm
+" -----------------------------------------------------------------------------
+
+set nocompatible
+filetype off
+
+let &runtimepath.=',~/.vim/bundle/neoterm'
+
+filetype plugin on
+
+let g:neoterm_autoinsert = 0            " jumps to the terminal in insert mode
+let g:neoterm_default_mod = 'botright'
+let g:neoterm_autoscroll = 1            " autoscroll to the bottom when entering insert mode
+let g:neoterm_size = 20
+let g:neoterm_fixedsize = 1             " fixed size. The autosizing was wonky for me
+let g:neoterm_keep_term_open = 0        " when buffer closes, exit the terminal too.
+
+nnoremap <Leader>t :Ttoggle<CR>
+
+" Makes ESC get you out of insert mode like regular vim
+tnoremap <Esc> <C-\><C-n>
+
+" Open current file in pry
+nnoremap <Leader>x :T pry -r %<CR>
+
+" -----------------------------------------------------------------------------
 " RI: Search Ruby documentation via ri
 " -----------------------------------------------------------------------------
 
@@ -272,20 +298,6 @@ let g:ri_no_mappings=1
 command -nargs=* Ri :call ri#OpenSearchPrompt(0)<CR>
 command -nargs=* RiV :call ri#OpenSearchPrompt(1)<CR>
 
-" -----------------------------------------------------------------------------
-" Vimux: allows tests to execute in another tmux pane
-" -----------------------------------------------------------------------------
-
-let g:VimuxHeight = "33"
-
-nnoremap <Leader>vp :VimuxPromptCommand<CR>
-nnoremap <Leader>vl :VimuxRunLastCommand<CR>
-nnoremap <Leader>vi :VimuxInspectRunner<CR>
-nnoremap <Leader>vq :VimuxCloseRunner<CR>
-nnoremap <Leader>vx :VimuxInterruptRunner<CR>
-nnoremap <Leader>vz :call VimuxZoomRunner()<CR>
-nnoremap <Leader>a :call VimuxRunCommand("clear; bin/rspec ")<CR>
- 
 " -----------------------------------------------------------------------------
 " Vim-Gitgutter
 "   * disabled by default
@@ -324,21 +336,43 @@ let g:rails_projections = {
     \     "app/components/{}.rb",
     \     "app/components/{}.html.erb"
     \   ]
+    \ },
+    \ "lib/predictions/*.rb": {
+    \   "type": "prediction",
+    \   "alternate": [
+    \     "spec/lib/predictions/{}_spec.rb",
+    \   ]
+    \ },
+    \ "spec/lib/predictions/*_spec.rb": {
+    \   "type": "prediction",
+    \   "alternate": [
+    \     "lib/predictions/{}.rb",
+    \   ]
+    \ },
+    \ "app/assets/javascript/components/*.js": {
+    \   "type": "js_component",
+    \   "alternate": [
+    \     "app/assets/javascript/test/{}.test.js",
+    \   ]
+    \ },
+    \ "app/assets/javascript/test/*.test.js": {
+    \   "type": "js_component",
+    \   "alternate": [
+    \     "app/assets/javascript/components/{}.js"
+    \   ]
     \ }}
 
 " -----------------------------------------------------------------------------
-" Vim-Test: runs tests in vim, with tmux where applicable
+" Vim-Test: runs tests in vim using neoterm
 " -----------------------------------------------------------------------------
 
 nnoremap <Leader>gt :TestVisit<CR>
 nnoremap <Leader>d :let test#ruby#rspec#executable = 'docker-compose exec listener bundle exec rspec'<CR>
+nnoremap <Leader>r :TestFile<CR>
+nnoremap <Leader>R :TestNearest<CR>
+nnoremap <Leader>l :TestLast<CR>
+nnoremap <Leader>a :TestSuite<CR>
 
-" -----------------------------------------------------------------------------
-" Vim-Vroom: runs Ruby tests via vimux
-" -----------------------------------------------------------------------------
+let test#strategy = "neoterm"
+let g:test#strategy = "neoterm"
 
-let g:vroom_use_vimux = 1
-
-nnoremap <Leader>r :call vroom#RunTestFile()<CR>
-nnoremap <Leader>R :call vroom#RunNearestTest()<CR>
-nnoremap <Leader>l :call vroom#RunLastTest()<CR>

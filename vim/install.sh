@@ -8,17 +8,15 @@ cd $HOME/.vim/bundle
 
 git clone https://github.com/airblade/vim-gitgutter
 git clone https://github.com/bcicen/vim-jfmt.git
-git clone https://github.com/benmills/vimux.git
-git clone https://github.com/christoomey/vim-tmux-navigator.git
 git clone https://github.com/danchoi/ri.vim
 git clone https://github.com/itchyny/lightline.vim
 git clone https://github.com/junegunn/fzf.git
 git clone https://github.com/junegunn/fzf.vim.git
+git clone https://github.com/kassio/neoterm
 git clone https://github.com/machakann/vim-highlightedyank.git
 git clone https://github.com/mtth/scratch.vim.git
 git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/preservim/nerdtree.git
-git clone https://github.com/skalnik/vim-vroom
 git clone https://github.com/tpope/vim-bundler.git
 git clone https://github.com/tpope/vim-endwise.git
 git clone https://github.com/tpope/vim-eunuch.git
