@@ -1,0 +1,10 @@
+# Copy
+
+rsync -av [src] [dst]
+
+# Verify with Checksum
+
+rsync -avcn [src] [dst]
+
+Uses the dry-run (-n) and checksum (-c) options to compare files using a checksum instead of a timestamp.
+Files that are different are listed in the results.
