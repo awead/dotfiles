@@ -78,7 +78,7 @@ class Episode
   private
 
     def parts
-      @parts ||= file.gsub(/\.m4v$/,"").split(" - ")
+      @parts ||= file.gsub(/\.m[4v|p4]$/,"").split(" - ")
     end
 end
 
@@ -93,7 +93,7 @@ def file_list
 end
 
 def episodes
-  Dir.glob("*.m4v").map.with_index do |file, index|
+  Dir.glob("*.m*").map.with_index do |file, index|
     Episode.new(
       file: file,
       list_name: file_list[index],
