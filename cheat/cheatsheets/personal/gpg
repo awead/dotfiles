@@ -200,9 +200,9 @@ that if one system is compromised, it limits the impact.
 The following extracts the necessary keys, deletes them, and then reimports only the subkeys:
   
     export KEY_ID=[who we're looking for]
-    gpg -a --export-secret-key KEY_ID > secret_key.gpg
-    gpg -a --export-secret-subkeys KEY_ID > secret_subkeys.gpg
-    gpg --delete-secret-keys KEY_ID
+    gpg -a --export-secret-key $KEY_ID > secret_key.gpg
+    gpg -a --export-secret-subkeys $KEY_ID > secret_subkeys.gpg
+    gpg --delete-secret-keys $KEY_ID
     gpg --import secret_subkeys.gpg
 
 Verify that the secret_key is save to a separate location, then shred the remains
