@@ -14,10 +14,15 @@ Add the manifests
     cat source-bag/manifest-sha1.txt >> manifest-sha1.txt
     cat source-bag/manifest-md5.txt >> manifest-md5.txt
 
-Generate new tag manifests
+Generate new tag manifests (*nix)
 
     ls *.txt | grep -v tag | xargs -I{} md5sum {} > tagmanifest-md5.txt
     ls *.txt | grep -v tag | xargs -I{} sha1sum {} > tagmanifest-sha1.txt
+
+Generate new tag manifests (MacOS)
+
+    ls *.txt | grep -v tag | xargs -I{} md5 {} | awk '{print $4" "$2}' | tr -d '()' > tagmanifest-md5.txt
+    ls *.txt | grep -v tag | xargs -I{} shasum {} > tagmanifest-sha1.txt
 
 Checking Bags
 
@@ -45,3 +50,7 @@ Get list of files that are missing from a bag (starting from procedures above)
     comm -23 result-md5.txt found-md5.txt > missing-md5.txt
     grep -f missing-md5.txt results.txt > missing.txt
 
+Manually create checksums for a bag (MacOS)
+
+    find data -type f -exec md5 {} \; | awk '{print $4" "$2}' | tr -d '()' > manifest-md5.txt
+    find data -type f -exec shasum {} \; > manifest-sha1.txt
