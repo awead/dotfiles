@@ -16,7 +16,7 @@ execute pathogen#infect()
 set autoindent
 set autowrite     " Automatically :write before running commands
 set backspace=2   " Backspace deletes like most programs in insert mode
-set colorcolumn=120
+set colorcolumn=160
 set encoding=utf-8
 set expandtab
 set history=50
@@ -38,13 +38,13 @@ set softtabstop=0
 set spell spelllang=en_us
 set splitbelow
 set splitright
-set tabstop=8
+set tabstop=2
 set textwidth=120
 
 " Customized status line
 set statusline=  
 set statusline+=%n\              " buffer number  
-set statusline+=%f\              " filename   
+set statusline+=%F\              " filename   
 set statusline+=%h%m%r%w         " status flags  
 set statusline+=%=               " right align remainder  
 set statusline+=0x%-8B           " character value  
@@ -66,11 +66,12 @@ endif
 
 " Return string of bundle paths (if present)
 function! BundlePaths() abort
-  if isdirectory('.bundle') == 1
-    return system('bundle list --paths')
+  let output = system('bundle list --paths')
+  if v:shell_error
+    ''
   else
-    return ''
-  endif
+    return output
+  end
 endfunction
 
 " -----------------------------------------------------------------------------
@@ -82,6 +83,8 @@ endfunction
 autocmd BufRead,BufNewFile setlocal textwidth=72
 autocmd FileType gitcommit setlocal textwidth=72
 autocmd FileType gitcommit setlocal spell
+
+nnoremap <Leader>gb :Git blame<CR>
  
 " -----------------------------------------------------------------------------
 " CTags
@@ -151,7 +154,7 @@ augroup my_spellcheck_colors
         \   guisp=Red
 augroup END
 
-colorscheme zellner
+colorscheme habamax
 
 " -----------------------------------------------------------------------------
 " Shortcuts
@@ -193,7 +196,7 @@ nnoremap <leader><Down> :resize +5<CR>
 " -----------------------------------------------------------------------------
 
 " Saves and (re)generates the Yard docs
-command -nargs=* Yard :w !bundle exec yard
+command -nargs=* Yard :w !yard
 nnoremap <leader>y :Yard<CR>
 
 " Saves and (re)generates OpenAPI docs
@@ -224,6 +227,9 @@ nnoremap <C-p> :<C-u>Files<CR>
 nnoremap <leader>b :<C-u>Buffers<CR>
 "nnoremap <leader>t :<C-u>Tags<CR>
 "nnoremap <leader>T :<C-u>BTags<CR>
+nnoremap <leader>s :<C-u>Line<CR>
+nnoremap <leader>S :<C-u>BLines<CR>
+nnoremap <leader>c :<C-u>Colors<CR>
 
 " Bg (bundle grep) command that uses rg to search the current directory as well
 " as all paths to bundled gems. See bgrep under zsh/functions.zsh
@@ -238,6 +244,7 @@ function! BgrepFzf(query, fullscreen)
 endfunction
 
 command! -nargs=* -bang Bg call BgrepFzf(<q-args>, <bang>0)
+command! -nargs=* -bang BundlePaths call BundlePaths()
 
 " Search using the word under the cursor 
 nnoremap <leader>f :<C-u>Bg <C-r><C-w><CR>
@@ -337,6 +344,18 @@ let g:rails_projections = {
     \     "app/components/{}.html.erb"
     \   ]
     \ },
+    \ "app/schemas/*.json": {
+    \   "type": "schema",
+    \   "alternate": [
+    \     "spec/schemas/{}_spec.rb"
+    \   ]
+    \ },
+    \ "spec/schemas/*_spec.rb": {
+    \   "type": "schema",
+    \   "alternate": [
+    \     "app/schemas/{}.json"
+    \   ]
+    \ },
     \ "lib/predictions/*.rb": {
     \   "type": "prediction",
     \   "alternate": [
@@ -367,7 +386,8 @@ let g:rails_projections = {
 " -----------------------------------------------------------------------------
 
 nnoremap <Leader>gt :TestVisit<CR>
-nnoremap <Leader>d :let test#ruby#rspec#executable = 'docker-compose exec listener bundle exec rspec'<CR>
+nnoremap <Leader>d :let test#ruby#rspec#executable = 'script/kat/rspec'<CR>
+nnoremap <Leader>D :let test#ruby#rspec#executable = 'bundle exec rspec'<CR>
 nnoremap <Leader>r :TestFile<CR>
 nnoremap <Leader>R :TestNearest<CR>
 nnoremap <Leader>l :TestLast<CR>
