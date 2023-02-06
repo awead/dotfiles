@@ -8,71 +8,23 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # Env
-export DUO_PASSCODE=push
 export EDITOR=$HOMEBREW_PREFIX/bin/vim
 
 # GPG
 export GPG_TTY=$(tty)
 
-# Kubernetes
-export KUBECONFIG=~/.kube/config-oidc-dev
-
 # Additional bin directories
-export DROPBOX_BIN="$HOME/Dropbox/bin"
 export LATEX_BIN="$HOMEBREW_PREFIX/texlive/2013/bin/x86_64-darwin"
-export SUBLIME_BIN="~/Applications/Sublime Text.app/Contents/SharedSupport/bin"
-export LO_BIN="$HOME/Applications/LibreOffice.app/Contents/MacOS"
-export FOX_BIN="$HOME/Applications/Firefox.app/Contents/MacOS"
 export DF_BIN="$HOME/.dotfiles/bin"
-export KREW_BIN="$HOME/.krew/bin"
 
 # Homebrew Settings
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS="--require-sha --appdir=~/Applications"
 
-# Postgres
-export PG_HOME="$HOMEBREW_PREFIX/var/postgres@13"
-export POSTGRES_USER=`whoami`
-export POSTGRES_BIN="$HOMEBREW_PREFIX/opt/postgresql@13/bin"
-
 # Pathing
 #
 # Look in Homebrew installs first, under $HOMEBREW_PREFIX, then OSX binaries. Lastly, look in the
 # custom-install directories.
-PATH=$HOMEBREW_PREFIX/bin:/usr/local/sbin:/opt/npm/bin:$PATH:$DROPBOX_BIN:$LATEX_BIN:$SUBLIME_BIN:$FOX_BIN:$LO_BIN:$DF_BIN:$KREW_BIN:$POSTGRES_BIN
+PATH=$HOMEBREW_PREFIX/bin:$PATH:$LATEX_BIN:$DF_BIN
 export PATH
-LOAD_LIB=$HOME/.dotfiles/lib
-export LOAD_LIB
-
-# Java
-JAVA_HOME='/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home'
-export JAVA_HOME
-
-# Imagemagick
-export MAGICK_TEMPORARY_PATH=/Volumes/Data/tmp
-export MAGICK_TEMPDIR=/Volumes/Data/tmp
-
-# Rails version
-# export RAILS_VERSION=4.2.7
-# export RAILS_VERSION=5.0.0.1
-
-# Sufia/Hydra
-LOCAL_IMPORT_DIR=~/Desktop
-export LOCAL_IMPORT_DIR
-#SOLR_DEVELOPMENT_PORT=8983 && export SOLR_DEVELOPMENT_PORT
-#SOLR_TEST_PORT=8985 && export SOLR_TEST_PORT
-FCREPO_DEVELOPMENT_PORT=8986 && export FCREPO_DEVELOPMENT_PORT
-FCREPO_TEST_PORT=8986 && export FCREPO_TEST_PORT
-
-# OpenSSL
-# We can build different things using the openssl from Homebrew as a dependency,
-# but not actually *use* it. We're still using the MacOS-included one. If you
-# want to fully use the version from Homebrew, uncomment the following.
-# Note: This is taken from  $ brew link openssl and I've seen reports to the effect
-# that MacOS doesn't even use the CPPFLAGS and LDFLAGS, so this may not be worth it:
-# PATH=$HOMEBREW_PREFIX/opt/openssl/bin:$PATH
-# export PATH
-# export LDFLAGS="-L$HOMEBREW_PREFIX/opt/openssl/lib"
-# export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/openssl/include"
-# export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/openssl/lib/pkgconfig"

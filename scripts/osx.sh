@@ -50,15 +50,6 @@ defaults write -g com.apple.swipescrolldirection -bool false
 # (e.g. enable Tab in modal dialogs)
 defaults write -g AppleKeyboardUIMode -int 3
 
-# Annoying Bluetooth audio problems
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Max (editable)" 80
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" 80
-defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool (editable)" 80
-defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool Min (editable)" 80
-defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool" 80
-defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Max" 80
-defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Min" 80
-
 # Clock settings
 defaults write com.apple.menuextra.clock DateFormat "EEE H:mm"
 defaults write com.apple.menuextra.clock FlashDateSeparators 0
@@ -131,12 +122,6 @@ defaults write com.apple.dock expose-group-by-app -bool false
 defaults write com.apple.dock mru-spaces -bool false
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
-
-#
-# Terminal
-#
-
-cp $HOME/.dotfiles/terminal/*.ttf ~/Library/Fonts
 
 #
 # Mail

@@ -1,4 +1,0 @@
-# rails new --help for complete options
---skip-unit
---skip-system-test
---database=sqlite3

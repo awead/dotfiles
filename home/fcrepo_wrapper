@@ -1,6 +1,0 @@
-# Default fcrepo_wrapper for testing environment
-# This should work for most Hydra gems
-port: 8986
-enable_jms: false
-fcrepo_home_dir: tmp/fcrepo4-test-data
-download_dir: tmp
