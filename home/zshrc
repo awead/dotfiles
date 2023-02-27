@@ -51,7 +51,7 @@ export ZSH_CUSTOM=$HOME/.dotfiles/zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler macos rake ruby history-substring-search)
+plugins=(git macos history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -65,18 +65,7 @@ source ~/.bash_profile
 # Allow [ or ] whereever you want
 unsetopt nomatch
 
-# added by travis gem
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
-
-# asdf initialization
-source $HOME/.dotfiles/asdf/include.sh
-
 # Set up FZF and tell it to use ripgrep
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --smart-case'
 
-# Yarn added this, I think, but it might interfere with asdf
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# Direnv - this should go after asdf
- eval "$(direnv hook zsh)"

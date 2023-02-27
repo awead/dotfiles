@@ -15,11 +15,6 @@ done
 rm -Rf $HOME/.bash
 ln -Fs $HOME/.dotfiles/home/bash $HOME/.bash
 
-# .bundle
-mkdir -p $HOME/.bundle
-rm -f $HOME/.bundle/config
-ln -s $HOME/.dotfiles/home/bundle/config $HOME/.bundle/config
-
 # .ssh
 if [ -z $SAFE ]; then
   echo "No safe found. Skipping..."
@@ -45,3 +40,7 @@ mkdir -p $HOME/Projects/Github/awead
 
 # Kitty
 source $HOME/.dotfiles/kitty/install.sh
+
+# Vim + Neovim
+source vim/install.sh
+source nvim/install.sh
