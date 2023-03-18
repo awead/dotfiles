@@ -24,7 +24,8 @@ OS X Setup
 
 ### Terminal
 
-* 16 pt. Inconsolata font
+* Inconsolata [Nerd Font](https://www.nerdfonts.com/font-downloads) needs to be installed manually to support the
+  devicons in neovim.
 
 ### Disabling Unneeded Services
 
