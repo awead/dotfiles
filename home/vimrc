@@ -395,4 +395,4 @@ nnoremap <Leader>a :TestSuite<CR>
 
 let test#strategy = "neoterm"
 let g:test#strategy = "neoterm"
-
+let test#rust#cargotest#execuatable = 'cargo run'
