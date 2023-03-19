@@ -1,0 +1,49 @@
+# Docker
+
+docker run -d -it -p 25565:25565 -e EULA=TRUE itzg/minecraft-server
+
+# Server
+
+## Java Commands
+
+time set 0
+
+## Bedrock Commands
+
+### Allowlist
+
+allowlist add CadetTiger95130
+allowlist add AwayAlpaca20358
+allowlist reload
+allowlist on
+
+### Gamerules
+
+gamerule keepInventory true
+
+gamemode CadetTiger95130 creative
+
+### Give
+
+Giving specific items:
+
+give AwayAlpaca20358 diamond_sword 1 0 {"keep_on_death": {}, "item_lock": {"mode": "lock_in_inventory"}}
+give AwayAlpaca20358 netherite_axe 1  {"keep_on_death": {}, "item_lock": {"mode": "lock_in_inventory"}}
+give AwayAlpaca20358 netherite_pickaxe 1 0 {"keep_on_death": {}, "item_lock": {"mode": "lock_in_inventory"}}
+
+Arrow of Decay (Wither arrow?):
+
+give CadetTiger95130 arrow 1 37
+
+Giving all players blocks:
+
+give @a diamond_block 128
+
+### Messages
+
+msg @a "Hi, everyone!"
+
+### Weather
+
+weather clear
+weather thunder
