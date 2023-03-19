@@ -16,7 +16,6 @@ alias autocop="bundle exec rubocop -P -f fi | xargs bundle exec rubocop -a"
 alias plistbuddy="/usr/libexec/PlistBuddy"
 alias k="kubectl"
 alias dc="docker-compose" # NB: this overrides /usr/bin/dc which is a calculator program
-alias vim="nvim"
 alias arst=asdf
 
 # Github repos
