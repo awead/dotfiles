@@ -1,20 +1,31 @@
 require('nvim-treesitter.configs').setup {
   auto_install = true,
-  autopairs = { enable = true },
-  ensure_installed = { 
-    "bash",
-    "c", 
-    "elixir",
-    "erlang",
-    "help", 
-    "json",
-    "javascript",
-    "lua", 
-    "query", 
+
+  -- Autopairing is wierd... could be conflicts with tpope/endwise
+  autopairs = { enable = false },
+
+  ensure_installed = {
+    -- "bash",
+    -- "c",
+    -- "css",
+    -- "diff",
+    -- "dockerfile",
+    -- "elixir",
+    -- "eex",
+    -- "erlang",
+    -- "heex",
+    -- "help",
+    -- "html",
+    -- "json",
+    -- "javascript",
+    -- "lua",
+    -- "query",
     "ruby",
-    "rust",
-    "typescript",
-    "vim", 
+    -- "rust",
+    -- "scss",
+    -- "terraform",
+    -- "typescript",
+    -- "vim",
   },
 
   highlight = {
@@ -23,6 +34,7 @@ require('nvim-treesitter.configs').setup {
     additional_vim_regex_highlighting = false,
   },
 
+  -- This just doesn't seem to work as well as the other default tools I've been using.
   indent = {
     enable = true
   },

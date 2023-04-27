@@ -24,20 +24,20 @@ return {
 
   -- Basic stuff, including a few things I brought over from vim
 
-  { "AndrewRadev/splitjoin.vim" },
-  { "elixir-editors/vim-elixir" },
-  { "hashivim/vim-terraform" },
-  { "lukas-reineke/indent-blankline.nvim" },
+  -- { "AndrewRadev/splitjoin.vim" },
+  -- { "elixir-editors/vim-elixir" },
+  -- { "hashivim/vim-terraform" },
+  -- { "lukas-reineke/indent-blankline.nvim" },
   { "machakann/vim-highlightedyank" },
-  { "pangloss/vim-javascript" },
-  { "vim-ruby/vim-ruby" },
-
+  -- { "pangloss/vim-javascript" },
+  -- { "vim-ruby/vim-ruby" },
+  --
   -- The Altar to Tim Pope
 
   { "tpope/vim-bundler" },
   { "tpope/vim-endwise" },
   { "tpope/vim-fugitive" },
-  --{ "tpope/vim-projectionist" },
+  { "tpope/vim-projectionist" },
   { "tpope/vim-rails" },
   { "tpope/vim-rake" },
   { "tpope/vim-repeat" },
@@ -48,16 +48,14 @@ return {
   {
     "akinsho/toggleterm.nvim",
     version = "*",
-    config = function()
-       require("toggleterm").setup()
-    end
+    config = build_with_config("toggleterm"),
   },
 
-  -- Used for linting
-  {
-    "dense-analysis/ale",
-    config = build_with_config("ale"),
-  },
+  -- -- Used for linting
+  -- {
+  --   "dense-analysis/ale",
+  --   config = build_with_config("ale"),
+  -- },
 
   {
     "folke/tokyonight.nvim",
@@ -85,6 +83,11 @@ return {
       require('Comment').setup()
     end
   },
+  
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   config = build_with_config("lspconfig"),
+  -- },
 
   {
     "nvim-lualine/lualine.nvim",

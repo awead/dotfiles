@@ -93,3 +93,12 @@ function clean-jetties {
          tmp/hydra-test
 }
 
+# Start a new tmux session with a given repo from the Projects directory
+function tnr() {
+  REPO=`tree -f -d -L 2 -in --noreport $HOME/Projects/Github | rg -i -e "$1" | head -n 1`
+  if [ -z $REPO ]; then
+    echo "Could not find $1"
+  else
+    TERM=screen-256color-bce tmux new -s $1 -c ${REPO}
+  fi
+}
