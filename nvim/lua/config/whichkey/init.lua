@@ -12,15 +12,18 @@ local mappings = {
     name = "Finding with Telescope",
 
     b = { ":Telescope buffers<cr>", "Buffers" },
+    B = { ":Telescope current_buffer_fuzzy_find<cr>", "Current open buffer" },
     c = { ":Telescope colorscheme<cr>", "Color Schemes" },
     f = { ":Telescope find_files<cr>", "Files" },
     g = { ":Telescope grep_string<cr>", "Grep (under cursor)" },
+    s = { ":Telescope search_history<cr>", "Search history" },
     ["<leader>"] = { ":Telescope live_grep<cr>", "Grep (live)" },
   },
 
   g = {
     name = "Git",
 
+    b = { ":Git blame<cr>", "Toggle git blame" },
     d = { ":Gitsigns diffthis<cr>", "Show the diff for this file" },
     -- f = { ":DiffviewFileHistory<cr>", "View file history" },
     g = { ":Git<cr>", "Current git status" },
@@ -29,12 +32,11 @@ local mappings = {
   },
 
   l = {
-    name = "Linting with Ale",
+    name = "LSP Commands",
 
-    d = { ":ALEGoToDefinition<cr>", "Goto definition" },
-    f = { ":ALEFindReferences<cr>", "Find references" },
-    n = { ":ALENext", "Next error<cr>" },
-    p = { ":ALEPrevious<cr>", "Previous error" },
+    D = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Goto declaration" },
+    d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Goto definition" },
+    l = { "<Cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
 
   },
 

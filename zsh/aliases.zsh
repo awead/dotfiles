@@ -11,12 +11,11 @@ alias dotfiles='cd ~/.dotfiles'
 alias tmux="TERM=screen-256color-bce tmux"
 alias tls="tmux ls"
 alias ta="tmux attach -t"
-alias tn="TERM=screen-256color-bce tmux -v new -s"
+alias tn="TERM=screen-256color-bce tmux new -s"
 alias autocop="bundle exec rubocop -P -f fi | xargs bundle exec rubocop -a"
 alias plistbuddy="/usr/libexec/PlistBuddy"
 alias k="kubectl"
 alias dc="docker-compose" # NB: this overrides /usr/bin/dc which is a calculator program
-alias arst=asdf
 
 # Github repos
 alias psu-libraries='cd ~/Projects/Github/psu-libraries'

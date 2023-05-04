@@ -37,10 +37,13 @@ source $HOME/.dotfiles/cheat/install.sh
 
 # Create project directories
 mkdir -p $HOME/Projects/Github/awead
+mkdir -p $HOME/Projects/Github/local
+
 
 # Kitty
 source $HOME/.dotfiles/kitty/install.sh
 
-# Vim + Neovim
+# Vim, Neovim, tmux
+source tmux/install.sh
 source vim/install.sh
 source nvim/install.sh

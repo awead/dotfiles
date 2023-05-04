@@ -25,3 +25,6 @@ map('n', '<leader><Left>', ':vertical resize -5<CR>', { desc = 'Resize left' })
 map('n', '<leader><Right>', ':vertical resize +5<CR>', { desc = 'Resize right' })
 map('n', '<leader><Up>', ':resize -5<CR>', { desc = 'Resize up' })
 map('n', '<leader><Down>', ':resize +5<CR>', { desc = 'Resize down' })
+
+-- ToggleTerm
+map('t', '<Escape>', '<C-Bslash><C-n>', { desc = 'ToggleTerm: Exit insert mode' })

@@ -393,6 +393,10 @@ nnoremap <Leader>R :TestNearest<CR>
 nnoremap <Leader>l :TestLast<CR>
 nnoremap <Leader>a :TestSuite<CR>
 
+let test#python#pytest#executable = "python -m pytest -s"
+let test#rust#cargotest#executable = "cargo run"
+let test#elixir#exunit#executable = "docker-compose run test mix test"
+
 let test#strategy = "neoterm"
 let g:test#strategy = "neoterm"
-let test#rust#cargotest#execuatable = 'cargo run'
+
