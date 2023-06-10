@@ -2,39 +2,40 @@ require('nvim-treesitter.configs').setup {
   auto_install = true,
 
   -- Autopairing is wierd... could be conflicts with tpope/endwise
-  autopairs = { enable = false },
+  autopairs = { enable = true },
 
   ensure_installed = {
-    -- "bash",
+    "bash",
     -- "c",
     -- "css",
     -- "diff",
-    -- "dockerfile",
+    "dockerfile",
     -- "elixir",
     -- "eex",
     -- "erlang",
     -- "heex",
     -- "help",
-    -- "html",
-    -- "json",
-    -- "javascript",
+    "html",
+    "json",
+    "javascript",
     -- "lua",
     -- "query",
-    "ruby",
+    "ruby",    -- disabled in favor of tpope plugins
     -- "rust",
-    -- "scss",
+    "scss",
+    "sql",
     -- "terraform",
     -- "typescript",
     -- "vim",
   },
 
+  -- setting to false will disable the whole extensios
   highlight = {
-    -- `false` will disable the whole extension
     enable = true,
     additional_vim_regex_highlighting = false,
   },
 
-  -- This just doesn't seem to work as well as the other default tools I've been using.
+  -- Seems very buggy with Ruby so I'm leaving this off
   indent = {
     enable = true
   },

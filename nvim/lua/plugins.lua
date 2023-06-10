@@ -10,8 +10,6 @@ return {
   --------------------------------
   -- { "akinsho/bufferline.nvim" },
   -- { "bcicen/vim-jfmt" },
-  -- Git integration:
-  -- { "tpope/vim-fugitive" },
   -- { "airblade/vim-gitgutter" },
   -- { "danchoi/ri.vim" },
   -- This does git diffs really nicely
@@ -22,28 +20,31 @@ return {
   --   }
   -- }
 
-  -- Basic stuff, including a few things I brought over from vim
+  -- Things that don't work
+  -------------------------
+  --  { "vim-ruby/vim-ruby" }, -- seems to conflict with treesitter
 
+  -- Basic stuff, including a few things I brought over from vim
+  --------------------------------------------------------------
   -- { "AndrewRadev/splitjoin.vim" },
   -- { "elixir-editors/vim-elixir" },
   -- { "hashivim/vim-terraform" },
   -- { "lukas-reineke/indent-blankline.nvim" },
   { "machakann/vim-highlightedyank" },
-  -- { "pangloss/vim-javascript" },
-  -- { "vim-ruby/vim-ruby" },
-  --
-  -- The Altar to Tim Pope
+  -- { "pangloss/vim-javascript"  ,
 
-  { "tpope/vim-bundler" },
-  { "tpope/vim-endwise" },
-  { "tpope/vim-fugitive" },
-  { "tpope/vim-projectionist" },
-  { "tpope/vim-rails" },
-  { "tpope/vim-rake" },
-  { "tpope/vim-repeat" },
-  { "tpope/vim-sensible" },
+  -- The Altar to Tim Pope
+  -------------------------
+  -- { "tpope/vim-bundler" },
+  -- { "tpope/vim-endwise" },
+  -- { "tpope/vim-fugitive" },
+  -- { "tpope/vim-projectionist" },
+  -- { "tpope/vim-rails" },
+  -- { "tpope/vim-rake" },
+  -- { "tpope/vim-repeat" },
+  -- { "tpope/vim-sensible" },
   { "tpope/vim-surround" },
-  { "tpope/vim-unimpaired" },
+  -- { "tpope/vim-unimpaired" },
 
   {
     "akinsho/toggleterm.nvim",

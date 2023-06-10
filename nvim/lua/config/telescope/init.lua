@@ -62,6 +62,8 @@ require("telescope").setup{
       mappings = {
         { 'lib/(.*).ex', { { 'test/[1]_test.exs', 'Test' } } },
         { 'test/(.*)_test.exs', { { 'lib/[1].ex', 'Original', true } } },
+        { 'lib/(.*).rb', { { 'spec/lib/[1]_spec.rb', 'Test' } } },
+        { 'spec/lib/(.*)_spec.rb', { { 'lib/[1].rb', 'Original', true } } },
       },
       presets = { "rails", "rspec", "nestjs" }
     },

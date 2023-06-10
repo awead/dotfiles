@@ -2,11 +2,11 @@ local wk = require("which-key")
 
 local mappings = {
   a = { ":Telescope telescope-alternate alternate_file<cr>", "Alternate file" },
+  b = { ":bd<CR>", "Close" },
+  B = { ":bd!<CR>", "Close!" },
   q = { ":qa<CR>", "Quit" },
   Q = { ":wq<CR>", "Save and Quit" },
   w = { ":w<CR>", "Save" },
-  x = { ":bdelete<CR>", "Close" },
-  X = { ":bdelete!<CR>", "Close!" },
 
   f = {
     name = "Finding with Telescope",
@@ -40,31 +40,36 @@ local mappings = {
 
   },
 
-  n = { ":NvimTreeToggle<cr>", "Toggle NvimTree" },
+  n = {
+    name = "NvimTree File explorer",
+
+    h = { "<cmd>lua require('nvim-tree.api').tree.toggle_help()<cr>", "Toggle help" },
+    n = { ":NvimTreeToggle<cr>", "Toggle NvimTree" },
+  },
 
   r = {
-    name = "Testing (using vim-test because I'm still evaluating Neotest)",
+    name = "Testing (vim-test and Neotest)",
 
+    R = { ":let test#ruby#rspec#executable = 'bundle exec rspec'<CR>", "Use bundle rspec for testing" },
+    a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach test output" },
     f = { ":TestFile<cr>", "Test file" },
+    F = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run file" },
+    k = { ":let test#ruby#rspec#executable = 'script/tilt/rspec'<CR>", "Run tests inside Kat" },
+    n = { "<cmd>lua require('neotest').run.run()<cr>", "Run nearest test" },
+    o = { "<cmd>lua require('neotest').output_panel.toggle()<cr>", "Toggle test output" },
     r = { ":TestLast<cr>", "Run last test" },
     s = { ":TestNearest<cr>", "Run nearest test" },
+    S = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle summary" },
+    t = { "<cmd>lua require('neotest').run.run_last()<cr>", "Re-run last test" },
     v = { ":TestVisit<cr>", "Go to the test file" },
+
   },
 
   t = {
-    name = "Testing (using Neotest)",
-
-    a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach test output" },
-    f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run file" },
-    n = { "<cmd>lua require('neotest').run.run()<cr>", "Run nearest test" },
-    o = { "<cmd>lua require('neotest').output_panel.toggle()<cr>", "Toggle test output" },
-    s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle summary" },
-  },
-
-  T = {
     name = "ToggleTerm",
 
-    t = { ":ToggleTerm<cr>", "Open a new terminal" },
+    f = { ":ToggleTerm direction=float<cr>", "Switch to floating terminal" },
+    t = { ":ToggleTerm<cr>", "Toggle the surrent open terminal" },
   }
 
 }
