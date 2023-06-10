@@ -69,3 +69,6 @@ unsetopt nomatch
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --smart-case'
 
+# Setup direnv
+eval "$(direnv hook zsh)"
+

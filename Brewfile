@@ -18,6 +18,7 @@ cask 'vlc'
 
 brew 'atomicparsley'
 brew 'cheat'
+brew 'direnv'
 brew 'fzf'
 brew 'gh'
 brew 'git'
