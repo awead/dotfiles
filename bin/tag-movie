@@ -1,8 +1,7 @@
-#!/Users/awead/.asdf/shims/ruby
+#!/usr/bin/ruby
 
 require 'optparse'
 require 'ostruct'
-require 'byebug'
 require 'pathname'
 
 def options
