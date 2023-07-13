@@ -158,4 +158,10 @@ return {
     build = ":TSUpdate",
     config = build_with_config("treesitter")
   },
+
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
+  },
 }
