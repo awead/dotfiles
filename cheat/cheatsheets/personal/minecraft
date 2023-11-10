@@ -2,11 +2,42 @@
 
 docker run -d -it -p 25565:25565 -e EULA=TRUE itzg/minecraft-server
 
+# Compose
+
+dc up --remove-orphans vanilla
+
+dc exec rcon-cli --password XXXXXXX
+
 # Server
 
 ## Java Commands
 
 time set 0
+
+### Difficulty
+
+difficulty [hard|easy|peaceful]
+
+### Gamemode
+
+gamemode [survival|creative] greathound9736
+
+### Teleport
+
+teleport greathound9736 0 64 0
+
+### Give
+
+Armor with all enchantments at max level:
+
+give greathound9736 minecraft:diamond_helmet{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:protection",lvl:99},{id:"minecraft:fire_protection",lvl:99},{id:"minecraft:projectile_protection",lvl:99},{id:"minecraft:blast_protection",lvl:99},{id:"minecraft:thorns",lvl:99},{id:"minecraft:respiration",lvl:99},{id:"minecraft:aqua_affinity",lvl:1}]} 1
+give greathound9736 minecraft:diamond_chestplate{Enchantments:[{id:"minecraft:unbreaking",lvl:3},{id:"minecraft:protection",lvl:4},{id:"minecraft:fire_protection",lvl:4},{id:"minecraft:projectile_protection",lvl:4},{id:"minecraft:blast_protection",lvl:4},{id:"minecraft:thorns",lvl:3}]} 1
+give greathound9736 minecraft:diamond_leggings{Enchantments:[{id:"minecraft:unbreaking",lvl:3},{id:"minecraft:protection",lvl:4},{id:"minecraft:fire_protection",lvl:4},{id:"minecraft:projectile_protection",lvl:4},{id:"minecraft:blast_protection",lvl:4},{id:"minecraft:thorns",lvl:3}]} 1
+
+Weapons with Enchantments:
+
+give greathound9736 minecraft:bow{Enchantments:[{id:"minecraft:infinity",lvl:1},{id:"minecraft:power",lvl:99}]} 1
+give greathound9736 minecraft:crossbow{Enchantments:[{id:"minecraft:quick_charge",lvl:3},{id:"minecraft:multishot",lvl:1}]} 1
 
 ## Bedrock Commands
 
@@ -38,6 +69,7 @@ give CadetTiger95130 arrow 1 37
 Giving all players blocks:
 
 give @a diamond_block 128
+
 
 ### Messages
 
