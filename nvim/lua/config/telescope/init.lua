@@ -74,3 +74,8 @@ require "telescope".load_extension("telescope-alternate")
 
 -- Maybe don't use this? NvimTree seems to cover this
 require "telescope".load_extension("file_browser")
+
+require("telescope").load_extension("lazygit")
+-- not sure about this one....
+--require("telescope").extensions.lazygit.lazygit()
+

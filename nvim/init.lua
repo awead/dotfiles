@@ -1,12 +1,7 @@
--- Neovim config
+-- Neovim config for terminal environment
 
 -- Define the leader before installing plugins
 vim.g.mapleader = " "
-
--- There apparently need to be invoked before the ale plugin is loaded
--- vim.o.omnifunc = "ale#completion#OmniFunc"
--- vim.g.ale_completion_enabled = 1
--- vim.g.ale_completion_autoimport = 1
 
 -- Configure lazy plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

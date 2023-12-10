@@ -74,6 +74,14 @@ return {
   },
 
   {
+    "kdheepak/lazygit.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+  },
+
+  {
     "lewis6991/gitsigns.nvim",
     config = build_with_config("gitsigns"),
   },
@@ -103,7 +111,6 @@ return {
     "nvim-neotest/neotest",
     dependencies = {
       "antoinemadec/FixCursorHold.nvim",
-      "jfpedroza/neotest-elixir",
       "nvim-lua/plenary.nvim",
       "nvim-neotest/neotest-vim-test",
       "nvim-treesitter/nvim-treesitter",
@@ -115,7 +122,7 @@ return {
 
   -- Telescope fuzzy finder and addons
   {
-    "nvim-telescope/telescope.nvim", tag = "0.1.1",
+    "nvim-telescope/telescope.nvim", tag = "0.1.4",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-fzf-native.nvim"
@@ -155,13 +162,15 @@ return {
   -- Treesitter for syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "RRethy/nvim-treesitter-endwise",
+    },
     build = ":TSUpdate",
     config = build_with_config("treesitter")
   },
 
   {
     'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    opts = {} -- this is equalent to setup({}) function
+    config = build_with_config("autopairs")
   },
 }

@@ -50,3 +50,7 @@ Get a listling of all the environment variables for a given container. This is u
 are what, or if you need to get the credentials for a service.
 
   kubectl exec [container-name]  -- /usr/bin/env
+
+To pass a specific var at execution time
+
+  kubectl exec -it [container-name] -- env RAILS_ENV=test bundle exec rspec

@@ -40,5 +40,9 @@ require('nvim-treesitter.configs').setup {
     enable = true
   },
 
+  endwise = {
+    enable = true,
+  },
+
   sync_install = false,
 }
