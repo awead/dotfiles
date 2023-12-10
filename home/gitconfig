@@ -9,7 +9,7 @@
   helper = osxkeychain
 [core]
   excludesfile = ~/.gitignore
-  editor = vim
+  editor = nvim
 [alias]
   aa = add --all
   alias = "!git config --get-regexp alias"
