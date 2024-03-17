@@ -8,13 +8,20 @@ local mappings = {
   Q = { ":wq<CR>", "Save and Quit" },
   w = { ":w<CR>", "Save" },
 
+  e = {
+    name = "Execute",
+
+    e = { ":TermExec cmd=\"cargo run %:.\"<cr>", "Execute the current file (only supports Rust)"},
+  },
+
   f = {
     name = "Finding with Telescope",
 
     b = { ":Telescope buffers<cr>", "Buffers" },
     B = { ":Telescope current_buffer_fuzzy_find<cr>", "Current open buffer" },
     c = { ":Telescope colorscheme<cr>", "Color Schemes" },
-    f = { ":Telescope find_files<cr>", "Files" },
+    f = { ":Telescope find_files<cr>", "Find files (live)" },
+    F = { ":lua find_file_under_cursor()<CR>", "Find files (under cursor)" },
     g = { ":Telescope grep_string<cr>", "Grep (under cursor)" },
     s = { ":Telescope search_history<cr>", "Search history" },
     ["<leader>"] = { ":Telescope live_grep<cr>", "Grep (live)" },

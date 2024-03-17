@@ -1,4 +1,7 @@
-local lspconfig = require('lspconfig')
+
+-- After setting up mason-lspconfig you may set up servers via lspconfig
+require("lspconfig").lua_ls.setup {}
+require("lspconfig").rust_analyzer.setup {}
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -33,9 +36,9 @@ local on_attach = function(client, bufnr)
 
 end
 
-lspconfig.solargraph.setup {
-  on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  }
-}
+-- lspconfig.solargraph.setup {
+--   on_attach = on_attach,
+--   flags = {
+--     debounce_text_changes = 150,
+--   }
+-- }

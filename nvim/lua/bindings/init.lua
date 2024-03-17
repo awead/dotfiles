@@ -28,3 +28,6 @@ map('n', '<leader><Down>', ':resize +5<CR>', { desc = 'Resize down' })
 
 -- ToggleTerm
 map('t', '<Escape>', '<C-Bslash><C-n>', { desc = 'ToggleTerm: Exit insert mode' })
+
+-- Spelling
+map('n', '<leader>s', 'z=', { desc = 'Suggest spelling correction' })

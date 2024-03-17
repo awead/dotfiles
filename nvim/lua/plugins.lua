@@ -92,12 +92,49 @@ return {
       require('Comment').setup()
     end
   },
-  
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   config = build_with_config("lspconfig"),
-  -- },
 
+  --
+  -- L,SP for rust
+  --
+  
+  {
+    "williamboman/mason.nvim",
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+    },
+    config = build_with_config("mason"),
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    config = build_with_config("lspconfig"),
+  },
+
+  {
+    "simrat39/rust-tools.nvim",
+    config = build_with_config("rust-tools"),
+  },
+
+  -- snippets
+  {
+    -- Completion framework:
+    "hrsh7th/nvim-cmp",
+
+    -- LSP completion source:
+    "hrsh7th/cmp-nvim-lsp",
+
+    -- Useful completion sources:
+    "hrsh7th/cmp-nvim-lua",
+    "hrsh7th/cmp-nvim-lsp-signature-help",
+    "hrsh7th/cmp-vsnip",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/vim-vsnip"
+  },
+
+  --
+  -- Pretty stuff...
+  --
   {
     "nvim-lualine/lualine.nvim",
     dependencies = {
@@ -122,7 +159,7 @@ return {
 
   -- Telescope fuzzy finder and addons
   {
-    "nvim-telescope/telescope.nvim", tag = "0.1.4",
+    "nvim-telescope/telescope.nvim", tag = "0.1.5",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-fzf-native.nvim"
