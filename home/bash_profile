@@ -28,3 +28,4 @@ export HOMEBREW_CASK_OPTS="--require-sha --appdir=~/Applications"
 # custom-install directories.
 PATH=$HOMEBREW_PREFIX/bin:$PATH:$LATEX_BIN:$DF_BIN
 export PATH
+. "$HOME/.cargo/env"
