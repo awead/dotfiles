@@ -79,6 +79,7 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
     },
+    config = build_with_config("lazygit"),
   },
 
   {
