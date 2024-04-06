@@ -12,7 +12,9 @@ local mappings = {
     name = "Execute",
 
     e = { ":TermExec cmd=\"cargo run %:.\"<cr>", "Execute the current file (only supports Rust)"},
-  },
+    p = { ":TermExec cmd=\"docker run --rm -v $(pwd):/home/jstorforumadm -it jasp-t pytest %:.\" name=pytest<cr>", "Run pytest in Docker"},
+    t = { ":TermExec cmd=\"./tmp/scripts/ssio2via2 %:.\" direction=float name=ssio2via2<cr>", "Transform current file" },
+   },
 
   f = {
     name = "Finding with Telescope",
