@@ -95,7 +95,21 @@ return {
   },
 
   --
-  -- L,SP for rust
+  -- Testing
+  -- Using plain ol' vim-test because neotest seems to be a hot mess right now with treesitter
+  --
+  { 
+    "vim-test/vim-test",
+    config = function()
+      vim.g["test#python#pytest#executable"] = "docker run --rm -v $(pwd):/home/jstorforumadm -it jasp-t pytest"
+      vim.g["test#strategy"] = "toggleterm"
+      vim.g["test#neovim#term_position"] = "hor 25"
+    end
+
+  },
+
+  --
+  -- LSP for rust
   --
   
   {
@@ -142,20 +156,6 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     config = build_with_config("lualine"),
-  },
-
-  -- Neotest, including any language-specific packages as well as vim-test to cover the rest
-  {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-neotest/neotest-vim-test",
-      "nvim-treesitter/nvim-treesitter",
-      "olimorris/neotest-rspec",
-      "vim-test/vim-test",
-    },
-    config = build_with_config("neotest"),
   },
 
   -- Telescope fuzzy finder and addons
