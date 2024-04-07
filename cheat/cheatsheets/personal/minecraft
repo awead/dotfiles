@@ -32,6 +32,8 @@ tp <source-player-handle> <target-player-handle>
 
 #### Playing tracks
 
+playsound minecraft:music.creative ambient @p
+
 
 
 ### Give
