@@ -94,6 +94,19 @@ return {
     end
   },
 
+
+  -- Documentation generator
+  -- 
+  -- Note: you need to run:
+  -- :call doge#install()
+  --
+  {
+    "kkoomen/vim-doge",
+    config = function()
+      vim.g["doge_doc_standard_python"] = "google"
+    end
+  },
+
   --
   -- Testing
   -- Using plain ol' vim-test because neotest seems to be a hot mess right now with treesitter
