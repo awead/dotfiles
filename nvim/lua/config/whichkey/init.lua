@@ -58,16 +58,14 @@ local mappings = {
   r = {
     name = "Testing (vim-test and Neotest)",
 
-    R = { ":let test#ruby#rspec#executable = 'bundle exec rspec'<CR>", "Use bundle rspec for testing" },
+    F = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run file" },
+    S = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle summary" },
     a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach test output" },
     f = { ":TestFile<cr>", "Test file" },
-    F = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run file" },
-    k = { ":let test#ruby#rspec#executable = 'script/tilt/rspec'<CR>", "Run tests inside Kat" },
     n = { "<cmd>lua require('neotest').run.run()<cr>", "Run nearest test" },
     o = { "<cmd>lua require('neotest').output_panel.toggle()<cr>", "Toggle test output" },
     r = { ":TestLast<cr>", "Run last test" },
     s = { ":TestNearest<cr>", "Run nearest test" },
-    S = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle summary" },
     t = { "<cmd>lua require('neotest').run.run_last()<cr>", "Re-run last test" },
     v = { ":TestVisit<cr>", "Go to the test file" },
 
