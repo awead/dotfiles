@@ -115,7 +115,7 @@ return {
     "vim-test/vim-test",
     config = function()
       vim.g["test#python#pytest#executable"] = "${LOCAL_PYTEST:-pytest}"
-      vim.g["test#ruby#rspec#executable"] = "${LOCAL_RSPEC:-bundle exec rspec}"
+      vim.g["test#ruby#rspec#executable"] = "d-rspec"
       vim.g["test#strategy"] = "toggleterm"
       vim.g["test#neovim#term_position"] = "hor 25"
     end

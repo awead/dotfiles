@@ -44,6 +44,16 @@ function rspec-save-results {
   cp tmp/rspec_results.html tmp/rspec_results_saved.html
 }
 
+function d-rspec {
+  if [[ -z "${RSPEC_SERVICE}" ]]; then
+    echo "No dc service defined, running rspec locally"
+    bundle exec rspec "$@"
+  else
+    echo "Running rspec with compose"
+    docker compose exec ${RSPEC_SERVICE} rspec
+  fi
+}
+
 function pdf-concat {
   "/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py" -o "$@"
 }
