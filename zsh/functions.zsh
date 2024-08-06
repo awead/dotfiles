@@ -49,8 +49,8 @@ function d-rspec {
     echo "No dc service defined, running rspec locally"
     bundle exec rspec "$@"
   else
-    echo "Running rspec with compose"
-    docker compose exec ${RSPEC_SERVICE} rspec
+    echo "Running rspec with docker"
+    docker run --rm -v $(pwd):/app -it ${RSPEC_SERVICE} bundle exec rspec "$@"
   fi
 }
 
