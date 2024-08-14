@@ -2,9 +2,6 @@
 # git brew bundle
 
 tap 'homebrew/bundle'
-tap 'homebrew/cask'
-tap 'homebrew/cask-versions'
-tap 'homebrew/core'
 
 cask_args appdir: '~/Applications'
 
