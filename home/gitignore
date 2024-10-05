@@ -5,8 +5,10 @@
 .envrc-docker
 .envrc-local
 .git-sources
+.m2
 .projections.json
 .rubocop-http*
+.solargraph.yml
 .tags
 .tool-versions
 .vscode
@@ -26,4 +28,3 @@ public/packs
 public/test_repository
 tags
 tmp
-.solargraph.yml
