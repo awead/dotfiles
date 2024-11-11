@@ -18,6 +18,15 @@ time set 0
 
 difficulty [hard|easy|peaceful]
 
+### Whitelist
+
+whitelist add CadetTiger95130
+whitelist add AwayAlpaca20358
+whitelist add greathound9736
+whitelist reload
+whitelist on
+
+
 ### Gamemode
 
 gamemode [survival|creative] greathound9736
@@ -43,8 +52,8 @@ playsound minecraft:music.creative ambient @p
 give greathound9736 minecraft:diamond_helmet{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:protection",lvl:99},{id:"minecraft:fire_protection",lvl:99},{id:"minecraft:projectile_protection",lvl:99},{id:"minecraft:blast_protection",lvl:99},{id:"minecraft:thorns",lvl:99},{id:"minecraft:respiration",lvl:99},{id:"minecraft:aqua_affinity",lvl:1}]} 1
 give greathound9736 minecraft:diamond_chestplate{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:protection",lvl:99},{id:"minecraft:fire_protection",lvl:99},{id:"minecraft:projectile_protection",lvl:99},{id:"minecraft:blast_protection",lvl:99},{id:"minecraft:thorns",lvl:99}]} 1
 give greathound9736 minecraft:diamond_leggings{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:protection",lvl:99},{id:"minecraft:fire_protection",lvl:99},{id:"minecraft:projectile_protection",lvl:99},{id:"minecraft:blast_protection",lvl:99},{id:"minecraft:thorns",lvl:99}]} 1
-give greathound9736 minecraft:diamond_boots{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:protection",lvl:99},{id:"minecraft:fire_protection",lvl:99},{id:"minecraft:projectile_protection",lvl:99},{id:"minecraft:blast_protection",lvl:99},{id:"minecraft:thorns",lvl:99},{id:"minecraft:feather_falling",lvl:99},{id:"minecraft:depth_strider",lvl:99}]} 1
 
+give greathound9736 minecraft:diamond_boots{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:protection",lvl:99},{id:"minecraft:fire_protection",lvl:99},{id:"minecraft:projectile_protection",lvl:99},{id:"minecraft:blast_protection",lvl:99},{id:"minecraft:thorns",lvl:99},{id:"minecraft:feather_falling",lvl:99},{id:"minecraft:depth_strider",lvl:99}]} 1
 give greathound9736 minecraft:netherite_helmet{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:protection",lvl:99},{id:"minecraft:fire_protection",lvl:99},{id:"minecraft:projectile_protection",lvl:99},{id:"minecraft:blast_protection",lvl:99},{id:"minecraft:thorns",lvl:99},{id:"minecraft:respiration",lvl:99},{id:"minecraft:aqua_affinity",lvl:1}]} 1
 give greathound9736 minecraft:netherite_chestplate{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:protection",lvl:99},{id:"minecraft:fire_protection",lvl:99},{id:"minecraft:projectile_protection",lvl:99},{id:"minecraft:blast_protection",lvl:99},{id:"minecraft:thorns",lvl:99}]} 1
 give greathound9736 minecraft:netherite_leggings{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:protection",lvl:99},{id:"minecraft:fire_protection",lvl:99},{id:"minecraft:projectile_protection",lvl:99},{id:"minecraft:blast_protection",lvl:99},{id:"minecraft:thorns",lvl:99}]} 1
@@ -53,10 +62,16 @@ give greathound9736 minecraft:netherite_boots{Enchantments:[{id:"minecraft:unbre
 #### Armor 1.21 and Later
 
 give @p diamond_helmet[enchantments={levels:{'unbreaking':255,'protection':255,'fire_protection':255,'projectile_protection':255,'blast_protection':255,'thorns':255,'respiration':255,'aqua_affinity':true},show_in_tooltip:true}]
+give @p diamond_chestplate[enchantments={levels:{'unbreaking':255,'protection':255,'fire_protection':255,'projectile_protection':255,'blast_protection':255,'thorns':255},show_in_tooltip:true}]
+give @p diamond_leggings[enchantments={levels:{'unbreaking':255,'protection':255,'fire_protection':255,'projectile_protection':255,'blast_protection':255,'thorns':255},show_in_tooltip:true}]
+give @p diamond_boots[enchantments={levels:{'unbreaking':255,'protection':255,'fire_protection':255,'projectile_protection':255,'blast_protection':255,'thorns':255,'feather_falling':255,'depth_strider':255},show_in_tooltip:true}]
+
+greathound9736 minecraft:diamond_leggings{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:protection",lvl:99},{id:"minecraft:fire_protection",lvl:99},{id:"minecraft:projectile_protection",lvl:99},{id:"minecraft:blast_protection",lvl:99},{id:"minecraft:thorns",lvl:99}]} 1
 
 #### Bows
 
 give greathound9736 minecraft:bow{Enchantments:[{id:"minecraft:infinity",lvl:1},{id:"minecraft:power",lvl:99}]} 1
+give @p bow[enchantments={levels:{"infinity":255,"power":255}}] 1
 give greathound9736 minecraft:crossbow{Enchantments:[{id:"minecraft:quick_charge",lvl:3},{id:"minecraft:multishot",lvl:1}]} 1
 
 #### Swords
@@ -69,7 +84,11 @@ give greathound9736 minecraft:diamond_axe{Enchantments:[{id:"minecraft:unbreakin
 give greathound9736 minecraft:diamond_pickaxe{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:efficiency",lvl:99}]} 1
 give greathound9736 minecraft:netherite_hoe{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:efficiency",lvl:99}]} 1
 give greathound9736 minecraft:netherite_axe{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:efficiency",lvl:99}]} 1
-give greathound9736 minecraft:iron_pickaxe{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:efficiency",lvl:99},{id:"minecraft:silk_touch",lvl:1}]} 1
+
+#### Tools 1.21 and Later
+give @p iron_pickaxe[enchantments={levels:{'unbreaking':255,'efficiency':255,'silk_touch':255},show_in_tooltip:true}]
+give @p iron_hoe[enchantments={levels:{'unbreaking':255,'efficiency':255,'silk_touch':255},show_in_tooltip:true}]
+
 
 #### Tridents
 
