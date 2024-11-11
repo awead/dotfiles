@@ -1,11 +1,11 @@
-vim.cmd('filetype plugin indent on')
+vim.cmd('filetype indent on')
 -- vim.o.fileencoding = 'utf-8' Note: causes "'modifiable' is off error"
 -- vim.o.backspace = 2 this is a bad option now
 
 vim.bo.autoindent = true
 vim.bo.expandtab = true
-vim.bo.shiftwidth = 2
-vim.bo.tabstop = 2
+vim.bo.shiftwidth = 4
+vim.bo.tabstop = 4
 vim.o.autoindent = true
 vim.o.autowrite = true
 vim.o.clipboard = 'unnamedplus'
@@ -24,14 +24,14 @@ vim.o.mouse = 'a'
 vim.o.number = true
 vim.o.pumheight = 10
 vim.o.scrolloff = 3
-vim.o.shiftwidth = 2
+vim.o.shiftwidth = 4
 vim.o.showtabline = 2
 vim.o.sidescrolloff = 5
-vim.o.softtabstop = 2
+vim.o.softtabstop = 4
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.swapfile = false
-vim.o.tabstop = 2
+vim.o.tabstop = 4
 vim.o.textwidth = 120
 vim.o.timeoutlen = 1000
 vim.o.updatetime = 100

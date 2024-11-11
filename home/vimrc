@@ -13,7 +13,7 @@ execute pathogen#infect()
 " Basic Settings
 " -----------------------------------------------------------------------------
 
-set autoindent
+set cindent 
 set autowrite     " Automatically :write before running commands
 set backspace=2   " Backspace deletes like most programs in insert mode
 set colorcolumn=160
