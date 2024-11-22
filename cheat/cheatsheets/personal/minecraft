@@ -71,11 +71,18 @@ greathound9736 minecraft:diamond_leggings{Enchantments:[{id:"minecraft:unbreakin
 #### Bows
 
 give greathound9736 minecraft:bow{Enchantments:[{id:"minecraft:infinity",lvl:1},{id:"minecraft:power",lvl:99}]} 1
-give @p bow[enchantments={levels:{"infinity":255,"power":255}}] 1
 give greathound9736 minecraft:crossbow{Enchantments:[{id:"minecraft:quick_charge",lvl:3},{id:"minecraft:multishot",lvl:1}]} 1
 
+#### 1.21 and Later
+give @p bow[enchantments={levels:{"infinity":255,"power":255}}] 1
+
 #### Swords
+
 give greathound9736 minecraft:diamond_sword{Enchantments:[{id:"minecraft:sharpness", lvl:99},{id:"minecraft:smite",lvl:99}]} 1
+
+#### 1.21 and Later
+
+give greathound9736 minecraft:netherite_sword
 
 #### Tools
 give greathound9736 minecraft:diamond_hoe{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:efficiency",lvl:99}]} 1
