@@ -44,25 +44,16 @@ To show the fingerprint for a key
 
 # Export keys
 
-    gpg --output ~/public_key.txt --armor --export KEY_ID
-    gpg --output ~/private_key.txt --armor --export-secret-key KEY_ID
+    gpg --armor --export KEY_ID > public.asc
+    gpg --armor --export-secret-key KEY_ID > secret.asc
 
-Where KEY_ID is the 8 character GPG key ID.
-
-Store these files to a safe location, such as a USB drive, then remove the private key file.
-
-    shred -zu ~/private_key.txt
+Where KEY_ID is the 8 character GPG key ID or the username.
 
 # Import keys
 
 Retrieve the key files which you previously exported.
 
-    gpg --import ~/public_key.txt
-    gpg --allow-secret-key-import --import ~/private_key.txt
-
-Then delete the private key file.
-
-    rm -P ~/private_key.txt
+    gpg --import public.asc secret.asc
 
 # Revoke a key
 
@@ -72,11 +63,11 @@ Create a revocation certificate.
 
 Where KEY_ID is the 8 character GPG key ID.
 
-After creating the certificate import it.
+Keep the certification and if you need to use it to revoke your key, import it:
 
     gpg --import ~/revoke.asc
 
-Then ensure that key servers know about the revokation.
+You've now revoked your key, but you have let the key servers know about it:
 
     gpg --send-keys KEY_ID
 
