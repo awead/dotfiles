@@ -10,8 +10,6 @@ cask 'github'
 cask 'handbrake'
 cask 'kitty'
 cask 'makemkv'
-cask 'moom'
-cask 'vlc'
 
 brew 'atomicparsley'
 brew 'cheat'
