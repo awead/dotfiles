@@ -66,7 +66,10 @@ give @p diamond_chestplate[enchantments={levels:{'unbreaking':255,'protection':2
 give @p diamond_leggings[enchantments={levels:{'unbreaking':255,'protection':255,'fire_protection':255,'projectile_protection':255,'blast_protection':255,'thorns':255},show_in_tooltip:true}]
 give @p diamond_boots[enchantments={levels:{'unbreaking':255,'protection':255,'fire_protection':255,'projectile_protection':255,'blast_protection':255,'thorns':255,'feather_falling':255,'depth_strider':255},show_in_tooltip:true}]
 
-greathound9736 minecraft:diamond_leggings{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:protection",lvl:99},{id:"minecraft:fire_protection",lvl:99},{id:"minecraft:projectile_protection",lvl:99},{id:"minecraft:blast_protection",lvl:99},{id:"minecraft:thorns",lvl:99}]} 1
+give @p netherite_helmet[enchantments={levels:{'unbreaking':255,'protection':255,'fire_protection':255,'projectile_protection':255,'blast_protection':255,'thorns':255,'respiration':255,'aqua_affinity':true},show_in_tooltip:true}]
+give @p netherite_chestplate[enchantments={levels:{'unbreaking':255,'protection':255,'fire_protection':255,'projectile_protection':255,'blast_protection':255,'thorns':255},show_in_tooltip:true}]
+give @p netherite_leggings[enchantments={levels:{'unbreaking':255,'protection':255,'fire_protection':255,'projectile_protection':255,'blast_protection':255,'thorns':255},show_in_tooltip:true}]
+give @p netherite_boots[enchantments={levels:{'unbreaking':255,'protection':255,'fire_protection':255,'projectile_protection':255,'blast_protection':255,'thorns':255,'feather_falling':255,'depth_strider':255},show_in_tooltip:true}]
 
 #### Bows
 
@@ -74,6 +77,7 @@ give greathound9736 minecraft:bow{Enchantments:[{id:"minecraft:infinity",lvl:1},
 give greathound9736 minecraft:crossbow{Enchantments:[{id:"minecraft:quick_charge",lvl:3},{id:"minecraft:multishot",lvl:1}]} 1
 
 #### 1.21 and Later
+
 give @p bow[enchantments={levels:{"infinity":255,"power":255}}] 1
 
 #### Swords
@@ -82,9 +86,10 @@ give greathound9736 minecraft:diamond_sword{Enchantments:[{id:"minecraft:sharpne
 
 #### 1.21 and Later
 
-give greathound9736 minecraft:netherite_sword
+give greathound9736 minecraft:netherite_sword[enchantments={levels:{"sharpness":255,"smite":255,"bane_of_arthropods":255,"looting":255,"fire_aspect":255,"sweeping_edge":255,"unbreaking":255},show_in_tooltip:true}]
 
 #### Tools
+
 give greathound9736 minecraft:diamond_hoe{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:efficiency",lvl:99}]} 1
 give greathound9736 minecraft:diamond_shovel{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:efficiency",lvl:99}]} 1
 give greathound9736 minecraft:diamond_axe{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:efficiency",lvl:99}]} 1
@@ -93,9 +98,10 @@ give greathound9736 minecraft:netherite_hoe{Enchantments:[{id:"minecraft:unbreak
 give greathound9736 minecraft:netherite_axe{Enchantments:[{id:"minecraft:unbreaking",lvl:99},{id:"minecraft:efficiency",lvl:99}]} 1
 
 #### Tools 1.21 and Later
+
 give @p iron_pickaxe[enchantments={levels:{'unbreaking':255,'efficiency':255,'silk_touch':255},show_in_tooltip:true}]
 give @p iron_hoe[enchantments={levels:{'unbreaking':255,'efficiency':255,'silk_touch':255},show_in_tooltip:true}]
-
+give @p minecraft:stone_hoe[enchantments={levels:{'unbreaking':255,'efficiency':255,"looting":255},show_in_tooltip:true}]
 
 #### Tridents
 
