@@ -1,6 +1,4 @@
 vim.cmd('filetype plugin indent on')
--- vim.o.fileencoding = 'utf-8' Note: causes "'modifiable' is off error"
--- vim.o.backspace = 2 this is a bad option now
 
 vim.bo.autoindent = true
 vim.bo.expandtab = true

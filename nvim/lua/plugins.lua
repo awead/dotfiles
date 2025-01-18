@@ -35,6 +35,7 @@ return {
 
   -- The Altar to Tim Pope
   -------------------------
+  { "tpope/vim-abolish" },
   -- { "tpope/vim-bundler" },
   -- { "tpope/vim-endwise" },
   -- { "tpope/vim-fugitive" },
@@ -48,6 +49,7 @@ return {
 
   {
     "akinsho/toggleterm.nvim",
+    cond = not vim.g.vscode,
     version = "*",
     config = build_with_config("toggleterm"),
   },
@@ -60,6 +62,7 @@ return {
 
   {
     "folke/tokyonight.nvim",
+    cond = not vim.g.vscode,
     lazy = false,
     priority = 1000,
     config = function()
@@ -69,65 +72,41 @@ return {
 
   {
     "folke/which-key.nvim",
+    cond = not vim.g.vscode,
     event = "BufWinEnter",
     config = build_with_config("whichkey")
   },
 
   {
     "kdheepak/lazygit.nvim",
+    cond = not vim.g.vscode,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
     },
-    config = build_with_config("lazygit"),
   },
 
   {
     "lewis6991/gitsigns.nvim",
+    cond = not vim.g.vscode,
     config = build_with_config("gitsigns"),
   },
 
   {
     "numToStr/Comment.nvim",
+    cond = not vim.g.vscode,
     config = function()
       require('Comment').setup()
     end
   },
 
-
-  -- Documentation generator
-  -- 
-  -- Note: you need to run:
-  -- :call doge#install()
   --
-  {
-    "kkoomen/vim-doge",
-    config = function()
-      vim.g["doge_doc_standard_python"] = "google"
-    end
-  },
-
-  --
-  -- Testing
-  -- Using plain ol' vim-test because neotest seems to be a hot mess right now with treesitter
-  --
-  { 
-    "vim-test/vim-test",
-    config = function()
-      vim.g["test#python#pytest#executable"] = "${LOCAL_PYTEST:-pytest}"
-      vim.g["test#ruby#rspec#executable"] = "d-rspec"
-      vim.g["test#strategy"] = "toggleterm"
-      vim.g["test#neovim#term_position"] = "hor 25"
-    end
-
-  },
-
-  --
-  -- LSP for rust
+  -- L,SP for rust
   --
   
   {
     "williamboman/mason.nvim",
+    cond = not vim.g.vscode,
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
     },
@@ -136,11 +115,13 @@ return {
 
   {
     "neovim/nvim-lspconfig",
+    cond = not vim.g.vscode,
     config = build_with_config("lspconfig"),
   },
 
   {
     "simrat39/rust-tools.nvim",
+    cond = not vim.g.vscode,
     config = build_with_config("rust-tools"),
   },
 
@@ -166,15 +147,33 @@ return {
   --
   {
     "nvim-lualine/lualine.nvim",
+    cond = not vim.g.vscode,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
     config = build_with_config("lualine"),
   },
 
+  -- Neotest, including any language-specific packages as well as vim-test to cover the rest
+  {
+    "nvim-neotest/neotest",
+    cond = not vim.g.vscode,
+    dependencies = {
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-neotest/neotest-vim-test",
+      "nvim-neotest/nvim-nio",
+      "nvim-treesitter/nvim-treesitter",
+      "olimorris/neotest-rspec",
+      "vim-test/vim-test",
+    },
+    config = build_with_config("neotest"),
+  },
+
   -- Telescope fuzzy finder and addons
   {
     "nvim-telescope/telescope.nvim", tag = "0.1.8",
+    cond = not vim.g.vscode,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-fzf-native.nvim"
@@ -184,6 +183,7 @@ return {
   },
   {
     "nvim-telescope/telescope-file-browser.nvim",
+    cond = not vim.g.vscode,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
@@ -191,13 +191,18 @@ return {
   },
   {
     "nvim-telescope/telescope-frecency.nvim",
+    cond = not vim.g.vscode,
     dependencies = { "kkharji/sqlite.lua" }
   },
-  { "otavioschwanck/telescope-alternate" },
+  { 
+    "otavioschwanck/telescope-alternate",
+    cond = not vim.g.vscode,
+  },
 
   -- NvimTree for file browsing
   {
     "nvim-tree/nvim-tree.lua",
+    cond = not vim.g.vscode,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
@@ -208,12 +213,14 @@ return {
   -- Devicons
   {
     "nvim-tree/nvim-web-devicons",
+    cond = not vim.g.vscode,
     config = build_with_config("icons")
   },
 
   -- Treesitter for syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
+    cond = not vim.g.vscode,
     dependencies = {
       "RRethy/nvim-treesitter-endwise",
     },

@@ -11,7 +11,7 @@ require("neotest").setup({
 })
 
 -- Configure vim-test, which neo-test will use under the hood
-vim.g["test#elixir#exunit#executable"] = "docker-compose run test mix test --trace"
-vim.g["test#ruby#rspec#executable"] = "bin/d-rspec"
+vim.g["test#elixir#exunit#executable"] = "script/tilt/test"
+vim.g["test#ruby#rspec#executable"] = "k-rspec"
 vim.g["test#strategy"] = "toggleterm"
 vim.g["test#neovim#term_position"] = "hor 25"

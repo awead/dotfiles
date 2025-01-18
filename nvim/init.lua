@@ -1,5 +1,3 @@
--- Neovim config for terminal environment
-
 -- Define the leader before installing plugins
 vim.g.mapleader = " "
 
@@ -16,8 +14,21 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
+-- These will load plugins for terminal Neovim, VSCode+Neovim, or both
 require("lazy").setup("plugins")
 require("options")
-require("bindings")
-require("functions")
+
+if vim.g.vscode then
+
+  -- VSCode+Neovim ONLY
+  vim.cmd[[source $HOME/.config/nvim/vscode/settings.vim]]
+
+else
+
+  -- Terminal-based Neovim ONLY
+  require("bindings")
+  require("functions")
+
+end
 
