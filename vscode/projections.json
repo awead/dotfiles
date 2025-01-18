@@ -1,0 +1,11 @@
+{
+  "app/*.rb": {
+    "alternate": "spec/{}_spec.rb"
+  },
+  "lib/*.rb": {
+    "alternate": "spec/lib/{}_spec.rb"
+  },
+  "app/assets/javascripts/*.js": {
+    "alternate": "spec/javascripts/{}_spec.js"
+  }
+}

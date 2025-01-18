@@ -19,14 +19,9 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 require("options")
 
-if vim.g.vscode then
+-- Terminal-based Neovim ONLY
+if not vim.g.vscode then
 
-  -- VSCode+Neovim ONLY
-  vim.cmd[[source $HOME/.config/nvim/vscode/settings.vim]]
-
-else
-
-  -- Terminal-based Neovim ONLY
   require("bindings")
   require("functions")
 

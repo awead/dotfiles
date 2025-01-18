@@ -48,7 +48,6 @@ wk.add({
     { "<leader>rS", "<cmd>lua require('neotest').summary.toggle()<cr>", desc = "Toggle summary" },
     { "<leader>ra", "<cmd>lua require('neotest').run.attach()<cr>", desc = "Attach test output" },
     { "<leader>rf", ":TestFile<cr>", desc = "Test file" },
-    { "<leader>rk", ":let test#ruby#rspec#executable = 'script/tilt/rspec'<CR>", desc = "Run tests inside Kat" },
     { "<leader>rn", "<cmd>lua require('neotest').run.run()<cr>", desc = "Run nearest test" },
     { "<leader>ro", "<cmd>lua require('neotest').output_panel.toggle()<cr>", desc = "Toggle test output" },
     { "<leader>rr", ":TestLast<cr>", desc = "Run last test" },
