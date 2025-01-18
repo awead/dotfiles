@@ -144,6 +144,9 @@ defaults write com.apple.mail ConversationViewSortDescending -bool true
 defaults write com.apple.iCal "TimeZone support enabled" -bool true
 defaults write com.apple.iCal "first day of week" -int 1
 
+# Disable startup sound
+sudo nvram StartupMute=%01
+
 #
 # Done. Restart things...
 #

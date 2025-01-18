@@ -47,3 +47,6 @@ source $HOME/.dotfiles/kitty/install.sh
 source tmux/install.sh
 source vim/install.sh
 source nvim/install.sh
+
+# Fonts
+source $HOME/.dotfiles/fonts/install.sh
