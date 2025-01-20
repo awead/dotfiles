@@ -72,3 +72,5 @@ export FZF_DEFAULT_COMMAND='rg --files --smart-case'
 # Setup direnv
 eval "$(direnv hook zsh)"
 
+# Setup z
+eval "$(zoxide init zsh --cmd cd)"
