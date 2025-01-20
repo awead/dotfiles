@@ -9,6 +9,7 @@ alias ta="tmux attach -t"
 alias tn="TERM=screen-256color-bce tmux new -s"
 alias k="kubectl"
 alias dc="docker compose" # NB: this overrides /usr/bin/dc which is a calculator program
+alias ls-projects="find ~/Projects/Github -type d -depth 2"
 
 # Azure
 alias az-suffix="uuidgen | tr '[:upper:]' '[:lower:]' | awk -F\- '{ print $5 }'"
