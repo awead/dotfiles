@@ -19,3 +19,6 @@ alias az-suffix="uuidgen | tr '[:upper:]' '[:lower:]' | awk -F\- '{ print $5 }'"
 # See: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 alias g='git status'
 alias gb='git recent'
+
+# Replace cat with bat
+alias cat=bat

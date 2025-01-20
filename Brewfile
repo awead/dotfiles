@@ -12,6 +12,7 @@ cask 'kitty'
 cask 'makemkv'
 
 brew 'atomicparsley'
+brew 'bat'
 brew 'cheat'
 brew 'direnv'
 brew 'fzf'
