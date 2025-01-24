@@ -1,11 +1,3 @@
-function rspec-changed {
-  git status | grep "_spec.rb" | awk '{ print $2 }' | xargs bundle exec rspec
-}
-
-function rspec-save-results {
-  cp tmp/rspec_results.html tmp/rspec_results_saved.html
-}
-
 function d-rspec {
   if [[ -z "${RSPEC_SERVICE}" ]]; then
     echo "No dc service defined, running rspec locally"
@@ -30,3 +22,10 @@ function k-rspec() {
   fi
 }
 
+function code-backup() {
+  cp $HOME/Library/Application\ Support/Code/User/settings.json $HOME/.dotfiles/vscode/settings.json
+}
+
+function code-restore() {
+  cp $HOME/.dotfiles/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+}

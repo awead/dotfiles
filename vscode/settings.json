@@ -1,6 +1,4 @@
 {
-  "azureFunctions.showMultiCoreToolsWarning": false,
-  "cSpell.enabled": true,
   "cSpell.enabled": true,
   "cSpell.language": "en",
   "cSpell.ignoreWords": [
@@ -11,18 +9,21 @@
     "markdown": true
   },
   "cSpell.userWords": [
+    "asvetliakov",
     "autofetch",
     "autofix",
     "CheckMyMeds",
     "cmmint",
     "datacenter",
     "FHIR",
+    "Lilex",
     "neovim",
     "nvim",
     "pendo",
     "reindentlines",
     "rubocop",
     "standardrb",
+    "vspacecode",
     "whichkey",
     "workdir"
   ],
@@ -38,19 +39,39 @@
     120
   ],
   "editor.tabSize": 2,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "git.autofetch": true,
-  "github-enterprise.uri": "https://git.innova-partners.com",
   "redhat.telemetry.enabled": false,
-  "ruby.specCommand": "k-rspec",
-  "[ruby]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.insertSpaces": true,
-    "editor.semanticHighlighting.enabled": true,
-    "editor.tabSize": 2,
+  "rubyLsp.rubyVersionManager": {
+    "identifier": "none"
   },
+  "rubyLsp.bundleGemfile": "Gemfile.dev", // seems to prevent the Gemfile.lock from being changed
+  "rubyLsp.enabledFeatures": {
+    "codeActions": true,
+    "diagnostics": true,
+    "documentHighlights": true,
+    "documentLink": true,
+    "documentSymbols": true,
+    "foldingRanges": true,
+    "formatting": true,
+    "hover": true,
+    "inlayHint": true,
+    "onTypeFormatting": true,
+    "selectionRanges": true,
+    "semanticHighlighting": true,
+    "completion": true,
+    "codeLens": true,
+    "definition": true,
+    "workspaceSymbol": true,
+    "signatureHelp": true,
+    "typeHierarchy": true
+  },
+  "ruby.specCommand": "k-rspec",
   "search.exclude": {
     "**/*.code-search": true,
     "**/bower_components": true,
@@ -60,19 +81,11 @@
     "**/node_modules": true,
     "**/tmp": true,
     "**/vendor": true,
-    "tags": true,
+    "tags": true
   },
   "terminal.integrated.fontSize": 14,
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
-  "whichkey.delay": 0,
-  "whichkey.sortOrder": "alphabetically",
-  "whichkey.bindings": [
-    {
-      "key": "=",
-      "name": "Standard RB auto-fixes",
-      "type": "command",
-      "command": "standardRuby.formatAutoFixes"
-    },
+  "vspacecode.bindings": [
     {
       "key": "w",
       "name": "Save",
@@ -95,20 +108,21 @@
           "name": "Open alternate in vertical split",
           "type": "command",
           "command": "alternateFile.alternateFileInSplit"
-        },
+        }
       ]
     },
     {
       "key": "f",
-      "name": "Files...",
+      "name": "Find...",
+      "icon": "search",
       "type": "bindings",
       "bindings": [
         {
           "key": "f",
-          "name": "Open file",
+          "name": "in files",
           "type": "command",
           "command": "workbench.action.quickOpen"
-        },
+        }
       ]
     },
     {
@@ -132,7 +146,7 @@
               "name": "Move group to the left",
               "type": "command",
               "command": "workbench.action.moveActiveEditorGroupLeft"
-            },
+            }
           ]
         },
         {
@@ -146,20 +160,46 @@
           "name": "File to left group",
           "type": "command",
           "command": "workbench.action.moveEditorToLeftGroup"
-        },
+        }
       ]
+    },
+    {
+      "key": "i",
+      "name": "Indent Lines",
+      "type": "command",
+      "command": "editor.action.reindentlines"
     },
     {
       "key": "n",
       "name": "Sidebar and File Explorer",
+      "icon": "list-tree",
       "type": "bindings",
       "bindings": [
         {
-          "key": "n",
-          "name": "Toggle sidebar",
-          "type": "command",
-          "command": "workbench.action.toggleSidebarVisibility"
+          "key": "t",
+          "name": "Toggle tree/explorer view",
+          "type": "conditional",
+          "bindings": [
+            {
+              "key": "",
+              "name": "Show explorer view",
+              "type": "command",
+              "command": "workbench.view.explorer"
+            },
+            {
+              "key": "when:sideBarVisible && explorerViewletVisible",
+              "name": "Hide side bar",
+              "type": "command",
+              "command": "workbench.action.toggleSidebarVisibility"
+            }
+          ]
         },
+        {
+          "key": "s",
+          "name": "Show active file in tree/explorer view",
+          "type": "command",
+          "command": "workbench.files.action.showActiveFileInExplorer"
+        }
       ]
     },
     {
@@ -171,30 +211,25 @@
           "key": "f",
           "name": "Run file",
           "type": "command",
-          "command": "extension.runFileSpecs",
+          "command": "extension.runFileSpecs"
         },
         {
           "key": "r",
           "name": "Run last test",
           "type": "command",
-          "command": "extension.runLastSpec",
+          "command": "extension.runLastSpec"
         },
         {
           "key": "s",
           "name": "Run nearest test",
           "type": "command",
-          "command": "extension.runSpecLine",
-        },
+          "command": "extension.runSpecLine"
+        }
       ]
-    },
+    }
   ],
-  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.colorTheme": "Spinel",
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false
 }
-
-
