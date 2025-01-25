@@ -1,0 +1,39 @@
+// Assumes the following directory structure:
+// 
+// .
+// ├── .devcontainer
+// │   ├── .devcontainer.json
+// ├── Dockerfile
+// ├── Gemfile
+// ├── Gemfile.lock
+// ├── etc...
+// ├── lib
+// │   ├── etc...
+// └── spec
+//     ├── lib
+//     │   ├── etc..
+
+{
+  "name": "Ruby project with RSpec",
+  "build": {
+    "context": "..",
+    "dockerfile": "../Dockerfile"
+  },
+
+  // "features": {},
+
+  // "forwardPorts": [],
+
+  // "postCreateCommand": "cat /etc/os-release",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "noku.rails-run-spec-vscode",
+        "testdouble.vscode-alternate-alternate-file"
+      ]
+    }
+  }
+
+  // "remoteUser": "devcontainer"
+}

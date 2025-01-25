@@ -1,6 +1,7 @@
 *.pyc
 .DS_Store
 .byebug_history
+.devcontainer
 .develop_node_modules
 .envrc
 .envrc-docker

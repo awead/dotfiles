@@ -31,7 +31,7 @@
   "editor.fontFamily": "Lilex, Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.insertSpaces": true,
   "editor.lineHeight": 1,
   "editor.minimap.enabled": false,
@@ -47,30 +47,6 @@
   "files.trimTrailingWhitespace": true,
   "git.autofetch": true,
   "redhat.telemetry.enabled": false,
-  "rubyLsp.rubyVersionManager": {
-    "identifier": "none"
-  },
-  "rubyLsp.bundleGemfile": "Gemfile.dev", // seems to prevent the Gemfile.lock from being changed
-  "rubyLsp.enabledFeatures": {
-    "codeActions": true,
-    "diagnostics": true,
-    "documentHighlights": true,
-    "documentLink": true,
-    "documentSymbols": true,
-    "foldingRanges": true,
-    "formatting": true,
-    "hover": true,
-    "inlayHint": true,
-    "onTypeFormatting": true,
-    "selectionRanges": true,
-    "semanticHighlighting": true,
-    "completion": true,
-    "codeLens": true,
-    "definition": true,
-    "workspaceSymbol": true,
-    "signatureHelp": true,
-    "typeHierarchy": true
-  },
   "ruby.specCommand": "k-rspec",
   "search.exclude": {
     "**/*.code-search": true,
@@ -81,20 +57,24 @@
     "**/node_modules": true,
     "**/tmp": true,
     "**/vendor": true,
-    "tags": true
+    "tags": true,
   },
+  "standardRuby.autofix": false,
+  "standardRuby.mode": "disable", // needs to be enabled using devcontainers
   "terminal.integrated.fontSize": 14,
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "vspacecode.bindings": [
     {
-      "key": "w",
-      "name": "Save",
+      "key": "=",
+      "name": "Format Document",
+      "icon": "code",
       "type": "command",
-      "command": "workbench.action.files.save"
+      "command": "editor.action.formatDocument"
     },
     {
       "key": "a",
       "name": "Alternates...",
+      "icon": "file",
       "type": "bindings",
       "bindings": [
         {
@@ -108,7 +88,7 @@
           "name": "Open alternate in vertical split",
           "type": "command",
           "command": "alternateFile.alternateFileInSplit"
-        }
+        },
       ]
     },
     {
@@ -122,12 +102,13 @@
           "name": "in files",
           "type": "command",
           "command": "workbench.action.quickOpen"
-        }
+        },
       ]
     },
     {
       "key": "m",
       "name": "Move...",
+      "icon": "arrow-both",
       "type": "bindings",
       "bindings": [
         {
@@ -146,7 +127,7 @@
               "name": "Move group to the left",
               "type": "command",
               "command": "workbench.action.moveActiveEditorGroupLeft"
-            }
+            },
           ]
         },
         {
@@ -160,14 +141,8 @@
           "name": "File to left group",
           "type": "command",
           "command": "workbench.action.moveEditorToLeftGroup"
-        }
+        },
       ]
-    },
-    {
-      "key": "i",
-      "name": "Indent Lines",
-      "type": "command",
-      "command": "editor.action.reindentlines"
     },
     {
       "key": "n",
@@ -205,31 +180,39 @@
     {
       "key": "r",
       "name": "Testing...",
+      "icon": "beaker",
       "type": "bindings",
       "bindings": [
         {
           "key": "f",
           "name": "Run file",
           "type": "command",
-          "command": "extension.runFileSpecs"
+          "command": "extension.runFileSpecs",
         },
         {
           "key": "r",
           "name": "Run last test",
           "type": "command",
-          "command": "extension.runLastSpec"
+          "command": "extension.runLastSpec",
         },
         {
           "key": "s",
           "name": "Run nearest test",
           "type": "command",
-          "command": "extension.runSpecLine"
-        }
+          "command": "extension.runSpecLine",
+        },
       ]
-    }
+    },
+    {
+      "key": "w",
+      "name": "Save",
+      "icon": "save",
+      "type": "command",
+      "command": "workbench.action.files.save"
+    },
   ],
-  "workbench.colorTheme": "Spinel",
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "workbench.colorTheme": "One Monokai",
 }
