@@ -60,7 +60,7 @@
     "tags": true,
   },
   "standardRuby.autofix": false,
-  "standardRuby.mode": "disable", // needs to be enabled using devcontainers
+    "standardRuby.mode": "onlyRunGlobally",
   "terminal.integrated.fontSize": 14,
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "vspacecode.bindings": [
