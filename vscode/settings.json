@@ -27,6 +27,7 @@
     "whichkey",
     "workdir"
   ],
+  "editor.defaultFormatter": "asvetliakov.vscode-neovim",
   "editor.detectIndentation": false,
   "editor.fontFamily": "Lilex, Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
@@ -47,6 +48,10 @@
   "files.trimTrailingWhitespace": true,
   "git.autofetch": true,
   "redhat.telemetry.enabled": false,
+  "[ruby]": {
+    "editor.defaultColorDecorators": false,
+    "editor.defaultFormatter": "testdouble.vscode-standard-ruby"
+  },
   "ruby.specCommand": "k-rspec",
   "search.exclude": {
     "**/*.code-search": true,
@@ -60,7 +65,7 @@
     "tags": true,
   },
   "standardRuby.autofix": false,
-    "standardRuby.mode": "onlyRunGlobally",
+  "standardRuby.mode": "onlyRunGlobally",
   "terminal.integrated.fontSize": 14,
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "vspacecode.bindings": [
@@ -88,6 +93,20 @@
           "name": "Open alternate in vertical split",
           "type": "command",
           "command": "alternateFile.alternateFileInSplit"
+        },
+      ]
+    },
+    {
+      "key": "d",
+      "name": "Devcontainers",
+      "icon": "rocket",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "d",
+          "name": "Reopen in devcontainer",
+          "type": "command",
+          "command": "remote-containers.reopenInContainer"
         },
       ]
     },

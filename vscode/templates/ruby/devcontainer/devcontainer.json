@@ -30,7 +30,8 @@
     "vscode": {
       "extensions": [
         "noku.rails-run-spec-vscode",
-        "testdouble.vscode-alternate-alternate-file"
+        "testdouble.vscode-alternate-alternate-file",
+        "testdouble.vscode-standard-ruby"
       ]
     }
   }

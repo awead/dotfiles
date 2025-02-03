@@ -25,5 +25,8 @@ if not vim.g.vscode then
   require("bindings")
   require("functions")
 
+  vim.opt.spell = true
+  vim.opt.spelllang = 'en_us'
+
 end
 
