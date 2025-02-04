@@ -34,6 +34,10 @@
         "testdouble.vscode-standard-ruby"
       ]
     }
+  },
+
+  "containerEnv": {
+    "SHELL": "/bin/bash"
   }
 
   // "remoteUser": "devcontainer"

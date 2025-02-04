@@ -1,4 +1,5 @@
 {
+  "@azure.argTenant": "",
   "cSpell.enabled": true,
   "cSpell.language": "en",
   "cSpell.ignoreWords": [
@@ -8,6 +9,17 @@
     "*": true,
     "markdown": true
   },
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/{info,lfs,logs,refs,objects}/**",
+    ".git/{index,*refs,*HEAD}",
+    ".vscode",
+    ".vscode-insiders",
+    "Dockerfile",
+    "docker-compose.yml",
+  ],
   "cSpell.userWords": [
     "asvetliakov",
     "autofetch",
@@ -43,13 +55,15 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
+  "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "git.autofetch": true,
+  "git.ignoreMissingGitWarning": true,
   "redhat.telemetry.enabled": false,
   "[ruby]": {
-    "editor.defaultColorDecorators": false,
+    "editor.defaultColorDecorators": "never",
     "editor.defaultFormatter": "testdouble.vscode-standard-ruby"
   },
   "ruby.specCommand": "k-rspec",
@@ -103,10 +117,28 @@
       "type": "bindings",
       "bindings": [
         {
+          "key": "a",
+          "name": "Attach to running container",
+          "type": "command",
+          "command": "remote-containers.attachToRunningContainer"
+        },
+        {
+          "key": "b",
+          "name": "(Re)build container",
+          "type": "command",
+          "command": "remote-containers.rebuildContainer"
+        },
+        {
           "key": "d",
           "name": "Reopen in devcontainer",
           "type": "command",
           "command": "remote-containers.reopenInContainer"
+        },
+        {
+          "key": "r",
+          "name": "Reopen folder locally",
+          "type": "command",
+          "command": "remote-containers.reopenLocally"
         },
       ]
     },
@@ -223,6 +255,26 @@
       ]
     },
     {
+      "key": "t",
+      "name": "Terminal",
+      "icon": "terminal",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "l",
+          "name": "New terminal (local)",
+          "type": "command",
+          "command": "workbench.action.terminal.newLocal",
+        },
+        {
+          "key": "t",
+          "name": "New terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.new",
+        },
+      ]
+    },
+    {
       "key": "w",
       "name": "Save",
       "icon": "save",
@@ -232,6 +284,6 @@
   ],
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
-  "explorer.confirmDelete": false,
   "workbench.colorTheme": "One Monokai",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
 }
