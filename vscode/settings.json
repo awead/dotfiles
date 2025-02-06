@@ -67,6 +67,7 @@
     "editor.defaultFormatter": "testdouble.vscode-standard-ruby"
   },
   "ruby.specCommand": "k-rspec",
+  "search.collapseResults": "alwaysCollapse",
   "search.exclude": {
     "**/*.code-search": true,
     "**/bower_components": true,
@@ -92,7 +93,7 @@
     },
     {
       "key": "a",
-      "name": "Alternates...",
+      "name": "Alternates",
       "icon": "file",
       "type": "bindings",
       "bindings": [
@@ -109,6 +110,13 @@
           "command": "alternateFile.alternateFileInSplit"
         },
       ]
+    },
+    {
+      "key": "b",
+      "name": "Close",
+      "icon": "close",
+      "type": "command",
+      "command": "workbench.action.closeActiveEditor",
     },
     {
       "key": "d",
@@ -144,27 +152,45 @@
     },
     {
       "key": "f",
-      "name": "Find...",
+      "name": "Find",
       "icon": "search",
       "type": "bindings",
       "bindings": [
         {
+          "key": " ",
+          "name": "by search",
+          "type": "command",
+          "command": "workbench.view.search"
+        },
+        {
+          "key": "F",
+          "name": "by file name under cursor",
+          "type": "command",
+          "command": "extension.searchFileUnderCursor"
+        },
+        {
           "key": "f",
-          "name": "in files",
+          "name": "by file name",
           "type": "command",
           "command": "workbench.action.quickOpen"
+        },
+        {
+          "key": "g",
+          "name": "by search under cursor",
+          "type": "command",
+          "command": "extension.searchUnderCursor"
         },
       ]
     },
     {
       "key": "m",
-      "name": "Move...",
+      "name": "Move",
       "icon": "arrow-both",
       "type": "bindings",
       "bindings": [
         {
           "key": "g",
-          "name": "Group...",
+          "name": "Group",
           "type": "bindings",
           "bindings": [
             {
@@ -230,7 +256,7 @@
     },
     {
       "key": "r",
-      "name": "Testing...",
+      "name": "Testing",
       "icon": "beaker",
       "type": "bindings",
       "bindings": [
