@@ -2,9 +2,6 @@
   "@azure.argTenant": "",
   "cSpell.enabled": true,
   "cSpell.language": "en",
-  "cSpell.ignoreWords": [
-    "guidesloaded"
-  ],
   "cSpell.enabledFileTypes": {
     "*": true,
     "markdown": true
@@ -17,29 +14,15 @@
     ".git/{index,*refs,*HEAD}",
     ".vscode",
     ".vscode-insiders",
-    "Dockerfile",
-    "docker-compose.yml",
   ],
-  "cSpell.userWords": [
-    "asvetliakov",
-    "autofetch",
-    "autofix",
-    "CheckMyMeds",
-    "cmmint",
-    "datacenter",
-    "FHIR",
-    "Lilex",
-    "neovim",
-    "nvim",
-    "pendo",
-    "reindentlines",
-    "rubocop",
-    "standardrb",
-    "vspacecode",
-    "whichkey",
-    "workdir"
-  ],
-  "editor.defaultFormatter": "asvetliakov.vscode-neovim",
+  "cSpell.customDictionaries": {
+    "custom-dictionary-user": {
+      "name": "custom-dictionary-user",
+      "path": "~/.cspell/dictionary.txt",
+      "addWords": true,
+      "scope": "user"
+    }
+  },
   "editor.detectIndentation": false,
   "editor.fontFamily": "Lilex, Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
@@ -81,6 +64,7 @@
   },
   "standardRuby.autofix": false,
   "standardRuby.mode": "onlyRunGlobally",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontSize": 14,
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "vspacecode.bindings": [
@@ -251,6 +235,12 @@
           "name": "Show active file in tree/explorer view",
           "type": "command",
           "command": "workbench.files.action.showActiveFileInExplorer"
+        },
+        {
+          "key": "w",
+          "name": "Show workspaces",
+          "type": "command",
+          "command": "vsc-workspace-sidebar-webview-workspace.focus"
         }
       ]
     },
@@ -310,9 +300,8 @@
   ],
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "One Monokai",
+  "workbench.colorTheme": "Dark Low Contrast Warm",
   "workspaceSidebar.rootFolders": [
     { "path": "~/Projects/Github", "depth": 2},
   ],
-  "terminal.integrated.enableMultiLinePasteWarning": "never",
 }
