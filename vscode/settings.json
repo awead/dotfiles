@@ -311,5 +311,8 @@
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "One Monokai",
+  "workspaceSidebar.rootFolders": [
+    { "path": "~/Projects/Github", "depth": 2},
+  ],
   "terminal.integrated.enableMultiLinePasteWarning": "never",
 }
