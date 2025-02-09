@@ -22,6 +22,23 @@ function k-rspec() {
   fi
 }
 
+function k-pytest() {
+  if [[ -z "${PYTEST_CONTAINER}" ]]; then
+
+    DEVELOPMENNT_STATE=`docker inspect -f '{{.State.Running}}' development`
+    if [[ $DEVELOPMENNT_STATE == "true" ]]; then
+      echo "Running pytest using development container"
+      dc exec -it development pytest $1
+    else
+      echo "A development container must be running"
+    fi
+
+  else
+    echo "Running pytest using Docker container ${PYTEST_CONTAINER}"
+    docker run --rm -v $(pwd):/app -it ${PYTEST_CONTAINER} bundle exec pytest $1
+  fi
+}
+
 function code-backup() {
   cp $HOME/Library/Application\ Support/Code/User/settings.json $HOME/.dotfiles/vscode/settings.json
 }
