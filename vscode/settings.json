@@ -2,9 +2,6 @@
   "@azure.argTenant": "",
   "cSpell.enabled": true,
   "cSpell.language": "en",
-  "cSpell.ignoreWords": [
-    "guidesloaded"
-  ],
   "cSpell.enabledFileTypes": {
     "*": true,
     "markdown": true
@@ -17,29 +14,15 @@
     ".git/{index,*refs,*HEAD}",
     ".vscode",
     ".vscode-insiders",
-    "Dockerfile",
-    "docker-compose.yml",
   ],
-  "cSpell.userWords": [
-    "asvetliakov",
-    "autofetch",
-    "autofix",
-    "CheckMyMeds",
-    "cmmint",
-    "datacenter",
-    "FHIR",
-    "Lilex",
-    "neovim",
-    "nvim",
-    "pendo",
-    "reindentlines",
-    "rubocop",
-    "standardrb",
-    "vspacecode",
-    "whichkey",
-    "workdir"
-  ],
-  "editor.defaultFormatter": "asvetliakov.vscode-neovim",
+  "cSpell.customDictionaries": {
+    "custom-dictionary-user": {
+      "name": "custom-dictionary-user",
+      "path": "~/.cspell/dictionary.txt",
+      "addWords": true,
+      "scope": "user"
+    }
+  },
   "editor.detectIndentation": false,
   "editor.fontFamily": "Lilex, Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
@@ -67,6 +50,7 @@
     "editor.defaultFormatter": "testdouble.vscode-standard-ruby"
   },
   "ruby.specCommand": "k-rspec",
+  "search.collapseResults": "alwaysCollapse",
   "search.exclude": {
     "**/*.code-search": true,
     "**/bower_components": true,
@@ -80,6 +64,7 @@
   },
   "standardRuby.autofix": false,
   "standardRuby.mode": "onlyRunGlobally",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontSize": 14,
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "vspacecode.bindings": [
@@ -92,7 +77,7 @@
     },
     {
       "key": "a",
-      "name": "Alternates...",
+      "name": "Alternates",
       "icon": "file",
       "type": "bindings",
       "bindings": [
@@ -109,6 +94,13 @@
           "command": "alternateFile.alternateFileInSplit"
         },
       ]
+    },
+    {
+      "key": "b",
+      "name": "Close",
+      "icon": "close",
+      "type": "command",
+      "command": "workbench.action.closeActiveEditor",
     },
     {
       "key": "d",
@@ -144,27 +136,45 @@
     },
     {
       "key": "f",
-      "name": "Find...",
+      "name": "Find",
       "icon": "search",
       "type": "bindings",
       "bindings": [
         {
+          "key": " ",
+          "name": "by search",
+          "type": "command",
+          "command": "workbench.view.search"
+        },
+        {
+          "key": "F",
+          "name": "by file name under cursor",
+          "type": "command",
+          "command": "extension.searchFileUnderCursor"
+        },
+        {
           "key": "f",
-          "name": "in files",
+          "name": "by file name",
           "type": "command",
           "command": "workbench.action.quickOpen"
+        },
+        {
+          "key": "g",
+          "name": "by search under cursor",
+          "type": "command",
+          "command": "extension.searchUnderCursor"
         },
       ]
     },
     {
       "key": "m",
-      "name": "Move...",
+      "name": "Move",
       "icon": "arrow-both",
       "type": "bindings",
       "bindings": [
         {
           "key": "g",
-          "name": "Group...",
+          "name": "Group",
           "type": "bindings",
           "bindings": [
             {
@@ -225,12 +235,18 @@
           "name": "Show active file in tree/explorer view",
           "type": "command",
           "command": "workbench.files.action.showActiveFileInExplorer"
+        },
+        {
+          "key": "w",
+          "name": "Show workspaces",
+          "type": "command",
+          "command": "vsc-workspace-sidebar-webview-workspace.focus"
         }
       ]
     },
     {
       "key": "r",
-      "name": "Testing...",
+      "name": "Testing",
       "icon": "beaker",
       "type": "bindings",
       "bindings": [
@@ -284,6 +300,8 @@
   ],
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "One Monokai",
-  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "workbench.colorTheme": "Dark Low Contrast Warm",
+  "workspaceSidebar.rootFolders": [
+    { "path": "~/Projects/Github", "depth": 2},
+  ],
 }
