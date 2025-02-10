@@ -60,10 +60,19 @@ require("telescope").setup{
     },
     ["telescope-alternate"] = {
       mappings = {
+        -- Elixir
         { 'lib/(.*).ex', { { 'test/[1]_test.exs', 'Test' } } },
         { 'test/(.*)_test.exs', { { 'lib/[1].ex', 'Original', true } } },
+
+        -- Ruby libraries
         { 'lib/(.*).rb', { { 'spec/lib/[1]_spec.rb', 'Test' } } },
         { 'spec/lib/(.*)_spec.rb', { { 'lib/[1].rb', 'Original', true } } },
+
+        -- Python (pytest)
+        { "src/(.*)/(.*).py", { { "tests/[1]/test_[2].py", "Pytest" } } },
+        { "tests/(.*)/test_(.*).py", { { "src/[1]/[2].py", "Original", true } } },
+        { "src/(.*).py", { { "tests/test_[1].py", "Pytest" } } },
+        { "tests/test_(.*).py", { { "src/[1].py", "Original", true } } },
       },
       presets = { "rails", "rspec", "nestjs" }
     },
