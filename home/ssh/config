@@ -1,4 +1,0 @@
-Host *
-  ServerAliveInterval 100
-  AddressFamily inet
-  IdentityFile ~/.ssh/id_rsa

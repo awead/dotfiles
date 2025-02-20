@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if [ $1 = 'stop' ]; then
-  osascript -e 'quit app "Cisco AnyConnect Secure Mobility Client"'
-else
-  open "/Applications/Cisco/Cisco AnyConnect Secure Mobility Client.app"
-fi

@@ -1,4 +1,0 @@
-{
-  "standardRuby.mode": "onlyRunGlobally",
-  "ruby.specCommand": "bundle exec rspec",
-}
