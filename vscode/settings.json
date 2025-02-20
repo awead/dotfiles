@@ -44,6 +44,9 @@
   "files.trimTrailingWhitespace": true,
   "git.autofetch": true,
   "git.ignoreMissingGitWarning": true,
+  "python.testing.pytestEnabled": "true",
+  "python.testing.unittestEnabled": "false",
+  "python.testing.pytestPath": "k-pytest",
   "redhat.telemetry.enabled": false,
   "[ruby]": {
     "editor.defaultColorDecorators": "never",
@@ -66,6 +69,7 @@
   "standardRuby.mode": "onlyRunGlobally",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontSize": 14,
+  "vscode-erb-beautify.keepBlankLines": 1,
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "vspacecode.bindings": [
     {
@@ -302,6 +306,9 @@
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Dark Low Contrast Warm",
   "workspaceSidebar.rootFolders": [
-    { "path": "~/Projects/Github", "depth": 2},
+    {
+      "path": "~/Projects/Github",
+      "depth": 2
+    }
   ],
 }
