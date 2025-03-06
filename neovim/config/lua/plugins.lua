@@ -54,12 +54,6 @@ return {
     config = build_with_config("toggleterm"),
   },
 
-  -- -- Used for linting
-  -- {
-  --   "dense-analysis/ale",
-  --   config = build_with_config("ale"),
-  -- },
-
   {
     "folke/tokyonight.nvim",
     cond = not vim.g.vscode,
@@ -100,51 +94,12 @@ return {
     end
   },
 
-  --
-  -- LSP for rust
-  --
-  
   {
-    "williamboman/mason.nvim",
-    cond = not vim.g.vscode,
-    dependencies = {
-      "williamboman/mason-lspconfig.nvim",
-    },
-    config = build_with_config("mason"),
+    'windwp/nvim-autopairs',
+    config = build_with_config("autopairs")
   },
 
-  {
-    "neovim/nvim-lspconfig",
-    cond = not vim.g.vscode,
-    config = build_with_config("lspconfig"),
-  },
-
-  {
-    "simrat39/rust-tools.nvim",
-    cond = not vim.g.vscode,
-    config = build_with_config("rust-tools"),
-  },
-
-  -- snippets
-  {
-    -- Completion framework:
-    "hrsh7th/nvim-cmp",
-
-    -- LSP completion source:
-    "hrsh7th/cmp-nvim-lsp",
-
-    -- Useful completion sources:
-    "hrsh7th/cmp-nvim-lua",
-    "hrsh7th/cmp-nvim-lsp-signature-help",
-    "hrsh7th/cmp-vsnip",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/vim-vsnip"
-  },
-
-  --
   -- Pretty stuff...
-  --
   {
     "nvim-lualine/lualine.nvim",
     cond = not vim.g.vscode,
@@ -226,10 +181,5 @@ return {
     },
     build = ":TSUpdate",
     config = build_with_config("treesitter")
-  },
-
-  {
-    'windwp/nvim-autopairs',
-    config = build_with_config("autopairs")
   },
 }
